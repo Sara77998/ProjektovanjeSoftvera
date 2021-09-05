@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain
+{
+    public class Ucenik
+    {
+        public int UcenikId { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public DateTime DatumRodjenja { get; set; }
+        public string Telefon { get; set; }
+        public string Email { get; set; }
+
+
+
+        [Browsable(false)]
+        public string TableName => "Ucenik";
+        [Browsable(false)]
+        public string InsertValues => $"'{Ime}','{Prezime}','{DatumRodjenja.ToString("MM/dd/yyyy")}','{Telefon}','{Email}'";
+        [Browsable(false)]
+        public string IdName => throw new NotImplementedException();
+        [Browsable(false)]
+        public string JoinCondition => "";
+        [Browsable(false)]
+        public string JoinTable => "";
+        [Browsable(false)]
+        public string TableAlias => "u";
+        [Browsable(false)]
+        public string SelectValues => "*";
+        [Browsable(false)]
+        public string WhereCondition { get; set; }
+        [Browsable(false)]
+        public string WhereValue { get; set; }
+        [Browsable(false)]
+        public string Where => "where";
+        [Browsable(false)]
+        public string JoinCondition1 => "";
+        [Browsable(false)]
+        public string JoinTable1 => "";
+        [Browsable(false)]
+        public string UpdateText { get; set; }
+        [Browsable(false)]
+        public string JoinCondition2 => "";
+        [Browsable(false)]
+        public string JoinTable2 => "";
+        [Browsable(false)]
+        public string JoinCondition3 => "";
+        [Browsable(false)]
+        public string JoinTable3 => "";
+
+        public List<IEntity> GetEntities(SqlDataReader citac)
+        {
+
+            List<IEntity> result = new List<IEntity>();
+            while (citac.Read())
+            {
+                Ucenik u = new Ucenik
+                {
+                    UcenikId = citac.GetInt32(0),
+                    Ime = citac.GetString(1),
+                    Prezime = citac.GetString(2),
+                    DatumRodjenja = (DateTime)citac["DatumRodjenja"],
+                    Telefon = citac.GetString(4),
+                    Email = citac.GetString(5)
+                };
+                result.Add((IEntity)u);
+            }
+            return result;
+        }
+    }
+}
