@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Odgovor.cs" />
     <Compile Include="Operacija.cs" />
+    <Compile Include="Posiljalac.cs" />
+    <Compile Include="Primalac.cs" />
     <Compile Include="Zahtev.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

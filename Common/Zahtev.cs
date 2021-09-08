@@ -7,6 +7,7 @@ using Domain;
 
 namespace Common
 {
+    [Serializable]
     public class Zahtev
     {
         public Operacija Operacija { get; set; }
