@@ -42,9 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IGenericRepositiry.cs" />
+    <Compile Include="Implementation\Database\GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseBroker\DatabaseBroker.csproj">
+      <Project>{9aa40618-78b9-4b63-a23f-fc6c97e57412}</Project>
+      <Name>DatabaseBroker</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{9703feee-cccf-496c-9276-e94d4e8dd4d4}</Project>
       <Name>Domain</Name>
