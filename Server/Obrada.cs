@@ -8,17 +8,25 @@ using System.Threading.Tasks;
 using Domain;
 using Common;
 using Controller;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.Serialization;
 
 namespace Server
 {
-    class Obrada
+    public class Obrada
     {
         private Socket klijentSoket;
         private NetworkStream tok;
         private BinaryFormatter formater;
-        public Obrada(Socket klijentSoket)
+
+        private readonly BindingList<Instruktor> instruktori;
+        private Instruktor ulogovaniInstruktor;
+
+        public Obrada(Socket klijentSoket, BindingList<Instruktor> instruktori)
         {
             this.klijentSoket = klijentSoket;
+            this.instruktori = instruktori;
             //tok = new NetworkStream(klijentSoket);
         }
         public void ObradiZahtev()
@@ -45,15 +53,19 @@ namespace Server
                     formater.Serialize(tok, o);
                 }
             }
-            catch (IOException ex)//greska kod upotrebe razl devajseva
+            catch (IOException)//greska kod upotrebe razl devajseva
             {
-                Console.WriteLine(">>>" + ex.Message);
-                Server.PrijavljeniUpravnici.Remove(upravnik);
+                //Console.WriteLine(">>>" + ex.Message);
+                //Server.PrijavljeniUpravnici.Remove(upravnik);
+                System.Windows.Forms.MessageBox.Show("Veza je prekinuta!");
+                instruktori.Remove(ulogovaniInstruktor);
             }
             catch (SerializationException ex)
             {
-                Console.WriteLine(">>>" + ex.Message);
-                Server.PrijavljeniUpravnici.Remove(upravnik);
+                //Console.WriteLine(">>>" + ex.Message);
+                //Server.PrijavljeniUpravnici.Remove(upravnik);
+                System.Windows.Forms.MessageBox.Show("Veza je prekinuta!");
+                instruktori.Remove(ulogovaniInstruktor);
             }
             finally
             {
@@ -64,21 +76,27 @@ namespace Server
             }
         }
 
+        
+
         private Odgovor KreirajOdgovor(Zahtev z)
         {
             Odgovor o = new Odgovor();
             o.UspesnoKreiranOdgovor = true;
             switch (z.Operacija)
             {
-                case Login:
-                    Odgovor.Rezultat = Kontroler.Instance.Login();
-                    Instruktor ulogovaniInstruktor = instruktori.First(i => i.KorisnickoIme == z.Instruktor.KorisnickoIme && i.Lozinka == z.Instruktor.Lozinka);
-                    o.Instruktor = ulogovaniInstruktor;
-                    return o;
-                default:
+                case Operacija.Login:
+                    o.Rezultat = Kontroler.Instance.Login((Instruktor)z.Objekat);                   
+                    ulogovaniInstruktor = (Instruktor)o.Rezultat;
+                    instruktori.Add(ulogovaniInstruktor);
                     break;
+                
             }
             return o;
+        }
+
+        internal void Zaustavi()
+        {
+            klijentSoket.Close();
         }
     }
 }

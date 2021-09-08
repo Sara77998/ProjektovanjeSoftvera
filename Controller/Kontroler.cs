@@ -25,17 +25,18 @@ namespace Controller
             }
         }
 
-        public Instruktor Login()
+        public Instruktor Login(Instruktor instruktor)
         {
-            foreach (Instruktor i in broker.VratiSve())
-            {
-                if (u.Username == user.Username && u.Password == user.Password)
-                {
-                    User = u;
-                    return u;
-                }
-            }
-            throw new Exception("Login failed!");
+
+            //foreach (Instruktor i in broker.VratiSve())
+            //{
+            //    if (u.Username == user.Username && u.Password == user.Password)
+            //    {
+            //        User = u;
+            //        return u;
+            //    }
+            //}
+            //throw new Exception("Login failed!");
         }
     }
 }

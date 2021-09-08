@@ -1,0 +1,12 @@
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.csprojAssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.FrmGlavna.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.FrmLogin.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.Properties.Resources.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCDodajCas.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCDodajTermin.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCDodajUcenika.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCPromeniTermin.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCPronadjiCas.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCPronadjiUcenika.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.csproj.GenerateResource.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.csproj.CoreCompileInputs.cache

@@ -1,0 +1,5 @@
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.FrmServer.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache

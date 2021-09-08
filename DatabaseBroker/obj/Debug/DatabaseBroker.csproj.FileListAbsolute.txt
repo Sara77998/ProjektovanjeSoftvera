@@ -1,0 +1,2 @@
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\obj\Debug\DatabaseBroker.csprojAssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\obj\Debug\DatabaseBroker.csproj.CoreCompileInputs.cache
