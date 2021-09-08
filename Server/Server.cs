@@ -20,6 +20,8 @@ namespace Server
         {
             get { return instruktori; }
         }
+
+
         public Server()
         {
             serverSoket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -36,7 +38,7 @@ namespace Server
                 {
 
                     Socket klijentSoket = serverSoket.Accept();
-                    Obrada o = new Obrada(klijentSoket, instruktor);
+                    Obrada o = new Obrada(klijentSoket, instruktori);
                     klijenti.Add(o);
                     Thread nit = new Thread(o.ObradiZahtev);
                     nit.IsBackground = true;

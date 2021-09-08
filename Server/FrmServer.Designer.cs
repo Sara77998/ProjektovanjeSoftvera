@@ -34,6 +34,7 @@ namespace Server
             this.btnPokreniServer = new System.Windows.Forms.Button();
             this.btnZaustaviServer = new System.Windows.Forms.Button();
             this.lblStanjeServera = new System.Windows.Forms.Label();
+            this.lblVreme = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregledTermina)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,7 @@ namespace Server
             this.btnPokreniServer.TabIndex = 1;
             this.btnPokreniServer.Text = "Pokreni server";
             this.btnPokreniServer.UseVisualStyleBackColor = true;
+            this.btnPokreniServer.Click += new System.EventHandler(this.btnPokreniServer_Click);
             // 
             // btnZaustaviServer
             // 
@@ -75,27 +77,40 @@ namespace Server
             this.btnZaustaviServer.TabIndex = 2;
             this.btnZaustaviServer.Text = "Zaustavi server";
             this.btnZaustaviServer.UseVisualStyleBackColor = true;
+            this.btnZaustaviServer.Click += new System.EventHandler(this.btnZaustaviServer_Click);
             // 
             // lblStanjeServera
             // 
             this.lblStanjeServera.AutoSize = true;
-            this.lblStanjeServera.Location = new System.Drawing.Point(584, 39);
+            this.lblStanjeServera.Location = new System.Drawing.Point(461, 39);
             this.lblStanjeServera.Name = "lblStanjeServera";
             this.lblStanjeServera.Size = new System.Drawing.Size(16, 17);
             this.lblStanjeServera.TabIndex = 3;
             this.lblStanjeServera.Text = "//";
+            // 
+            // lblVreme
+            // 
+            this.lblVreme.AutoSize = true;
+            this.lblVreme.Location = new System.Drawing.Point(673, 38);
+            this.lblVreme.Name = "lblVreme";
+            this.lblVreme.Size = new System.Drawing.Size(59, 17);
+            this.lblVreme.TabIndex = 4;
+            this.lblVreme.Text = "*Vreme*";
             // 
             // FrmServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblVreme);
             this.Controls.Add(this.lblStanjeServera);
             this.Controls.Add(this.btnZaustaviServer);
             this.Controls.Add(this.btnPokreniServer);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmServer";
             this.Text = "Server";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmServer_FormClosed);
+            this.Load += new System.EventHandler(this.FrmServer_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregledTermina)).EndInit();
             this.ResumeLayout(false);
@@ -110,6 +125,7 @@ namespace Server
         private System.Windows.Forms.Button btnPokreniServer;
         private System.Windows.Forms.Button btnZaustaviServer;
         private System.Windows.Forms.Label lblStanjeServera;
+        private System.Windows.Forms.Label lblVreme;
     }
 }
 
