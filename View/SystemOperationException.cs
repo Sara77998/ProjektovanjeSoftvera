@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace View.Communication
+namespace View
 {
     [Serializable]
     internal class SystemOperationException : Exception

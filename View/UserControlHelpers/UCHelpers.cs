@@ -48,7 +48,6 @@ namespace View.UserControlHelpers
             txt.BackColor = Color.White;
             return true;     
         }
-
         public static bool CenaValidacija(TextBox txt, Label label)
         {
             if (txt.Text.Contains("."))
@@ -73,10 +72,9 @@ namespace View.UserControlHelpers
                 return false;
             }
         }
-
-        public static bool DatumValidacija(TextBox txt, Label label)
+        public static bool DatumValidacija(DateTimePicker dtp, Label label)
         {
-            if (!DateTime.TryParseExact(txt.Text, "dd.MM.yyyy.", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
+            if (!DateTime.TryParseExact(dtp.Text, "dd.MM.yyyy.", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
             {
                 MessageBox.Show("datume morate uneti u dd.MM.yyyy formatu");
                 return false;

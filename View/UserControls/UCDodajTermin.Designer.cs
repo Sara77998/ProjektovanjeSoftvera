@@ -38,7 +38,15 @@ namespace View.UserControls
             this.cmbInstruktor = new System.Windows.Forms.ComboBox();
             this.cmbCas = new System.Windows.Forms.ComboBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnObrisiStavku = new System.Windows.Forms.Button();
+            this.btnDodajStavku = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lblDatumIVreme = new System.Windows.Forms.Label();
+            this.lblInstruktor = new System.Windows.Forms.Label();
+            this.lblCas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeTermina)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -81,11 +89,11 @@ namespace View.UserControls
             // dgvStavkeTermina
             // 
             this.dgvStavkeTermina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStavkeTermina.Location = new System.Drawing.Point(35, 216);
+            this.dgvStavkeTermina.Location = new System.Drawing.Point(6, 32);
             this.dgvStavkeTermina.Name = "dgvStavkeTermina";
             this.dgvStavkeTermina.RowHeadersWidth = 51;
             this.dgvStavkeTermina.RowTemplate.Height = 24;
-            this.dgvStavkeTermina.Size = new System.Drawing.Size(399, 150);
+            this.dgvStavkeTermina.Size = new System.Drawing.Size(491, 191);
             this.dgvStavkeTermina.TabIndex = 4;
             // 
             // dtpDatumIVreme
@@ -113,29 +121,97 @@ namespace View.UserControls
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(308, 372);
+            this.btnSacuvaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSacuvaj.Location = new System.Drawing.Point(434, 479);
             this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(126, 41);
+            this.btnSacuvaj.Size = new System.Drawing.Size(147, 41);
             this.btnSacuvaj.TabIndex = 8;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnObrisiStavku);
+            this.groupBox1.Controls.Add(this.btnDodajStavku);
+            this.groupBox1.Controls.Add(this.dgvStavkeTermina);
+            this.groupBox1.Location = new System.Drawing.Point(3, 226);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(593, 247);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Stavke termina - ucenici";
+            // 
+            // btnObrisiStavku
+            // 
+            this.btnObrisiStavku.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrisiStavku.Location = new System.Drawing.Point(503, 147);
+            this.btnObrisiStavku.Name = "btnObrisiStavku";
+            this.btnObrisiStavku.Size = new System.Drawing.Size(75, 63);
+            this.btnObrisiStavku.TabIndex = 6;
+            this.btnObrisiStavku.Text = "-";
+            this.btnObrisiStavku.UseVisualStyleBackColor = true;
+            this.btnObrisiStavku.Click += new System.EventHandler(this.btnObrisiStavku_Click);
+            // 
+            // btnDodajStavku
+            // 
+            this.btnDodajStavku.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajStavku.Location = new System.Drawing.Point(503, 53);
+            this.btnDodajStavku.Name = "btnDodajStavku";
+            this.btnDodajStavku.Size = new System.Drawing.Size(75, 63);
+            this.btnDodajStavku.TabIndex = 5;
+            this.btnDodajStavku.Text = "+";
+            this.btnDodajStavku.UseVisualStyleBackColor = true;
+            this.btnDodajStavku.Click += new System.EventHandler(this.btnDodajStavku_Click);
+            // 
+            // lblDatumIVreme
+            // 
+            this.lblDatumIVreme.AutoSize = true;
+            this.lblDatumIVreme.ForeColor = System.Drawing.Color.Red;
+            this.lblDatumIVreme.Location = new System.Drawing.Point(412, 83);
+            this.lblDatumIVreme.Name = "lblDatumIVreme";
+            this.lblDatumIVreme.Size = new System.Drawing.Size(0, 17);
+            this.lblDatumIVreme.TabIndex = 10;
+            // 
+            // lblInstruktor
+            // 
+            this.lblInstruktor.AutoSize = true;
+            this.lblInstruktor.ForeColor = System.Drawing.Color.Red;
+            this.lblInstruktor.Location = new System.Drawing.Point(412, 132);
+            this.lblInstruktor.Name = "lblInstruktor";
+            this.lblInstruktor.Size = new System.Drawing.Size(0, 17);
+            this.lblInstruktor.TabIndex = 11;
+            // 
+            // lblCas
+            // 
+            this.lblCas.AutoSize = true;
+            this.lblCas.ForeColor = System.Drawing.Color.Red;
+            this.lblCas.Location = new System.Drawing.Point(412, 174);
+            this.lblCas.Name = "lblCas";
+            this.lblCas.Size = new System.Drawing.Size(0, 17);
+            this.lblCas.TabIndex = 12;
             // 
             // UCDodajTermin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblCas);
+            this.Controls.Add(this.lblInstruktor);
+            this.Controls.Add(this.lblDatumIVreme);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.cmbCas);
             this.Controls.Add(this.cmbInstruktor);
             this.Controls.Add(this.dtpDatumIVreme);
-            this.Controls.Add(this.dgvStavkeTermina);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UCDodajTermin";
-            this.Size = new System.Drawing.Size(477, 437);
+            this.Size = new System.Drawing.Size(599, 532);
+            this.Load += new System.EventHandler(this.UCDodajTermin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeTermina)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +228,12 @@ namespace View.UserControls
         private System.Windows.Forms.ComboBox cmbInstruktor;
         private System.Windows.Forms.ComboBox cmbCas;
         private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnObrisiStavku;
+        private System.Windows.Forms.Button btnDodajStavku;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label lblDatumIVreme;
+        private System.Windows.Forms.Label lblInstruktor;
+        private System.Windows.Forms.Label lblCas;
     }
 }

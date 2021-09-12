@@ -15,7 +15,7 @@ namespace Domain
         public double Cena { get; set; }
 
         public string TableName => "Cas";
-        //public string InsertValues => $"{Marka.Id},'{Naziv}','{Verzija}'";
+        public string InsertValues => $"{StazaLokacija},'{TezinaCasa}','{Cena}'";
         public string IdName => "";
         public string JoinCondition => "";
         public string JoinTable => "";

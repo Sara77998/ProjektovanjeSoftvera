@@ -37,6 +37,9 @@ namespace View.UserControls
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblStazaLokacija = new System.Windows.Forms.Label();
+            this.lblTezinaCasa = new System.Windows.Forms.Label();
+            this.lblCena = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -107,10 +110,40 @@ namespace View.UserControls
             this.label1.TabIndex = 8;
             this.label1.Text = "Staza (lokacija):";
             // 
+            // lblStazaLokacija
+            // 
+            this.lblStazaLokacija.AutoSize = true;
+            this.lblStazaLokacija.ForeColor = System.Drawing.Color.Red;
+            this.lblStazaLokacija.Location = new System.Drawing.Point(339, 102);
+            this.lblStazaLokacija.Name = "lblStazaLokacija";
+            this.lblStazaLokacija.Size = new System.Drawing.Size(0, 17);
+            this.lblStazaLokacija.TabIndex = 16;
+            // 
+            // lblTezinaCasa
+            // 
+            this.lblTezinaCasa.AutoSize = true;
+            this.lblTezinaCasa.ForeColor = System.Drawing.Color.Red;
+            this.lblTezinaCasa.Location = new System.Drawing.Point(339, 170);
+            this.lblTezinaCasa.Name = "lblTezinaCasa";
+            this.lblTezinaCasa.Size = new System.Drawing.Size(0, 17);
+            this.lblTezinaCasa.TabIndex = 17;
+            // 
+            // lblCena
+            // 
+            this.lblCena.AutoSize = true;
+            this.lblCena.ForeColor = System.Drawing.Color.Red;
+            this.lblCena.Location = new System.Drawing.Point(339, 232);
+            this.lblCena.Name = "lblCena";
+            this.lblCena.Size = new System.Drawing.Size(0, 17);
+            this.lblCena.TabIndex = 18;
+            // 
             // UCDodajCas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblCena);
+            this.Controls.Add(this.lblTezinaCasa);
+            this.Controls.Add(this.lblStazaLokacija);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSacuvajCas);
             this.Controls.Add(this.cmbTezinaCasa);
@@ -120,7 +153,7 @@ namespace View.UserControls
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UCDodajCas";
-            this.Size = new System.Drawing.Size(390, 385);
+            this.Size = new System.Drawing.Size(539, 385);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +169,8 @@ namespace View.UserControls
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStazaLokacija;
+        private System.Windows.Forms.Label lblTezinaCasa;
+        private System.Windows.Forms.Label lblCena;
     }
 }

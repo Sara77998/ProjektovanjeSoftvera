@@ -32,10 +32,19 @@ namespace View.Communication
                 return instance;
             }
         }
+
+        public object GetAllInstrukruktor { get; internal set; }
+
         public Komunikacija()
         {
             klijentSoket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
+
+        internal object GetAllInstrukruktor()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool PoveziSe()
         {
             try

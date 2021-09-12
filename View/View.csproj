@@ -46,10 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientController\CasController.cs" />
     <Compile Include="ClientController\LoginController.cs" />
     <Compile Include="ClientController\MainController.cs" />
+    <Compile Include="ClientController\StavkaTerminaController.cs" />
+    <Compile Include="ClientController\TerminController.cs" />
+    <Compile Include="ClientController\UcenikController.cs" />
     <Compile Include="Communication\KomunikacijaKlijent.cs" />
-    <Compile Include="Communication\SystemOperationException.cs" />
+    <Compile Include="Dialog\DodajStavkuRentiranjaDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DodajStavkuRentiranjaDialog.Designer.cs">
+      <DependentUpon>DodajStavkuRentiranjaDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemOperationException.cs" />
     <Compile Include="FrmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +113,9 @@
     <Compile Include="UserControls\UCPronadjiUcenika.Designer.cs">
       <DependentUpon>UCPronadjiUcenika.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dialog\DodajStavkuRentiranjaDialog.resx">
+      <DependentUpon>DodajStavkuRentiranjaDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </EmbeddedResource>
