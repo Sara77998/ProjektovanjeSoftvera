@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain;
 
-namespace SistemOperations.InstruktorSO
+namespace SystemOperations.InstruktorSO
 {
     
     public class LoginSO:SystemOperationBase

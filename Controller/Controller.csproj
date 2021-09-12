@@ -53,6 +53,14 @@
       <Project>{9703feee-cccf-496c-9276-e94d4e8dd4d4}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SistemOperations\SystemOperations.csproj">
+      <Project>{bc65b45e-143f-485c-971b-65955b99607b}</Project>
+      <Name>SystemOperations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Storage\Storage.csproj">
+      <Project>{11f8412a-189a-4c57-bf73-727153225da9}</Project>
+      <Name>Storage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\View\View.csproj">
       <Project>{e34f5099-5d07-4900-a9de-f154d3ab7357}</Project>
       <Name>View</Name>

@@ -25,9 +25,11 @@ namespace Common
         UcitajUcenika,
         KreirajTermin,
         ZapamtiTermin,
+        IzmeniTermin,
         ZapamtiStvakuTermina,
         PretraziTermin,
         PretraziTerminDatum,
-        UcitajTermin
+        UcitajTermin,
+        ObrisiStavkuTermina
     }
 }

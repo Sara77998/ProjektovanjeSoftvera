@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="ClientController\LoginController.cs" />
     <Compile Include="ClientController\MainController.cs" />
+    <Compile Include="Communication\KomunikacijaKlijent.cs" />
+    <Compile Include="Communication\SystemOperationException.cs" />
     <Compile Include="FrmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,7 +62,7 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Komunikacija.cs" />
+    <Compile Include="Communication\Komunikacija.cs" />
     <Compile Include="MainCoordinator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

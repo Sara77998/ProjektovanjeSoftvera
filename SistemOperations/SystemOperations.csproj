@@ -50,6 +50,10 @@
       <Project>{9703feee-cccf-496c-9276-e94d4e8dd4d4}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Storage\Storage.csproj">
+      <Project>{11f8412a-189a-4c57-bf73-727153225da9}</Project>
+      <Name>Storage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

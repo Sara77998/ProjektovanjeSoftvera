@@ -22,7 +22,7 @@ namespace Common
             this.formater = new BinaryFormatter();
         }
 
-        public object Receive()
+        public object Primi()
         {
             return formater.Deserialize(tok);
         }
