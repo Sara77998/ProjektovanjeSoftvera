@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class StavkaTermina
+    public class StavkaTermina : IEntity
     {
         public Termin TerimId { get; set; }
         public int RB { get; set; }
@@ -18,8 +18,8 @@ namespace Domain
 
         [Browsable(false)]
         public string TableName => "StavkaTermina";
-        //[Browsable(false)]
-        //public string InsertValues => $"{Rentiranje.Id},'{DatumOd.ToString("MM/dd/yyyy")}','{DatumDo.ToString("MM/dd/yyyy")}','{Automobil.BrojSasije}',{Polisa.Id},{RedniBroj}";
+        [Browsable(false)]
+        public string InsertValues => $"{Rentiranje.Id},'{DatumOd.ToString("MM/dd/yyyy")}','{DatumDo.ToString("MM/dd/yyyy")}','{Automobil.BrojSasije}',{Polisa.Id},{RedniBroj}";
         [Browsable(false)]
         public string IdName => throw new NotImplementedException();
         [Browsable(false)]
@@ -54,53 +54,53 @@ namespace Domain
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
             List<IEntity> result = new List<IEntity>();
-            while (citac.Read())
-            {
-                 a = new Automobil
-                {
-                    BrojSasije = reader.GetString(7),
-                    Registracija = reader.GetString(8),
-                    GodinaProizvodnje = reader.GetInt32(9),
-                    CenaPoDanu = Convert.ToDouble(reader.GetDecimal(10)),
-                    Model = new Model
-                    {
-                        Id = reader.GetInt32(16),
-                        Naziv = reader.GetString(18),
-                        Verzija = reader.GetString(19),
-                        Marka = new Marka
-                        {
-                            Id = reader.GetInt32(20),
-                            Naziv = reader.GetString(21)
-                        }
-                    }
+            //while (citac.Read())
+            //{
+            //    a = new Automobil
+            //    {
+            //        BrojSasije = reader.GetString(7),
+            //        Registracija = reader.GetString(8),
+            //        GodinaProizvodnje = reader.GetInt32(9),
+            //        CenaPoDanu = Convert.ToDouble(reader.GetDecimal(10)),
+            //        Model = new Model
+            //        {
+            //            Id = reader.GetInt32(16),
+            //            Naziv = reader.GetString(18),
+            //            Verzija = reader.GetString(19),
+            //            Marka = new Marka
+            //            {
+            //                Id = reader.GetInt32(20),
+            //                Naziv = reader.GetString(21)
+            //            }
+            //        }
 
-                };
+            //    };
 
-                Polisa p = new Polisa
-                {
-                    Id = reader.GetInt32(12),
-                    Naziv = reader.GetString(13),
-                    CenaPoDanu = Convert.ToDouble(reader.GetDecimal(14)),
-                    Opis = reader.GetString(15)
-                };
+            //    Polisa p = new Polisa
+            //    {
+            //        Id = reader.GetInt32(12),
+            //        Naziv = reader.GetString(13),
+            //        CenaPoDanu = Convert.ToDouble(reader.GetDecimal(14)),
+            //        Opis = reader.GetString(15)
+            //    };
 
-                StavkaRentiranja sr = new StavkaRentiranja
-                {
-                    Polisa = p,
-                    Automobil = a,
-                    Id = reader.GetInt32(0),
-                    DatumOd = reader.GetDateTime(2),
-                    DatumDo = reader.GetDateTime(3),
-                    Rentiranje = new Rentiranje
-                    {
-                        Id = reader.GetInt32(1)
-                    },
-                    RedniBroj = reader.GetInt32(6)
+            //    StavkaRentiranja sr = new StavkaRentiranja
+            //    {
+            //        Polisa = p,
+            //        Automobil = a,
+            //        Id = reader.GetInt32(0),
+            //        DatumOd = reader.GetDateTime(2),
+            //        DatumDo = reader.GetDateTime(3),
+            //        Rentiranje = new Rentiranje
+            //        {
+            //            Id = reader.GetInt32(1)
+            //        },
+            //        RedniBroj = reader.GetInt32(6)
 
-                };
+            //    };
 
-                result.Add(sr);
-            }
+            //    result.Add(sr);
+            //}
             return result;
         }
     }

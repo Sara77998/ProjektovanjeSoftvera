@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Termin
+    public class Termin : IEntity
     {
         public int TerminId { get; set; }
         public DateTime DatumIVreme { get; set; }

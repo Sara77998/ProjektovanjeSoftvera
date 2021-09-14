@@ -16,7 +16,7 @@ namespace DatabaseBroker
 
         public Broker()
         {
-            konekcija = new SqlConnection(ConfigurationManager.ConnectionStrings["RentACarDatabase"].ConnectionString);
+            konekcija = new SqlConnection(@"");
         }
 
         public void OtvoriKonekciju()

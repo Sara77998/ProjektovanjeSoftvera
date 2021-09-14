@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public enum TezinaCasa
+    public enum TezinaCasa 
     {
         lako=1,
         srednje=2,

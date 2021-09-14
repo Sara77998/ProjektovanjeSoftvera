@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class SkolaSkijanja
+    public class SkolaSkijanja : IEntity
     {
         public int SkolaSkijanjaId { get; set; }
         public string Naziv { get; set; }
