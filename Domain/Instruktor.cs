@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Instruktor:IEntity
+    public class Instruktor : IEntity
     {
         public int InstruktorId { get; set; }
         public string Ime { get; set; }

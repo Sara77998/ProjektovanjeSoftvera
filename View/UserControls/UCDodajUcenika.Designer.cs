@@ -216,6 +216,7 @@ namespace View.UserControls
             this.Controls.Add(this.label1);
             this.Name = "UCDodajUcenika";
             this.Size = new System.Drawing.Size(642, 398);
+            this.Load += new System.EventHandler(this.UCDodajUcenika_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

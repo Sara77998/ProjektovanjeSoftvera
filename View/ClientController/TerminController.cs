@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Domain;
+using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using View.UserControls;
-using Domain;
+using System.Windows.Forms;
 using View.Communication;
 using View.Dialog;
-using System.Windows.Forms;
 using View.UserControlHelpers;
+using View.UserControls;
 
 namespace View.ClientController
-   
+
 {
     public class TerminController
     {
@@ -85,7 +82,7 @@ namespace View.ClientController
                 MessageBox.Show("Termin nema ni jednog ucenika tako da se ne moze sacuvati!");
                 return;
             }
-            if (!UCHelpers.ComboBoxValidacija(uCDodajTermin.CmbInstruktor, uCDodajTermin.LblInstruktor) | 
+            if (!UCHelpers.ComboBoxValidacija(uCDodajTermin.CmbInstruktor, uCDodajTermin.LblInstruktor) |
                 !UCHelpers.ComboBoxValidacija(uCDodajTermin.CmbCas, uCDodajTermin.LblCas))
             {
                 //mozda i datum treba da validiram?
@@ -105,7 +102,7 @@ namespace View.ClientController
                     StavkeTermina = stavkeTermina.ToList()
                     //InsertValues = $"'{m.JMBG}','{DateTime.Now.ToString("MM/dd/yyyy")}',{k}"
 
-                    
+
                 };
 
                 Komunikacija.Instance.SaveTermin(t);

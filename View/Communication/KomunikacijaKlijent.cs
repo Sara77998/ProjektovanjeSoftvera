@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Common;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Remoting;
-using System.Text;
-using System.Threading.Tasks;
-using Common;
 
 namespace View.Communication
 {
@@ -19,7 +14,7 @@ namespace View.Communication
             posiljalac = new Posiljalac(klijentSocket);
             primalac = new Primalac(klijentSocket);
         }
-        
+
 
         public void PosaljiZahtev(Zahtev z)
         {

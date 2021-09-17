@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
+﻿using Domain;
+using System;
 using View.ClientController;
 
 namespace View
@@ -32,16 +28,18 @@ namespace View
             }
         }
 
-        public void OpenLoginForm()
-        {
-            frmLogin = new FrmLogin(loginController);
-            frmLogin.Show();
-        }
+     
 
         public void OpenMainForm()
         {
             frmGlavna = new FrmGlavna(mainController);
             frmGlavna.Show();
+        }
+
+        internal void OpenFrmLogin()
+        {
+            frmLogin = new FrmLogin(loginController);
+            frmLogin.Show();
         }
     }
 }

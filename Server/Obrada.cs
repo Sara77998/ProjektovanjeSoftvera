@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
-using Common;
+﻿using Common;
 using Controller;
+using Domain;
+using System;
 using System.ComponentModel;
 using System.IO;
+using System.Net.Sockets;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Server
 {
@@ -35,7 +31,7 @@ namespace Server
             {
                 tok = new NetworkStream(klijentSoket);
                 formater = new BinaryFormatter();
-                
+
                 while (true)
                 {
                     Odgovor o;
@@ -76,7 +72,7 @@ namespace Server
             }
         }
 
-        
+
 
         private Odgovor KreirajOdgovor(Zahtev z)
         {
@@ -85,11 +81,11 @@ namespace Server
             switch (z.Operacija)
             {
                 case Operacija.Login:
-                    o.Rezultat = Kontroler.Instance.Login((Instruktor)z.Objekat);                   
+                    o.Rezultat = Kontroler.Instance.Login((Instruktor)z.Objekat);
                     ulogovaniInstruktor = (Instruktor)o.Rezultat;
                     instruktori.Add(ulogovaniInstruktor);
                     break;
-                
+
             }
             return o;
         }

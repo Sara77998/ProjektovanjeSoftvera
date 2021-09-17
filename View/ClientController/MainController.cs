@@ -1,36 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using View.Communication;
+using View.UserControls;
+using View.ClientController;
 
 namespace View.ClientController
 {
     public class MainController
     {
-        internal void OpenUCUcenik(FrmGlavna frmGlavna)
+        internal void CloseFrmGlavna()
         {
-            frmGlavna.SetPanel(new UCManufacturer(new Controller.ManufacturerController()));
+            Komunikacija.Instance.Disconnect();
+            MainCoordinator.Instance.OpenFrmLogin();
         }
 
-        internal void OpenUCProduct(FrmMain frmMain)
+        internal void OpenUCDodajUcenika(FrmGlavna frmGlavna)
         {
-            frmMain.SetPanel(new UCProduct(new Controller.ProductController()));
+            frmGlavna.SetPanel(new UCDodajUcenika(new UcenikController()));
         }
 
-        internal void OpenUCAllManufacturers(FrmMain frmMain)
+        internal void OpenUCPronadjiUcenika(FrmGlavna frmGlavna)
         {
-            frmMain.SetPanel(new UCAllManufacturers(new Controller.ManufacturerController()));
+            frmGlavna.SetPanel(new UCPronadjiUcenika(new UcenikController()));
         }
 
-        internal void OpenUCDataGridViewManufacturer(FrmMain frmMain)
+        internal void OpenUCObrisiUcenika(FrmGlavna frmGlavna)
         {
-            frmMain.SetPanel(new UCDataGridViewManufacturer(new Controller.ManufacturerController()));
+            // frmGlavna.SetPanel(new UCObrisiUcenika(new UcenikController()));
         }
 
-        internal void OpenUCAddInvoice(FrmMain frmMain)
+        internal void OpenUCDodajCas(FrmGlavna frmGlavna)
         {
-            frmMain.SetPanel(new UCAddInvoice(new Controller.InvoiceController()));
+            frmGlavna.SetPanel(new UCDodajCas(new CasController()));
+        }
+
+
+
+        internal void OpenUCObrisiCas(FrmGlavna frmGlavna)
+        {
+            // throw new NotImplementedException();
+        }
+
+        internal void OpenUCPRonadjiCas(FrmGlavna frmGlavna)
+        {
+            frmGlavna.SetPanel(new UCPronadjiCas(new CasController()));
+        }
+
+        internal void OpenUCDodajTermin(FrmGlavna frmGlavna)
+        {
+            frmGlavna.SetPanel(new UCDodajTermin(new TerminController()));
+        }
+
+        internal void OpenUCPromeniTermin(FrmGlavna frmGlavna)
+        {
+            frmGlavna.SetPanel(new UCPromeniTermin(new TerminController()));
+
         }
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
 
 namespace DatabaseBroker
 {
@@ -64,7 +61,7 @@ namespace DatabaseBroker
 
         }
 
-    
+
         public List<IEntity> VratiSve(IEntity entity)
         {
             List<IEntity> result;

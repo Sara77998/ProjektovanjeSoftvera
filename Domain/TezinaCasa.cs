@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain
+﻿namespace Domain
 {
-    public enum TezinaCasa 
+    public enum TezinaCasa
     {
-        lako=1,
-        srednje=2,
-        tesko=3
+        lako = 1,
+        srednje = 2,
+        tesko = 3
     }
 }

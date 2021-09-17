@@ -1,4 +1,4 @@
-C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.csprojAssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.Dialog.DodajStavkuRentiranjaDialog.resources
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.FrmGlavna.resources
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.FrmLogin.resources
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.Properties.Resources.resources
@@ -10,4 +10,4 @@ C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UC
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCPronadjiUcenika.resources
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.csproj.GenerateResource.cache
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.csproj.CoreCompileInputs.cache
-C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.Dialog.DodajStavkuRentiranjaDialog.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.csprojAssemblyReference.cache

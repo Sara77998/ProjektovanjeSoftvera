@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Common;
 using Domain;
-using Common;
+using System;
+using System.Collections.Generic;
+using System.Net.Sockets;
 
 
 namespace View.Communication
@@ -14,6 +10,13 @@ namespace View.Communication
     public class Komunikacija
     {
         private Socket klijentSoket;
+
+        internal void Disconnect()
+        {
+            klijentSoket.Close();
+            klijentSoket = null;
+        }
+
         //private NetworkStream tok;
         //private BinaryFormatter formater = new BinaryFormatter();
 
@@ -28,7 +31,7 @@ namespace View.Communication
                 {
                     instance = new Komunikacija();
                 }
-                   
+
                 return instance;
             }
         }
@@ -74,7 +77,7 @@ namespace View.Communication
             };
             klijent.PosaljiZahtev(z);
 
-            return (Instruktor)klijent.VratiOdgovor();            
+            return (Instruktor)klijent.VratiOdgovor();
         }
 
         //***************************************************
@@ -103,7 +106,7 @@ namespace View.Communication
             klijent.PosaljiZahtev(z);
 
 
-            ucenici = (List<Ucenik>)klijent.VratiOdgovor();          
+            ucenici = (List<Ucenik>)klijent.VratiOdgovor();
             if (ucenici.Count == 0 || ucenici == null)
             {
                 throw new Exception("Ne postoji ucenik sa zadatim kriterijumom!");
@@ -172,11 +175,11 @@ namespace View.Communication
             klijent.PosaljiZahtev(z);
 
 
-            casovi = (List<Cas>)klijent.VratiOdgovor();          
+            casovi = (List<Cas>)klijent.VratiOdgovor();
             if (casovi.Count == 0 || casovi == null)
             {
                 throw new Exception("Ne postoji cas sa zadatim kriterijumom!");
-            }           
+            }
             return casovi;
         }
         internal List<Cas> GetAllCas()
@@ -220,7 +223,7 @@ namespace View.Communication
             {
                 Operacija = Operacija.ZapamtiTermin,
                 Objekat = t
-            };           
+            };
             klijent.PosaljiZahtev(z);
 
 
@@ -305,7 +308,7 @@ namespace View.Communication
             klijent.VratiOdgovor();
         }
 
-       
+
 
 
     }

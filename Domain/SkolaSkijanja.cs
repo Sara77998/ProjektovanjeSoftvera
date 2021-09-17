@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain
 {
@@ -32,7 +29,7 @@ namespace Domain
         public string JoinTable2 => "";
         public string JoinCondition3 => "";
         public string JoinTable3 => "";
-        
+
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
             List<IEntity> result = new List<IEntity>();

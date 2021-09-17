@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using View.ClientController;
-using Domain;
 
 namespace View.UserControls
 {
@@ -27,7 +19,7 @@ namespace View.UserControls
         public Label LblDatumIVreme { get => lblDatumIVreme; set { } }
         public Label LblInstruktor { get => lblInstruktor; set { } }
         public Label LblCas { get => lblCas; set { } }
-        
+
 
         public UCDodajTermin(TerminController terminController)
         {
@@ -46,7 +38,7 @@ namespace View.UserControls
         //private BindingList<StavkaTermina> stavkeTermina = new BindingList<StavkaTermina>();
         //public BindingList<StavkaTermina> StavkeTermina { get => stavkeTermina; set { } }
 
-       
+
 
         private void btnDodajStavku_Click(object sender, EventArgs e)
         {

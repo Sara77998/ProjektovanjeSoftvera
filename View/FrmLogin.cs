@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using View.ClientController;
 
@@ -32,7 +25,7 @@ namespace View
             {
                 loginController.Login(txtKorisnickoIme, txtLozinka, this);// zasto ovde prosledjujemo this
             }
-                
+
         }
 
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)

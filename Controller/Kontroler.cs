@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
-using Storage;
+﻿using Domain;
 using Storage.Implementation.Database;
-using SystemOperations;
+using System.Collections.Generic;
 using SystemOperations.InstruktorSO;
 
 namespace Controller
@@ -138,9 +132,9 @@ namespace Controller
 
         ////////////////////////////////
 
-        
 
-        
+
+
         //public void UpdateAutomobil(Automobil automobil)
         //{
 
@@ -151,7 +145,7 @@ namespace Controller
 
 
 
-        
+
 
 
 

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using View.UserControls;
-using View.UserControlHelpers;
-using Domain;
+﻿using Domain;
+using System;
 using View.Communication;
+using View.UserControlHelpers;
+using View.UserControls;
 
 namespace View.ClientController
 {
@@ -26,15 +22,15 @@ namespace View.ClientController
             {
                 Ucenik u = new Ucenik
                 {
-                    
+
                     Ime = UCDodajUcenika.TxtIme.Text,
                     Prezime = UCDodajUcenika.TxtPrezime.Text,
                     DatumRodjenja = UCDodajUcenika.DtpDatumRodjenja.Value,
                     Telefon = UCDodajUcenika.TxtTelefon.Text,
                     Email = UCDodajUcenika.TxtEmail.Text
-                   
+
                 };
-                
+
                 Komunikacija.Instance.SaveUcenik(u);
                 System.Windows.Forms.MessageBox.Show("Ucenik je sacuvan!");
                 ResetForm(UCDodajUcenika);
@@ -163,14 +159,14 @@ namespace View.ClientController
 
         }
 
-        
+
         internal void InitUCUcenik(UCDodajUcenika uCDodajUcenika)
         {
 
         }
 
         internal void ResetForm(UCDodajUcenika uCDodajUcenika)
-        {        
+        {
             uCDodajUcenika.TxtIme.Clear();
             uCDodajUcenika.TxtPrezime.Clear();
             DateTime dt = DateTime.Now;

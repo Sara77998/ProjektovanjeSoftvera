@@ -30,11 +30,10 @@ namespace View
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pnlGlavna = new System.Windows.Forms.Panel();
             this.časToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajČasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pronađiČasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sviČasoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.obrišiČasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.učenikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajUčenikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pronađiUčenikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +41,11 @@ namespace View
             this.terminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajTerminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.promeniTerminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.obrišiČasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1lblUlogovaniInstruktor = new System.Windows.Forms.Label();
-            this.dgvSviInstruktori = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pnlGlavna = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvSviInstruktori = new System.Windows.Forms.DataGridView();
+            this.label1lblUlogovaniInstruktor = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlGlavna.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviInstruktori)).BeginInit();
@@ -56,8 +55,8 @@ namespace View
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.časToolStripMenuItem,
             this.učenikToolStripMenuItem,
+            this.časToolStripMenuItem,
             this.terminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -65,25 +64,12 @@ namespace View
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // pnlGlavna
-            // 
-            this.pnlGlavna.Controls.Add(this.label1);
-            this.pnlGlavna.Controls.Add(this.label2);
-            this.pnlGlavna.Controls.Add(this.dgvSviInstruktori);
-            this.pnlGlavna.Controls.Add(this.label1lblUlogovaniInstruktor);
-            this.pnlGlavna.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGlavna.Location = new System.Drawing.Point(0, 28);
-            this.pnlGlavna.Name = "pnlGlavna";
-            this.pnlGlavna.Size = new System.Drawing.Size(755, 391);
-            this.pnlGlavna.TabIndex = 1;
-            // 
             // časToolStripMenuItem
             // 
             this.časToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajČasToolStripMenuItem,
             this.pronađiČasToolStripMenuItem,
-            this.obrišiČasToolStripMenuItem,
-            this.sviČasoviToolStripMenuItem});
+            this.obrišiČasToolStripMenuItem});
             this.časToolStripMenuItem.Name = "časToolStripMenuItem";
             this.časToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.časToolStripMenuItem.Text = "Čas";
@@ -93,18 +79,21 @@ namespace View
             this.dodajČasToolStripMenuItem.Name = "dodajČasToolStripMenuItem";
             this.dodajČasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dodajČasToolStripMenuItem.Text = "Dodaj čas";
+            this.dodajČasToolStripMenuItem.Click += new System.EventHandler(this.dodajČasToolStripMenuItem_Click);
             // 
             // pronađiČasToolStripMenuItem
             // 
             this.pronađiČasToolStripMenuItem.Name = "pronađiČasToolStripMenuItem";
             this.pronađiČasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pronađiČasToolStripMenuItem.Text = "Pronađi čas";
+            this.pronađiČasToolStripMenuItem.Click += new System.EventHandler(this.pronađiČasToolStripMenuItem_Click);
             // 
-            // sviČasoviToolStripMenuItem
+            // obrišiČasToolStripMenuItem
             // 
-            this.sviČasoviToolStripMenuItem.Name = "sviČasoviToolStripMenuItem";
-            this.sviČasoviToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.sviČasoviToolStripMenuItem.Text = "Svi časovi";
+            this.obrišiČasToolStripMenuItem.Name = "obrišiČasToolStripMenuItem";
+            this.obrišiČasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.obrišiČasToolStripMenuItem.Text = "Obriši čas";
+            this.obrišiČasToolStripMenuItem.Click += new System.EventHandler(this.obrišiČasToolStripMenuItem_Click);
             // 
             // učenikToolStripMenuItem
             // 
@@ -121,18 +110,21 @@ namespace View
             this.dodajUčenikaToolStripMenuItem.Name = "dodajUčenikaToolStripMenuItem";
             this.dodajUčenikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dodajUčenikaToolStripMenuItem.Text = "Dodaj učenika";
+            this.dodajUčenikaToolStripMenuItem.Click += new System.EventHandler(this.dodajUčenikaToolStripMenuItem_Click);
             // 
             // pronađiUčenikaToolStripMenuItem
             // 
             this.pronađiUčenikaToolStripMenuItem.Name = "pronađiUčenikaToolStripMenuItem";
             this.pronađiUčenikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pronađiUčenikaToolStripMenuItem.Text = "Pronađi učenika";
+            this.pronađiUčenikaToolStripMenuItem.Click += new System.EventHandler(this.pronađiUčenikaToolStripMenuItem_Click);
             // 
             // obrišiUčenikaToolStripMenuItem
             // 
             this.obrišiUčenikaToolStripMenuItem.Name = "obrišiUčenikaToolStripMenuItem";
             this.obrišiUčenikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.obrišiUčenikaToolStripMenuItem.Text = "Obriši učenika";
+            this.obrišiUčenikaToolStripMenuItem.Click += new System.EventHandler(this.obrišiUčenikaToolStripMenuItem_Click);
             // 
             // terminToolStripMenuItem
             // 
@@ -148,47 +140,26 @@ namespace View
             this.dodajTerminToolStripMenuItem.Name = "dodajTerminToolStripMenuItem";
             this.dodajTerminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dodajTerminToolStripMenuItem.Text = "Dodaj termin";
+            this.dodajTerminToolStripMenuItem.Click += new System.EventHandler(this.dodajTerminToolStripMenuItem_Click);
             // 
             // promeniTerminToolStripMenuItem
             // 
             this.promeniTerminToolStripMenuItem.Name = "promeniTerminToolStripMenuItem";
             this.promeniTerminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.promeniTerminToolStripMenuItem.Text = "Promeni termin";
+            this.promeniTerminToolStripMenuItem.Click += new System.EventHandler(this.promeniTerminToolStripMenuItem_Click);
             // 
-            // obrišiČasToolStripMenuItem
+            // pnlGlavna
             // 
-            this.obrišiČasToolStripMenuItem.Name = "obrišiČasToolStripMenuItem";
-            this.obrišiČasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.obrišiČasToolStripMenuItem.Text = "Obriši čas";
-            // 
-            // label1lblUlogovaniInstruktor
-            // 
-            this.label1lblUlogovaniInstruktor.AutoSize = true;
-            this.label1lblUlogovaniInstruktor.Location = new System.Drawing.Point(238, 343);
-            this.label1lblUlogovaniInstruktor.Name = "label1lblUlogovaniInstruktor";
-            this.label1lblUlogovaniInstruktor.Size = new System.Drawing.Size(16, 17);
-            this.label1lblUlogovaniInstruktor.TabIndex = 0;
-            this.label1lblUlogovaniInstruktor.Text = "//";
-            // 
-            // dgvSviInstruktori
-            // 
-            this.dgvSviInstruktori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSviInstruktori.Location = new System.Drawing.Point(12, 84);
-            this.dgvSviInstruktori.Name = "dgvSviInstruktori";
-            this.dgvSviInstruktori.RowHeadersWidth = 51;
-            this.dgvSviInstruktori.RowTemplate.Height = 24;
-            this.dgvSviInstruktori.Size = new System.Drawing.Size(731, 226);
-            this.dgvSviInstruktori.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 28);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Svi instruktori:";
+            this.pnlGlavna.Controls.Add(this.label1);
+            this.pnlGlavna.Controls.Add(this.label2);
+            this.pnlGlavna.Controls.Add(this.dgvSviInstruktori);
+            this.pnlGlavna.Controls.Add(this.label1lblUlogovaniInstruktor);
+            this.pnlGlavna.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlGlavna.Location = new System.Drawing.Point(0, 28);
+            this.pnlGlavna.Name = "pnlGlavna";
+            this.pnlGlavna.Size = new System.Drawing.Size(755, 391);
+            this.pnlGlavna.TabIndex = 1;
             // 
             // label1
             // 
@@ -200,6 +171,35 @@ namespace View
             this.label1.TabIndex = 3;
             this.label1.Text = "Ulogovani instruktor:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Svi instruktori:";
+            // 
+            // dgvSviInstruktori
+            // 
+            this.dgvSviInstruktori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSviInstruktori.Location = new System.Drawing.Point(12, 84);
+            this.dgvSviInstruktori.Name = "dgvSviInstruktori";
+            this.dgvSviInstruktori.RowHeadersWidth = 51;
+            this.dgvSviInstruktori.RowTemplate.Height = 24;
+            this.dgvSviInstruktori.Size = new System.Drawing.Size(731, 226);
+            this.dgvSviInstruktori.TabIndex = 1;
+            // 
+            // label1lblUlogovaniInstruktor
+            // 
+            this.label1lblUlogovaniInstruktor.AutoSize = true;
+            this.label1lblUlogovaniInstruktor.Location = new System.Drawing.Point(238, 343);
+            this.label1lblUlogovaniInstruktor.Name = "label1lblUlogovaniInstruktor";
+            this.label1lblUlogovaniInstruktor.Size = new System.Drawing.Size(16, 17);
+            this.label1lblUlogovaniInstruktor.TabIndex = 0;
+            this.label1lblUlogovaniInstruktor.Text = "//";
+            // 
             // FrmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,6 +210,8 @@ namespace View
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmGlavna";
             this.Text = "Glavna";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGlavna_FormClosed);
+            this.Load += new System.EventHandler(this.FrmGlavna_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlGlavna.ResumeLayout(false);
@@ -228,7 +230,6 @@ namespace View
         private System.Windows.Forms.ToolStripMenuItem dodajČasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pronađiČasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obrišiČasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sviČasoviToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem učenikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajUčenikaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pronađiUčenikaToolStripMenuItem;

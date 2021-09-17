@@ -1,12 +1,9 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using View.UserControls;
-using View.UserControlHelpers;
 using View.Communication;
-using Domain;
+using View.UserControlHelpers;
+using View.UserControls;
 
 namespace View.ClientController
 {
@@ -78,7 +75,7 @@ namespace View.ClientController
 
                 };
 
-               
+
                 Komunikacija.Instance.SaveCas(c);
                 System.Windows.Forms.MessageBox.Show("Cas je sacuvan!");
                 ResetForm(uCDodajCas);

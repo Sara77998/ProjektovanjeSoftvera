@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View.UserControlHelpers
@@ -26,7 +23,7 @@ namespace View.UserControlHelpers
         }
         public static bool VlastiteImeniceValidacija(TextBox txt, Label label)
         {
-            
+
             if (char.IsLower(txt.Text[0]))
             {
                 label.Text = "Početno slovo mora biti veliko!";
@@ -46,7 +43,7 @@ namespace View.UserControlHelpers
                 }
             }
             txt.BackColor = Color.White;
-            return true;     
+            return true;
         }
         public static bool CenaValidacija(TextBox txt, Label label)
         {

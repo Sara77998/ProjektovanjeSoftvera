@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain;
+using System;
 using System.Windows.Forms;
-using Domain;
 using View.Communication;
 
 namespace View.ClientController
@@ -17,7 +13,7 @@ namespace View.ClientController
         }
         public void Login(TextBox txtKorisnickoIme, TextBox txtLozinka, FrmLogin frmLogin)
         {
-       
+
             if (!UserControlHelpers.UCHelpers.PraznoPoljeValidacija(txtKorisnickoIme) | !UserControlHelpers.UCHelpers.PraznoPoljeValidacija(txtLozinka))
             {
                 return;

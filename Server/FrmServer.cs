@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
@@ -41,11 +37,11 @@ namespace Server
             lblVreme.Text = "Timer " + DateTime.Now.ToString("dd. MM. yyyy. HH:mm:ss");
         }
 
-        
+
 
         private void FrmServer_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // Environment.Exit(0);
+            // Environment.Exit(0);
         }
 
         private void btnPokreniServer_Click(object sender, EventArgs e)
@@ -70,7 +66,7 @@ namespace Server
 
         private void Instruktori_ListChanged(object sender, ListChangedEventArgs e)
         {
-            dgvPregledTermina.Invoke(new Action(() => dgvPregledTermina .DataSource = s.Instruktori.ToList()));
+            dgvPregledTermina.Invoke(new Action(() => dgvPregledTermina.DataSource = s.Instruktori.ToList()));
         }
 
         private void btnZaustaviServer_Click(object sender, EventArgs e)
