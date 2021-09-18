@@ -30,103 +30,134 @@ namespace View.UserControls
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.cbIme = new System.Windows.Forms.CheckBox();
-            this.cbPrezime = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPronadjiUcenika = new System.Windows.Forms.Button();
-            this.btnPrikaziUcenika = new System.Windows.Forms.Button();
+            this.dgvUcenici = new System.Windows.Forms.DataGridView();
+            this.btnPronadjiIme = new System.Windows.Forms.Button();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPronadjiPrezime = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 33);
+            this.label1.Location = new System.Drawing.Point(51, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pronadji učenika";
             // 
-            // cbIme
+            // dgvUcenici
             // 
-            this.cbIme.AutoSize = true;
-            this.cbIme.Location = new System.Drawing.Point(44, 100);
-            this.cbIme.Name = "cbIme";
-            this.cbIme.Size = new System.Drawing.Size(52, 21);
-            this.cbIme.TabIndex = 1;
-            this.cbIme.Text = "Ime";
-            this.cbIme.UseVisualStyleBackColor = true;
+            this.dgvUcenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUcenici.ColumnHeadersVisible = false;
+            this.dgvUcenici.EnableHeadersVisualStyles = false;
+            this.dgvUcenici.Location = new System.Drawing.Point(27, 343);
+            this.dgvUcenici.Name = "dgvUcenici";
+            this.dgvUcenici.RowHeadersWidth = 51;
+            this.dgvUcenici.RowTemplate.Height = 24;
+            this.dgvUcenici.Size = new System.Drawing.Size(642, 160);
+            this.dgvUcenici.TabIndex = 3;
             // 
-            // cbPrezime
+            // btnPronadjiIme
             // 
-            this.cbPrezime.AutoSize = true;
-            this.cbPrezime.Location = new System.Drawing.Point(44, 160);
-            this.cbPrezime.Name = "cbPrezime";
-            this.cbPrezime.Size = new System.Drawing.Size(81, 21);
-            this.cbPrezime.TabIndex = 2;
-            this.cbPrezime.Text = "Prezime";
-            this.cbPrezime.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 210);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(397, 160);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // btnPronadjiUcenika
-            // 
-            this.btnPronadjiUcenika.Location = new System.Drawing.Point(353, 138);
-            this.btnPronadjiUcenika.Name = "btnPronadjiUcenika";
-            this.btnPronadjiUcenika.Size = new System.Drawing.Size(75, 66);
-            this.btnPronadjiUcenika.TabIndex = 4;
-            this.btnPronadjiUcenika.Text = "Pronadji";
-            this.btnPronadjiUcenika.UseVisualStyleBackColor = true;
-            // 
-            // btnPrikaziUcenika
-            // 
-            this.btnPrikaziUcenika.Location = new System.Drawing.Point(353, 376);
-            this.btnPrikaziUcenika.Name = "btnPrikaziUcenika";
-            this.btnPrikaziUcenika.Size = new System.Drawing.Size(75, 64);
-            this.btnPrikaziUcenika.TabIndex = 5;
-            this.btnPrikaziUcenika.Text = "Prikaži";
-            this.btnPrikaziUcenika.UseVisualStyleBackColor = true;
+            this.btnPronadjiIme.Location = new System.Drawing.Point(541, 21);
+            this.btnPronadjiIme.Name = "btnPronadjiIme";
+            this.btnPronadjiIme.Size = new System.Drawing.Size(75, 66);
+            this.btnPronadjiIme.TabIndex = 4;
+            this.btnPronadjiIme.Text = "Pronadji";
+            this.btnPronadjiIme.UseVisualStyleBackColor = true;
+            this.btnPronadjiIme.Click += new System.EventHandler(this.btnPronadjiIme_Click);
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(150, 100);
+            this.txtIme.Location = new System.Drawing.Point(234, 43);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(182, 22);
             this.txtIme.TabIndex = 6;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(150, 160);
+            this.txtPrezime.Location = new System.Drawing.Point(234, 43);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(182, 22);
             this.txtPrezime.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnPronadjiIme);
+            this.groupBox1.Controls.Add(this.txtIme);
+            this.groupBox1.Location = new System.Drawing.Point(27, 96);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(642, 100);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pretraga po imenu";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnPronadjiPrezime);
+            this.groupBox2.Controls.Add(this.txtPrezime);
+            this.groupBox2.Location = new System.Drawing.Point(27, 224);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(642, 100);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Pretraga po prezimenu";
+            // 
+            // btnPronadjiPrezime
+            // 
+            this.btnPronadjiPrezime.Location = new System.Drawing.Point(541, 21);
+            this.btnPronadjiPrezime.Name = "btnPronadjiPrezime";
+            this.btnPronadjiPrezime.Size = new System.Drawing.Size(75, 66);
+            this.btnPronadjiPrezime.TabIndex = 4;
+            this.btnPronadjiPrezime.Text = "Pronadji";
+            this.btnPronadjiPrezime.UseVisualStyleBackColor = true;
+            this.btnPronadjiPrezime.Click += new System.EventHandler(this.btnPronadjiPrezime_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Ime:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Prezime:";
             // 
             // UCPronadjiUcenika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtPrezime);
-            this.Controls.Add(this.txtIme);
-            this.Controls.Add(this.btnPrikaziUcenika);
-            this.Controls.Add(this.btnPronadjiUcenika);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.cbPrezime);
-            this.Controls.Add(this.cbIme);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgvUcenici);
             this.Controls.Add(this.label1);
             this.Name = "UCPronadjiUcenika";
-            this.Size = new System.Drawing.Size(457, 443);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(701, 517);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,12 +166,15 @@ namespace View.UserControls
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox cbIme;
-        private System.Windows.Forms.CheckBox cbPrezime;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnPronadjiUcenika;
-        private System.Windows.Forms.Button btnPrikaziUcenika;
+        private System.Windows.Forms.DataGridView dgvUcenici;
+        private System.Windows.Forms.Button btnPronadjiIme;
         private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.TextBox txtPrezime;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnPronadjiPrezime;
     }
 }

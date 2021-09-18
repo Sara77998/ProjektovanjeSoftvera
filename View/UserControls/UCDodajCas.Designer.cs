@@ -60,6 +60,7 @@ namespace View.UserControls
             this.btnSacuvajCas.TabIndex = 14;
             this.btnSacuvajCas.Text = "Sacuvaj cas";
             this.btnSacuvajCas.UseVisualStyleBackColor = true;
+            this.btnSacuvajCas.Click += new System.EventHandler(this.btnSacuvajCas_Click_1);
             // 
             // cmbTezinaCasa
             // 
@@ -154,6 +155,7 @@ namespace View.UserControls
             this.Controls.Add(this.label1);
             this.Name = "UCDodajCas";
             this.Size = new System.Drawing.Size(539, 385);
+            this.Load += new System.EventHandler(this.UCDodajCas_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

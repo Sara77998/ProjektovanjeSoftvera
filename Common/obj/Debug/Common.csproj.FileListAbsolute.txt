@@ -1,2 +1,3 @@
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.csproj.AssemblyReference.cache

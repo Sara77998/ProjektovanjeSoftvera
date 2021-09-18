@@ -6,6 +6,7 @@ namespace View.UserControls
 {
     public partial class UCDodajCas : UserControl
     {
+        private CasController casController;
         public TextBox TxtStazaLokacija { get => txtStazaLokacija; }
         public ComboBox CmbTezinaCasa { get => cmbTezinaCasa; }
         public TextBox TxtCena { get => txtCena; }
@@ -17,17 +18,17 @@ namespace View.UserControls
         public UCDodajCas(CasController casController)
         {
             InitializeComponent();
-            this.casController = casController
+            this.casController = casController;
         }
 
-        private void UCDodajCas_Load(object sender, EventArgs e)
-        {
-            casController = InitUCDodajCas(this);
-        }
-
-        private void btnSacuvajCas_Click(object sender, EventArgs e)
+        private void btnSacuvajCas_Click_1(object sender, EventArgs e)
         {
             casController.Save(this);
+        }
+
+        private void UCDodajCas_Load_1(object sender, EventArgs e)
+        {
+            casController.InitUCDodajCas(this);
         }
     }
 }

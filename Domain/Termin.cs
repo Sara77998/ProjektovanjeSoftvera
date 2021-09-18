@@ -38,25 +38,25 @@ namespace Domain
             List<IEntity> result = new List<IEntity>();
             while (citac.Read())
             {
-                Musterija m = new Musterija
-                {
-                    JMBG = reader.GetString(4),
-                    Ime = reader.GetString(5),
-                    Prezime = reader.GetString(6),
-                    BrojTelefona = reader.GetString(7),
-                    DatumRodjenja = reader.GetDateTime(8)
+                //Musterija m = new Musterija
+                //{
+                //    JMBG = reader.GetString(4),
+                //    Ime = reader.GetString(5),
+                //    Prezime = reader.GetString(6),
+                //    BrojTelefona = reader.GetString(7),
+                //    DatumRodjenja = reader.GetDateTime(8)
 
-                };
+                //};
 
-                Rentiranje r = new Rentiranje
-                {
-                    Id = reader.GetInt32(0),
-                    Datum = reader.GetDateTime(2),
-                    UkupnaCena = Convert.ToDouble(reader.GetDecimal(3)),
-                    Musterija = m
-                };
+                //Rentiranje r = new Rentiranje
+                //{
+                //    Id = reader.GetInt32(0),
+                //    Datum = reader.GetDateTime(2),
+                //    UkupnaCena = Convert.ToDouble(reader.GetDecimal(3)),
+                //    Musterija = m
+                //};
 
-                result.Add(r);
+                //result.Add(r);
             }
             return result;
         }

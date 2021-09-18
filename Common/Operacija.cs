@@ -26,6 +26,7 @@ namespace Common
         PretraziTermin,
         PretraziTerminDatum,
         UcitajTermin,
-        ObrisiStavkuTermina
+        ObrisiStavkuTermina,
+        UcitajInstruktore
     }
 }

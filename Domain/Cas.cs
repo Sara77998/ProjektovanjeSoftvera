@@ -12,13 +12,13 @@ namespace Domain
         public double Cena { get; set; }
 
         public string TableName => "Cas";
-        public string InsertValues => $"{StazaLokacija},'{TezinaCasa}','{Cena}'";
+        public string InsertValues { get; set; }
         public string IdName => "";
         public string JoinCondition => "";
         public string JoinTable => "";
         public string TableAlias => "c";
         public string SelectValues => "*";
-        public string WhereCondition => "";
+        public string WhereCondition { get; set; }
         public string WhereValue { get; set; }
         public string Where => "where";
         public string JoinCondition1 => "";

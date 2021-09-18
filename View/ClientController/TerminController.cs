@@ -1,5 +1,6 @@
 ﻿using Domain;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,7 +15,9 @@ namespace View.ClientController
     public class TerminController
     {
         private UCDodajTermin uCDodajTermin;
+        private UCPromeniTermin uCPromeniTermin;
         private BindingList<StavkaTermina> stavkeTermina = new BindingList<StavkaTermina>();
+        private List<Termin> termini = new List<Termin>();
         internal void InitForm(UCDodajTermin uCDodajTermin)
         {
             try
@@ -29,6 +32,79 @@ namespace View.ClientController
             }
         }
 
+        internal void SearchTerminDatum()
+        {
+            try
+            {
+                Termin t = new Termin
+                {
+                    DatumIVreme = uCPromeniTermin.DtpDatum.Value,
+                    WhereCondition = "r.Datum=",
+                    WhereValue = uCPromeniTermin.DtpDatum.Value.ToString("MM/dd/yyyy")
+                };
+                termini = Komunikacija.Instance.SearchTermin(t);
+                //uCPromeniTermin.DgvTermini.DataSource = termini;
+                //uCUpdateRentiranje.CbPretraga.DataSource = Communication.Communication.Instance.SearchRentiranjeDatum(r);
+                MessageBox.Show("Postoji termin za taj dan");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal void SearchTerminInstruktor()
+        {
+            try
+            {
+                Termin t = new Termin
+                {
+                    Instruktor = (Instruktor)uCPromeniTermin.CmbInstruktor.SelectedItem,
+                    WhereCondition = "m.Ime=",
+                    //WhereValue = uCPromeniTermin.TxtPretragaImePrezime.Text
+
+                };
+               termini = Komunikacija.Instance.SearchTermin(t);
+                //uCPromeniTermin.CbPretraga.DataSource = rentiranja;
+                //uCUpdateRentiranje.CbPretraga.DataSource = Communication.Communication.Instance.SearchRentiranjeIme(m);
+                MessageBox.Show("Postoji rentiranje sa zadatim imenom");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal void SearchTerminCas()
+        {
+            try
+            {
+                Termin t = new Termin
+                {
+                    Instruktor = (Instruktor)uCPromeniTermin.CmbInstruktor.SelectedItem,
+                    WhereCondition = "m.Ime=",
+                    //WhereValue = uCPromeniTermin.TxtPretragaImePrezime.Text
+
+                };
+                termini = Komunikacija.Instance.SearchTermin(t);
+                //uCPromeniTermin.CbPretraga.DataSource = rentiranja;
+                //uCUpdateRentiranje.CbPretraga.DataSource = Communication.Communication.Instance.SearchRentiranjeIme(m);
+                MessageBox.Show("Postoji rentiranje sa zadatim imenom");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal void InitUCPromeniTermin()
+        {
+            throw new NotImplementedException();
+        }
+
         internal void InitUCDodajTermin(UCDodajTermin uCDodajTermin)
         {
             try
@@ -41,6 +117,11 @@ namespace View.ClientController
 
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+        }
+
+        internal void UpdateTermin()
+        {
+            throw new NotImplementedException();
         }
 
         internal void AddStavkaTermina()
@@ -115,6 +196,12 @@ namespace View.ClientController
 
                 MessageBox.Show(ex.Message);
             }
+            
+        }
+        internal void InitForm(UCPromeniTermin uCPromeniTermin)
+        {
+            this.uCPromeniTermin = uCPromeniTermin;
+
         }
     }
 }

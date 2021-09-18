@@ -11,12 +11,6 @@ namespace View.Communication
     {
         private Socket klijentSoket;
 
-        internal void Disconnect()
-        {
-            klijentSoket.Close();
-            klijentSoket = null;
-        }
-
         //private NetworkStream tok;
         //private BinaryFormatter formater = new BinaryFormatter();
 
@@ -35,35 +29,23 @@ namespace View.Communication
                 return instance;
             }
         }
-
-        public object GetAllInstrukruktor { get; internal set; }
-
-        public Komunikacija()
-        {
-            klijentSoket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        }
-
-        internal object GetAllInstrukruktor()
-        {
-            throw new NotImplementedException();
-        }
-
         public bool PoveziSe()
         {
-            try
+            if (klijentSoket != null && klijentSoket.Connected)
             {
-                klijentSoket.Connect("127.0.0.1", 9000);
-                tok = new NetworkStream(klijentSoket);
-                return true;
-            }
-            catch (SocketException)
-            {
-                System.Windows.Forms.MessageBox.Show("Nije se povezao klijent");
                 return false;
             }
+            
+            klijentSoket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            klijentSoket.Connect("127.0.0.1", 9000);
+            klijent = new KomunikacijaKlijent(klijentSoket);
+            return true;
         }
-
-
+        internal void Disconnect()
+        {
+            klijentSoket.Close();
+            klijentSoket = null;
+        }
         internal Instruktor PrijaviSe(string username, string password)
         {
             Zahtev z = new Zahtev()
@@ -80,6 +62,33 @@ namespace View.Communication
             return (Instruktor)klijent.VratiOdgovor();
         }
 
+        public Komunikacija()
+        {
+            klijentSoket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        }
+
+
+        //******************************************************
+
+        internal List<Instruktor> GetAllInstrukruktor()
+        {
+            List<Instruktor> instruktori = new List<Instruktor>();
+            Zahtev z = new Zahtev()
+            {
+                Operacija = Operacija.UcitajInstruktore,
+                Objekat = new Instruktor
+                {
+
+                }
+            };
+            klijent.PosaljiZahtev(z);
+
+
+            instruktori = (List<Instruktor>)klijent.VratiOdgovor();
+            return instruktori;
+        }
+
+
         //***************************************************
         internal void SaveUcenik(Ucenik u)
         {
@@ -94,7 +103,6 @@ namespace View.Communication
 
             klijent.VratiOdgovor();
         }
-
         internal List<Ucenik> SearchUcenik(Ucenik u)
         {
             Zahtev z = new Zahtev()
@@ -114,6 +122,39 @@ namespace View.Communication
             return ucenici;
         }
 
+        internal bool SearchUcenikIme(Ucenik u)
+        {
+            Zahtev z = new Zahtev
+            {
+                Operacija = Operacija.PretraziUcenikaIme,
+                Objekat = u
+            };
+            List<Ucenik> ucenici;
+            klijent.PosaljiZahtev(z);
+            ucenici = (List<Ucenik>)klijent.VratiOdgovor();            
+            if (ucenici.Count == 0 || ucenici == null)
+            {
+                return true;
+            }            
+            return false;
+        }
+        internal bool SearchUcenikPrezime(Ucenik u)
+        {
+            Zahtev z = new Zahtev
+            {
+                Operacija = Operacija.PretraziUcenikaPrezime,
+                Objekat = u
+            };
+            List<Ucenik> ucenici;
+            klijent.PosaljiZahtev(z);
+            ucenici = (List<Ucenik>)klijent.VratiOdgovor();
+            if (ucenici.Count == 0 || ucenici == null)
+            {
+                return true;
+            }
+            return false;
+        }
+
         internal List<Ucenik> GetAllUcenik()
         {
             List<Ucenik> ucenici = new List<Ucenik>();
@@ -131,7 +172,6 @@ namespace View.Communication
             ucenici = (List<Ucenik>)klijent.VratiOdgovor();
             return ucenici;
         }
-
         internal void DeleteUcenik(Ucenik u)
         {
             Zahtev z = new Zahtev()
@@ -149,7 +189,8 @@ namespace View.Communication
                 throw ex;
             }
         }
-        //******************************************************
+       
+        //***************************************************
         internal void SaveCas(Cas c)
         {
             Zahtev z = new Zahtev
@@ -182,6 +223,45 @@ namespace View.Communication
             }
             return casovi;
         }
+
+        internal List<Cas> SearchCasStazaLokacija(Cas c)
+        {
+            Zahtev z = new Zahtev
+            {
+                Operacija = Operacija.PretraziCasStazaLokacija,
+                Objekat = c
+            };
+            List<Cas> casovi;
+            klijent.PosaljiZahtev(z);
+
+
+            casovi = (List<Cas>)klijent.VratiOdgovor();
+            if (casovi.Count == 0 || casovi == null)
+            {
+                throw new Exception("Ne postoji cas sa zadatim kriterijumom!");
+            }
+            return casovi;
+        }
+
+        internal List<Cas> SearchCasTezina(Cas c)
+        {
+            Zahtev z = new Zahtev
+            {
+                Operacija = Operacija.PretraziCasTezina,
+                Objekat = c
+            };
+            List<Cas> casovi;
+            klijent.PosaljiZahtev(z);
+
+
+            casovi = (List<Cas>)klijent.VratiOdgovor();
+            if (casovi.Count == 0 || casovi == null)
+            {
+                throw new Exception("Ne postoji cas sa zadatim kriterijumom!");
+            }
+            return casovi;
+        }
+
         internal List<Cas> GetAllCas()
         {
             List<Cas> casovi = new List<Cas>();
@@ -248,6 +328,7 @@ namespace View.Communication
             }
             return termini;
         }
+
         internal List<Termin> GetAllTermin()
         {
             List<Termin> termini = new List<Termin>();
@@ -307,9 +388,6 @@ namespace View.Communication
 
             klijent.VratiOdgovor();
         }
-
-
-
 
     }
 }

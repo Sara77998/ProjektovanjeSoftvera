@@ -29,86 +29,54 @@ namespace View.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cbStazaLokacija = new System.Windows.Forms.CheckBox();
-            this.cbTezinaCasa = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.btnPronadjiCas = new System.Windows.Forms.Button();
+            this.dgvPretragaCasa = new System.Windows.Forms.DataGridView();
+            this.btnPretraziTezina = new System.Windows.Forms.Button();
             this.txtStazaLokacija = new System.Windows.Forms.TextBox();
-            this.txtCena = new System.Windows.Forms.TextBox();
             this.cmbTezina = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPrikazi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnPretraziStaza = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPretragaCasa)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPretragaCasa
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 199);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(386, 182);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvPretragaCasa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPretragaCasa.Location = new System.Drawing.Point(24, 319);
+            this.dgvPretragaCasa.Name = "dgvPretragaCasa";
+            this.dgvPretragaCasa.RowHeadersWidth = 51;
+            this.dgvPretragaCasa.RowTemplate.Height = 24;
+            this.dgvPretragaCasa.Size = new System.Drawing.Size(498, 182);
+            this.dgvPretragaCasa.TabIndex = 0;
             // 
-            // cbStazaLokacija
+            // btnPretraziTezina
             // 
-            this.cbStazaLokacija.AutoSize = true;
-            this.cbStazaLokacija.Location = new System.Drawing.Point(41, 66);
-            this.cbStazaLokacija.Name = "cbStazaLokacija";
-            this.cbStazaLokacija.Size = new System.Drawing.Size(127, 21);
-            this.cbStazaLokacija.TabIndex = 1;
-            this.cbStazaLokacija.Text = "Staza (lokacija)";
-            this.cbStazaLokacija.UseVisualStyleBackColor = true;
-            // 
-            // cbTezinaCasa
-            // 
-            this.cbTezinaCasa.AutoSize = true;
-            this.cbTezinaCasa.Location = new System.Drawing.Point(41, 113);
-            this.cbTezinaCasa.Name = "cbTezinaCasa";
-            this.cbTezinaCasa.Size = new System.Drawing.Size(77, 21);
-            this.cbTezinaCasa.TabIndex = 2;
-            this.cbTezinaCasa.Text = "Težina:";
-            this.cbTezinaCasa.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(41, 158);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(67, 21);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Cena:";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // btnPronadjiCas
-            // 
-            this.btnPronadjiCas.Location = new System.Drawing.Point(352, 113);
-            this.btnPronadjiCas.Name = "btnPronadjiCas";
-            this.btnPronadjiCas.Size = new System.Drawing.Size(75, 68);
-            this.btnPronadjiCas.TabIndex = 4;
-            this.btnPronadjiCas.Text = "Pronadji";
-            this.btnPronadjiCas.UseVisualStyleBackColor = true;
+            this.btnPretraziTezina.Location = new System.Drawing.Point(383, 26);
+            this.btnPretraziTezina.Name = "btnPretraziTezina";
+            this.btnPretraziTezina.Size = new System.Drawing.Size(75, 68);
+            this.btnPretraziTezina.TabIndex = 4;
+            this.btnPretraziTezina.Text = "Pronadji";
+            this.btnPretraziTezina.UseVisualStyleBackColor = true;
+            this.btnPretraziTezina.Click += new System.EventHandler(this.btnPretraziTezina_Click);
             // 
             // txtStazaLokacija
             // 
-            this.txtStazaLokacija.Location = new System.Drawing.Point(172, 66);
+            this.txtStazaLokacija.Location = new System.Drawing.Point(173, 46);
             this.txtStazaLokacija.Name = "txtStazaLokacija";
             this.txtStazaLokacija.Size = new System.Drawing.Size(145, 22);
             this.txtStazaLokacija.TabIndex = 5;
             // 
-            // txtCena
-            // 
-            this.txtCena.Location = new System.Drawing.Point(172, 156);
-            this.txtCena.Name = "txtCena";
-            this.txtCena.Size = new System.Drawing.Size(145, 22);
-            this.txtCena.TabIndex = 6;
-            // 
             // cmbTezina
             // 
             this.cmbTezina.FormattingEnabled = true;
-            this.cmbTezina.Location = new System.Drawing.Point(172, 111);
+            this.cmbTezina.Location = new System.Drawing.Point(173, 49);
             this.cmbTezina.Name = "cmbTezina";
             this.cmbTezina.Size = new System.Drawing.Size(145, 24);
             this.cmbTezina.TabIndex = 7;
@@ -117,38 +85,80 @@ namespace View.UserControls
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 18);
+            this.label1.Location = new System.Drawing.Point(19, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 28);
             this.label1.TabIndex = 8;
             this.label1.Text = "Pretraga časa";
             // 
-            // btnPrikazi
+            // btnPretraziStaza
             // 
-            this.btnPrikazi.Location = new System.Drawing.Point(352, 387);
-            this.btnPrikazi.Name = "btnPrikazi";
-            this.btnPrikazi.Size = new System.Drawing.Size(75, 73);
-            this.btnPrikazi.TabIndex = 9;
-            this.btnPrikazi.Text = "Prikaži";
-            this.btnPrikazi.UseVisualStyleBackColor = true;
+            this.btnPretraziStaza.Location = new System.Drawing.Point(383, 21);
+            this.btnPretraziStaza.Name = "btnPretraziStaza";
+            this.btnPretraziStaza.Size = new System.Drawing.Size(75, 73);
+            this.btnPretraziStaza.TabIndex = 9;
+            this.btnPretraziStaza.Text = "Pretrazi";
+            this.btnPretraziStaza.UseVisualStyleBackColor = true;
+            this.btnPretraziStaza.Click += new System.EventHandler(this.btnPretraziStaza_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnPretraziStaza);
+            this.groupBox1.Controls.Add(this.txtStazaLokacija);
+            this.groupBox1.Location = new System.Drawing.Point(24, 70);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(498, 100);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pretraga po lokaciji";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnPretraziTezina);
+            this.groupBox2.Controls.Add(this.cmbTezina);
+            this.groupBox2.Location = new System.Drawing.Point(24, 196);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(498, 100);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Pretraga po tezini";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Staza - lokacija:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Tezina:";
             // 
             // UCPronadjiCas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnPrikazi);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbTezina);
-            this.Controls.Add(this.txtCena);
-            this.Controls.Add(this.txtStazaLokacija);
-            this.Controls.Add(this.btnPronadjiCas);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.cbTezinaCasa);
-            this.Controls.Add(this.cbStazaLokacija);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPretragaCasa);
             this.Name = "UCPronadjiCas";
-            this.Size = new System.Drawing.Size(464, 463);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(547, 548);
+            this.Load += new System.EventHandler(this.UCPronadjiCas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPretragaCasa)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,15 +166,17 @@ namespace View.UserControls
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox cbStazaLokacija;
-        private System.Windows.Forms.CheckBox cbTezinaCasa;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Button btnPronadjiCas;
+        private System.Windows.Forms.DataGridView dgvPretragaCasa;
+        private System.Windows.Forms.Button btnPretraziTezina;
         private System.Windows.Forms.TextBox txtStazaLokacija;
-        private System.Windows.Forms.TextBox txtCena;
         private System.Windows.Forms.ComboBox cmbTezina;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnPrikazi;
+        private System.Windows.Forms.Button btnPretraziStaza;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

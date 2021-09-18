@@ -42,6 +42,8 @@ namespace View.ClientController
             }
         }
 
+       
+
         //internal void Update(UCUpdateMusterija uCUpdateMusterija)
         //{
         //    if (uCUpdateMusterija.CbMusterije.SelectedItem == null)
@@ -82,7 +84,7 @@ namespace View.ClientController
         //    }
         //}
 
-        internal void SearchUcenikIme(UCPronadjiUcenika uCPronadjiUcenika)
+        internal static void SearchUcenikIme(UCPronadjiUcenika uCPronadjiUcenika)
         {
             try
             {
@@ -98,7 +100,7 @@ namespace View.ClientController
                 }
                 else
                 {
-                    UCPronadjiUcenika.DgvUcenik.DataSource = Komunikacija.Instance.SearchUcenik(u);
+                    uCPronadjiUcenika.DgvUcenici.DataSource = Komunikacija.Instance.SearchUcenik(u);
                     System.Windows.Forms.MessageBox.Show("Pronadjen je ucenik sa zadatim imenom!");
                 }
             }
@@ -131,14 +133,14 @@ namespace View.ClientController
 
 
 
-        internal void SearchUcenikPrezime(UCPronadjiUcenika uCPronadjiUcenika)
+        internal static void SearchUcenikPrezime(UCPronadjiUcenika uCPronadjiUcenika)
         {
             try
             {
                 Ucenik u = new Ucenik
                 {
-                    Prezime = UCPronadjiUcenika.TxtPrezime.Text,
-                    WhereValue = UCPronadjiUcenika.TxtPrezime.Text,
+                    Prezime = uCPronadjiUcenika.TxtPrezime.Text,
+                    WhereValue = uCPronadjiUcenika.TxtPrezime.Text,
                     WhereCondition = "u.Prezime="
                 };
                 if (Komunikacija.Instance.SearchUcenikPrezime(u))
@@ -147,7 +149,7 @@ namespace View.ClientController
                 }
                 else
                 {
-                    UCPronadjiUcenika.DgvUcenik.DataSource = Komunikacija.Instance.SearchUcenik(u);
+                    uCPronadjiUcenika.DgvUcenici.DataSource = Komunikacija.Instance.SearchUcenik(u);
                     System.Windows.Forms.MessageBox.Show("Pronadjen je ucenik sa zadatim prezimenom");
                 }
             }

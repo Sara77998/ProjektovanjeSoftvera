@@ -3,3 +3,4 @@ C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.Properties.
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.csproj.GenerateResource.cache
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Server\obj\Debug\Server.csproj.AssemblyReference.cache
