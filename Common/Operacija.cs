@@ -19,7 +19,7 @@ namespace Common
         ObrisiCas,
         UcitajCasove,
         UcitajUcenika,
-        KreirajTermin,
+        
         ZapamtiTermin,
         IzmeniTermin,
         ZapamtiStvakuTermina,

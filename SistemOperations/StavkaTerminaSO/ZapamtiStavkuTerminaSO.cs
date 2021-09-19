@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SystemOperations;
 using Domain;
 
-namespace SistemOperations.StavkaTerminaSO
+namespace SystemOperations.StavkaTerminaSO
 {
     public class ZapamtiStavkuTerminaSO : SystemOperationBase
     {

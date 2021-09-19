@@ -4,8 +4,10 @@ using System.Data.SqlClient;
 
 namespace Domain
 {
+    [Serializable]
     public class Termin : IEntity
     {
+        
         public int TerminId { get; set; }
         public DateTime DatumIVreme { get; set; }
         public Instruktor Instruktor { get; set; }

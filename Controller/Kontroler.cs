@@ -3,6 +3,9 @@ using Storage.Implementation.Database;
 using System.Collections.Generic;
 using SystemOperations.InstruktorSO;
 using SystemOperations.UcenikSO;
+using SystemOperations.CasSO;
+using SystemOperations.TerminSO;
+using SystemOperations.StavkaTerminaSO;
 
 namespace Controller
 {
@@ -52,7 +55,7 @@ namespace Controller
         }
         public List<Ucenik> SearchUcenika(Ucenik ucenik)
         {
-            VratiUcenikePoKriterijumuSO so = new VratiUcenikaPoKriterijumuSO();
+            VratiUcenikePoKriterijumuSO so = new VratiUcenikePoKriterijumuSO();
             so.ExecuteTemplate(ucenik);
             return so.Result;
         }
@@ -93,12 +96,12 @@ namespace Controller
 
         }
         //*********************************************
-        public void SaveTermin(Cas cas)
+        public void SaveTermin(Termin termin)
         {
             ZapamtiTerminSO so = new ZapamtiTerminSO();
-            so.ExecuteTemplate(cas);
+            so.ExecuteTemplate(termin);
         }
-        public List<Cas> SearchTermin(Termin termin)
+        public List<Termin> SearchTermin(Termin termin)
         {
             VratiTerminePoKriterijumuSO so = new VratiTerminePoKriterijumuSO();
             so.ExecuteTemplate(termin);
@@ -106,7 +109,7 @@ namespace Controller
         }
         public object GetAllTermin()
         {
-            UcitajTerminSO so = new UcitajTerminSO();
+            UcitajTermineSO so = new UcitajTermineSO();
             so.ExecuteTemplate(new Termin());
             return so.Result;
         }

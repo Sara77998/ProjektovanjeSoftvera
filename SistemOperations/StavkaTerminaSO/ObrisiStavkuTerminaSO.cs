@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 using Domain;
 using SystemOperations;
 
-namespace SistemOperations.StavkaTerminaSO
+namespace SystemOperations.StavkaTerminaSO
 {
     public class ObrisiStavkuTerminaSO : SystemOperationBase
     {
         protected override void ExecuteOperation(IEntity entity)
-        {
-            
+        {        
             repository.Delete(entity);
         }
     }

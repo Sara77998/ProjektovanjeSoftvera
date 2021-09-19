@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SystemOperations;
 using Domain;
 
-namespace SistemOperations.TerminSO
+namespace SystemOperations.TerminSO
 {
     public class VratiTerminePoKriterijumuSO : SystemOperationBase
     {

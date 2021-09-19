@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SystemOperations;
 using Domain;
 
-namespace SistemOperations.UcenikSO
+namespace SystemOperations.UcenikSO
 {
     public class UcitajUcenikeSO : SystemOperationBase
     {

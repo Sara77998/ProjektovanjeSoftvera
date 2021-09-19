@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Domain;
 using SystemOperations;
 
-namespace SistemOperations.TerminSO
+namespace SystemOperations.TerminSO
 {
     public class PromenaTerminaSO : SystemOperationBase
     {

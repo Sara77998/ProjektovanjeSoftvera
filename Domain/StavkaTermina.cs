@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 
 namespace Domain
 {
+    [Serializable]
     public class StavkaTermina : IEntity
     {
         public Termin TerimId { get; set; }

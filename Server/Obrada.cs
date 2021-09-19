@@ -86,6 +86,60 @@ namespace Server
                     instruktori.Add(ulogovaniInstruktor);
                     break;
 
+
+
+                case Operacija.ZapamtiUcenika:
+                    Kontroler.Instance.SaveUcenik((Ucenik)z.Objekat);
+                    break;
+                case Operacija.PretraziUcenika:
+                    Kontroler.Instance.SearchUcenika((Ucenik)z.Objekat);
+                    break;
+                case Operacija.UcitajUcenika:
+                    o.Rezultat = Kontroler.Instance.GetAllUcenik();
+                    break;
+                case Operacija.ObrisiUcenika:
+                    Kontroler.Instance.DeleteUcenik((Ucenik)z.Objekat);
+                    break;
+
+
+
+                case Operacija.ZapamtiCas:
+                    Kontroler.Instance.SaveCas((Cas)z.Objekat);
+                    break;
+                case Operacija.PretraziCas:
+                    Kontroler.Instance.SearchCas((Cas)z.Objekat);
+                    break;
+                case Operacija.UcitajCasove:
+                    o.Rezultat = Kontroler.Instance.GetAllCas();
+                    break;
+                case Operacija.ObrisiCas:
+                    Kontroler.Instance.DeleteCas((Cas)z.Objekat);
+                    break;
+
+
+
+                case Operacija.ZapamtiTermin:
+                    Kontroler.Instance.SaveTermin((Termin)z.Objekat);
+                    break;
+                case Operacija.IzmeniTermin:
+                    Kontroler.Instance.UpdateTermin((Termin)z.Objekat);
+                    break;
+                case Operacija.PretraziTermin:
+                    Kontroler.Instance.SearchTermin((Termin)z.Objekat);
+                    break;
+                case Operacija.UcitajTermin:
+                    o.Rezultat = Kontroler.Instance.GetAllTermin();
+                    break;
+
+
+
+                case Operacija.ZapamtiStvakuTermina:
+                    Kontroler.Instance.SaveStavkaTermina((StavkaTermina)z.Objekat);
+                    break;
+                case Operacija.ObrisiStavkuTermina:
+                    Kontroler.Instance.DeleteStavkaTermina((StavkaTermina)z.Objekat);
+                    break;
+
             }
             return o;
         }

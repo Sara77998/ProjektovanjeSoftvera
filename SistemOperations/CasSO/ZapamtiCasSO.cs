@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SystemOperations;
 using Domain;
 
-namespace SistemOperations.CasSO
+namespace SystemOperations.CasSO
 {
     public class ZapamtiCasSO : SystemOperationBase
     {

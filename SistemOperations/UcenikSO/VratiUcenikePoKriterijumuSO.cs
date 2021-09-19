@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Domain;
 using SystemOperations;
 
-namespace SistemOperations.UcenikSO
+namespace SystemOperations.UcenikSO
 {
     public class VratiUcenikePoKriterijumuSO : SystemOperationBase
     {

@@ -34,7 +34,7 @@ namespace Server
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            lblVreme.Text = "Timer " + DateTime.Now.ToString("dd. MM. yyyy. HH:mm:ss");
+            lblVreme.Text = "Vreme: " + DateTime.Now.ToString("dd. MM. yyyy. HH:mm:ss");
         }
 
 

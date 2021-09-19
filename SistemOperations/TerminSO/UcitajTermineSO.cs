@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
-namespace SistemOperations.TerminSO
+namespace SystemOperations.TerminSO
 {
-    class UcitajTermineSO
+    public class UcitajTermineSO : SystemOperationBase
     {
+        public List<Termin> Result { get; private set; }
+        protected override void ExecuteOperation(IEntity entity)
+        {
+            Result = repository.GetAll(entity).Cast<Termin>().ToList();
+        }
     }
 }
