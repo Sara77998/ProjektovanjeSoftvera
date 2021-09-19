@@ -7,10 +7,11 @@ namespace View
     public partial class FrmGlavna : Form
     {
         private MainController mainController;
-        public FrmGlavna(Instruktor i)
+        public FrmGlavna(MainController mainController)
         {
+            this.mainController = mainController;
             InitializeComponent();
-            label1lblUlogovaniInstruktor.Text = $"{i.Ime} {i.Prezime}";
+            //label1lblUlogovaniInstruktor.Text = $"{i.Ime} {i.Prezime}";
         }
         public void SetPanel(UserControl userControl)
         {

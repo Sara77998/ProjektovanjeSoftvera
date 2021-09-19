@@ -1,3 +1,9 @@
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
-C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.csprojAssemblyReference.cache
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\bin\Debug\Common.dll
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\bin\Debug\Common.pdb
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\bin\Debug\Domain.dll
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\bin\Debug\Domain.pdb
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.csproj.CopyComplete
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.dll
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\Common\obj\Debug\Common.pdb

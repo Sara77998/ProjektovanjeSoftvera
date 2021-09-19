@@ -7,17 +7,14 @@ namespace View
     public partial class FrmLogin : Form
     {
         private LoginController loginController;
-        public FrmLogin()
+        public FrmLogin(LoginController loginController)
         {
-            InitializeComponent();
-        }
-        public FrmLogin(FrmLogin loginController)
-        {
-            //this.loginController = loginController;
+            this.loginController = loginController;
             InitializeComponent();
             txtKorisnickoIme.Text = "ana";
-            txtLozinka.Text = "ana1";
+            txtLozinka.Text = "ana";
         }
+       
 
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {

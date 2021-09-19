@@ -1,5 +1,6 @@
 ﻿using DatabaseBroker;
 using Domain;
+using System;
 using System.Collections.Generic;
 
 namespace Storage.Implementation.Database
@@ -18,6 +19,10 @@ namespace Storage.Implementation.Database
             broker.ZatvoriKonekciju();
         }
 
+        public object VratiSve(Instruktor instruktor)
+        {
+            throw new NotImplementedException();
+        }
 
         public void BeginTransaction()
         {

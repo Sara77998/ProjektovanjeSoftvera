@@ -1,1 +1,9 @@
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\obj\Debug\DatabaseBroker.csproj.CoreCompileInputs.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\bin\Debug\DatabaseBroker.dll
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\bin\Debug\DatabaseBroker.pdb
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\bin\Debug\Domain.dll
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\bin\Debug\Domain.pdb
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\obj\Debug\DatabaseBroker.csproj.AssemblyReference.cache
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\obj\Debug\DatabaseBroker.csproj.CopyComplete
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\obj\Debug\DatabaseBroker.dll
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\DatabaseBroker\obj\Debug\DatabaseBroker.pdb

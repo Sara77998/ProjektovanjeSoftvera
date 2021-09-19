@@ -27,20 +27,17 @@ namespace View
                 return instance;
             }
         }
-
-     
-
-        public void OpenMainForm()
-        {
-            frmGlavna = new FrmGlavna(mainController);
-            frmGlavna.Show();
-        }
-
         internal void OpenFrmLogin()
         {
             frmLogin = new FrmLogin(loginController);
             frmLogin.Show();
         }
+        public void OpenMainForm()
+        {
+            frmGlavna = new FrmGlavna(mainController);
+            frmGlavna.Show();
+        }
+    
     }
 }
-}
+

@@ -13,7 +13,16 @@ namespace View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            try
+            {
+                MainCoordinator.Instance.OpenFrmLogin();
+                Application.Run();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }

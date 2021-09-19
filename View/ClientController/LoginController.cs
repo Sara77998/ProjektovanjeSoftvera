@@ -23,8 +23,7 @@ namespace View.ClientController
                 Instruktor i = Komunikacija.Instance.PrijaviSe(txtKorisnickoIme.Text, txtLozinka.Text);
                 MainCoordinator.Instance.Instruktor = i;
                 MessageBox.Show($"Dobrodošao {i.Ime} {i.Prezime}");
-                FrmGlavna frmGlavna = new FrmGlavna(i);
-                frmGlavna.ShowDialog();
+                MainCoordinator.Instance.OpenMainForm();
                 frmLogin.Dispose();
             }
             catch (Exception ex)

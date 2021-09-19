@@ -16,7 +16,7 @@ namespace Domain
         [Browsable(false)]
         public string TableName => "StavkaTermina";
         [Browsable(false)]
-        public string InsertValues => $"{Rentiranje.Id},'{DatumOd.ToString("MM/dd/yyyy")}','{DatumDo.ToString("MM/dd/yyyy")}','{Automobil.BrojSasije}',{Polisa.Id},{RedniBroj}";
+        public string InsertValues { get; set; }
         [Browsable(false)]
         public string IdName => throw new NotImplementedException();
         [Browsable(false)]
