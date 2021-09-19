@@ -9,6 +9,7 @@ namespace Domain
     {
         public Termin TerimId { get; set; }
         public int RB { get; set; }
+       
         public Ucenik Ucenik { get; set; }
 
 

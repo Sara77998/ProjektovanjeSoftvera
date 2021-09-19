@@ -41,9 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CasSO\ObrisiCasSO.cs" />
+    <Compile Include="CasSO\UcitajCasoveSO.cs" />
+    <Compile Include="CasSO\VratiCasovePoKriterijumuSO.cs" />
+    <Compile Include="CasSO\ZapamtiCasSO.cs" />
+    <Compile Include="StavkaTerminaSO\ObrisiStavkuTerminaSO.cs" />
+    <Compile Include="StavkaTerminaSO\ZapamtiStavkuTerminaSO.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="InstruktorSO\LoginSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TerminSO\PromenaTerminaSO.cs" />
+    <Compile Include="TerminSO\UcitajTermineSO.cs" />
+    <Compile Include="TerminSO\VratiTerminePoKriterijumuSO.cs" />
+    <Compile Include="TerminSO\ZapamtiTerminSO.cs" />
+    <Compile Include="UcenikSO\ObrisiUcenikaSO.cs" />
+    <Compile Include="UcenikSO\UcitajUcenikeSO.cs" />
+    <Compile Include="UcenikSO\VratiUcenikePoKriterijumuSO.cs" />
+    <Compile Include="UcenikSO\ZapamtiUcenikaSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
@@ -55,5 +69,6 @@
       <Name>Storage</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
