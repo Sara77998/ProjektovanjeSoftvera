@@ -60,7 +60,7 @@ namespace View
             this.terminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(706, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(706, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,27 +71,27 @@ namespace View
             this.pronađiUčenikaToolStripMenuItem,
             this.obrišiUčenikaToolStripMenuItem});
             this.učenikToolStripMenuItem.Name = "učenikToolStripMenuItem";
-            this.učenikToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.učenikToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.učenikToolStripMenuItem.Text = "Učenik";
             // 
             // dodajUčenikaToolStripMenuItem
             // 
             this.dodajUčenikaToolStripMenuItem.Name = "dodajUčenikaToolStripMenuItem";
-            this.dodajUčenikaToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.dodajUčenikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dodajUčenikaToolStripMenuItem.Text = "Dodaj učenika";
             this.dodajUčenikaToolStripMenuItem.Click += new System.EventHandler(this.dodajUčenikaToolStripMenuItem_Click);
             // 
             // pronađiUčenikaToolStripMenuItem
             // 
             this.pronađiUčenikaToolStripMenuItem.Name = "pronađiUčenikaToolStripMenuItem";
-            this.pronađiUčenikaToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.pronađiUčenikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pronađiUčenikaToolStripMenuItem.Text = "Pronađi učenika";
             this.pronađiUčenikaToolStripMenuItem.Click += new System.EventHandler(this.pronađiUčenikaToolStripMenuItem_Click);
             // 
             // obrišiUčenikaToolStripMenuItem
             // 
             this.obrišiUčenikaToolStripMenuItem.Name = "obrišiUčenikaToolStripMenuItem";
-            this.obrišiUčenikaToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.obrišiUčenikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.obrišiUčenikaToolStripMenuItem.Text = "Obriši učenika";
             this.obrišiUčenikaToolStripMenuItem.Click += new System.EventHandler(this.obrišiUčenikaToolStripMenuItem_Click);
             // 
@@ -102,7 +102,7 @@ namespace View
             this.pronađiČasToolStripMenuItem,
             this.obrišiČasToolStripMenuItem});
             this.časToolStripMenuItem.Name = "časToolStripMenuItem";
-            this.časToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.časToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.časToolStripMenuItem.Text = "Čas";
             // 
             // dodajČasToolStripMenuItem
@@ -132,7 +132,7 @@ namespace View
             this.dodajTerminToolStripMenuItem,
             this.promeniTerminToolStripMenuItem});
             this.terminToolStripMenuItem.Name = "terminToolStripMenuItem";
-            this.terminToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.terminToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
             this.terminToolStripMenuItem.Text = "Termin";
             // 
             // dodajTerminToolStripMenuItem
@@ -156,9 +156,9 @@ namespace View
             this.pnlGlavna.Controls.Add(this.dgvSviInstruktori);
             this.pnlGlavna.Controls.Add(this.lblUlogovaniInstruktor);
             this.pnlGlavna.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGlavna.Location = new System.Drawing.Point(0, 30);
+            this.pnlGlavna.Location = new System.Drawing.Point(0, 28);
             this.pnlGlavna.Name = "pnlGlavna";
-            this.pnlGlavna.Size = new System.Drawing.Size(706, 573);
+            this.pnlGlavna.Size = new System.Drawing.Size(706, 575);
             this.pnlGlavna.TabIndex = 1;
             // 
             // label1

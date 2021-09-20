@@ -1,6 +1,7 @@
 ﻿using Domain;
 using System;
 using System.Globalization;
+using System.Windows.Forms;
 using View.Communication;
 using View.UserControlHelpers;
 using View.UserControls;
@@ -57,7 +58,12 @@ namespace View.ClientController
             }
         }
 
-       
+        internal void InitUCObrisiUcenika(UCObrisiUcenika uCObrisiUcenika)
+        {
+            uCObrisiUcenika.DgvSviUcenici.DataSource = Komunikacija.Instance.GetAllUcenik();
+        }
+
+
 
         //internal void Update(UCUpdateMusterija uCUpdateMusterija)
         //{
@@ -147,7 +153,26 @@ namespace View.ClientController
         //    }
         //}
 
+        internal void Delete(UCObrisiUcenika uCObrisiUcenika)
+        {
+            try
+            {
 
+                DataGridViewRow red = uCObrisiUcenika.DgvSviUcenici.SelectedRows[0];
+                Ucenik u = (Ucenik)red.DataBoundItem;
+                u.WhereCondition = "ucenikId=";
+                u.WhereValue = $"'{u.UcenikId}'";
+                Komunikacija.Instance.DeleteUcenik(u);
+                System.Windows.Forms.MessageBox.Show("Izabrani ucenik je obrisan!");
+                //ResetForm(uCUpdateAutomobil);
+
+            }
+            catch (Exception ex)
+            {
+
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
 
         internal static void SearchUcenikPrezime(UCPronadjiUcenika uCPronadjiUcenika)
         {

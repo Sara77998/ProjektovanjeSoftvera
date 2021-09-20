@@ -95,6 +95,18 @@
     <Compile Include="UserControls\UCDodajUcenika.Designer.cs">
       <DependentUpon>UCDodajUcenika.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCObrisiCas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCObrisiCas.Designer.cs">
+      <DependentUpon>UCObrisiCas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCObrisiUcenika.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCObrisiUcenika.Designer.cs">
+      <DependentUpon>UCObrisiUcenika.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCPromeniTermin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDodajUcenika.resx">
       <DependentUpon>UCDodajUcenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCObrisiCas.resx">
+      <DependentUpon>UCObrisiCas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCObrisiUcenika.resx">
+      <DependentUpon>UCObrisiUcenika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCPromeniTermin.resx">
       <DependentUpon>UCPromeniTermin.cs</DependentUpon>

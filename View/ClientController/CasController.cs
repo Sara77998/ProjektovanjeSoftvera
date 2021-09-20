@@ -1,6 +1,7 @@
 ﻿using Domain;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using View.Communication;
 using View.UserControlHelpers;
 using View.UserControls;
@@ -26,6 +27,32 @@ namespace View.ClientController
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        internal void InitUCObrisiCas(UCObrisiCas uCObrisiCas)
+        {
+             uCObrisiCas.DgvSviCasovi.DataSource = Komunikacija.Instance.GetAllCas();
+        }
+
+        internal void Delete(UCObrisiCas uCObrisiCas)
+        {
+            try
+            {
+
+                DataGridViewRow red = uCObrisiCas.DgvSviCasovi.SelectedRows[0];
+                Cas c = (Cas)red.DataBoundItem;
+                c.WhereCondition = "casId=";
+                c.WhereValue = $"'{c.CasId}'";
+                Komunikacija.Instance.DeleteCas(c);
+                System.Windows.Forms.MessageBox.Show("Izabrani cas je obrisan!");
+                //ResetForm(uCUpdateAutomobil);
+
+            }
+            catch (Exception ex)
+            {
+
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         internal void InitUCPronadjiCas(UCPronadjiCas uCPronadjiCas)

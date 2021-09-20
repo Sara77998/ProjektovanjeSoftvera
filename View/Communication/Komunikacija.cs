@@ -267,7 +267,7 @@ namespace View.Communication
             List<Cas> casovi = new List<Cas>();
             Zahtev z = new Zahtev()
             {
-                Operacija = Operacija.PretraziCas,
+                Operacija = Operacija.UcitajCasove,
                 Objekat = new Cas
                 {
 

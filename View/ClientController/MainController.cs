@@ -25,7 +25,7 @@ namespace View.ClientController
 
         internal void OpenUCObrisiUcenika(FrmGlavna frmGlavna)
         {
-            // frmGlavna.SetPanel(new UCObrisiUcenika(new UcenikController()));
+            frmGlavna.SetPanel(new UCObrisiUcenika(new UcenikController()));
         }
 
         internal void OpenUCDodajCas(FrmGlavna frmGlavna)
@@ -37,7 +37,7 @@ namespace View.ClientController
 
         internal void OpenUCObrisiCas(FrmGlavna frmGlavna)
         {
-            // throw new NotImplementedException();
+            frmGlavna.SetPanel(new UCObrisiCas(new CasController()));
         }
 
         internal void OpenUCPRonadjiCas(FrmGlavna frmGlavna)
