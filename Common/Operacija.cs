@@ -12,8 +12,6 @@ namespace Common
         ObrisiUcenika,
         ZapamtiCas,
         PretraziCas,
-        PretraziCasStazaLokacija,
-        PretraziCasTezina,
         ObrisiCas,
         UcitajCasove,
         UcitajUcenika,

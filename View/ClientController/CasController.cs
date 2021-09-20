@@ -27,6 +27,25 @@ namespace View.ClientController
             }
 
         }
+
+        internal void InitUCPronadjiCas(UCPronadjiCas uCPronadjiCas)
+        {
+            try
+            {
+                List<string> tezine = new List<string>();
+                tezine.Add("lako");
+                tezine.Add("srednje");
+                tezine.Add("tesko");
+                uCPronadjiCas.CmbTezina.DataSource = tezine;
+
+            }
+            catch (Exception ex)
+            {
+
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
         internal void SearchCasStazaLokacija(UCPronadjiCas uCPronadjiCas)
         {
             Cas c = new Cas()
@@ -38,14 +57,15 @@ namespace View.ClientController
             };
             try
             {
-                if (Komunikacija.Instance.SearchCasStazaLokacija(c) != null)
+                if (Komunikacija.Instance.SearchCasStazaLokacija(c) == null)
                 {
+                    uCPronadjiCas.DgvCas.DataSource = null;
                     System.Windows.Forms.MessageBox.Show("Nema takvog casa!");
                 }
                 else
                 {
                     uCPronadjiCas.DgvCas.DataSource = Komunikacija.Instance.SearchCasStazaLokacija(c);
-                    System.Windows.Forms.MessageBox.Show("Pstoji takav cas!");
+                    System.Windows.Forms.MessageBox.Show("Postoji takav cas!");
                 }
             }
             catch (Exception ex)
@@ -61,15 +81,16 @@ namespace View.ClientController
             Cas c = new Cas()
             {
                 
-                TezinaCasa = (TezinaCasa)uCPronadjiCas.CmbTezina.SelectedItem,
+                TezinaCasa = (string)uCPronadjiCas.CmbTezina.SelectedItem,
                 WhereCondition = "c.TezinaCasa=",
                 WhereValue = (string)uCPronadjiCas.CmbTezina.SelectedItem,
 
             };
             try
             {
-                if (Komunikacija.Instance.SearchCasTezina(c) != null)
+                if (Komunikacija.Instance.SearchCasTezina(c) == null)
                 {
+                    uCPronadjiCas.DgvCas.DataSource = null;
                     System.Windows.Forms.MessageBox.Show("Nema takvog casa!");
                 }
                 else
@@ -88,6 +109,12 @@ namespace View.ClientController
         
         internal void Save(UCDodajCas uCDodajCas)
         {
+            if (!UCHelpers.PraznoPoljeValidacija(uCDodajCas.TxtStazaLokacija)
+               | !UCHelpers.PraznoPoljeValidacija(uCDodajCas.TxtCena)
+               )
+            {
+                return;
+            }
             if (!UCHelpers.ComboBoxValidacija(uCDodajCas.CmbTezinaCasa, uCDodajCas.LblTezinaCasa)
                 | !UCHelpers.CenaValidacija(uCDodajCas.TxtCena, uCDodajCas.LblCena)
                 )
@@ -99,11 +126,12 @@ namespace View.ClientController
                
                 Cas c = new Cas()
                 {
-                    //StazaLokacija = uCDodajCas.TxtStazaLokacija.Text,
-                    //TezinaCasa = (TezinaCasa)uCDodajCas.CmbTezinaCasa.SelectedItem,
-                    //Cena = int.Parse(uCDodajCas.TxtCena.Text),
-                    
-                    InsertValues = $"'{uCDodajCas.TxtStazaLokacija.Text}',{(TezinaCasa)uCDodajCas.CmbTezinaCasa.SelectedItem},{int.Parse(uCDodajCas.TxtCena.Text)}"
+                    StazaLokacija = uCDodajCas.TxtStazaLokacija.Text,
+                    TezinaCasa = (string)uCDodajCas.CmbTezinaCasa.SelectedItem,
+                    Cena = int.Parse(uCDodajCas.TxtCena.Text),
+                    WhereCondition = "c.stazalokacija=",
+                    WhereValue = uCDodajCas.TxtStazaLokacija.Text,
+
                 };
                 Komunikacija.Instance.SaveCas(c);
                 System.Windows.Forms.MessageBox.Show("Cas je sacuvan!");

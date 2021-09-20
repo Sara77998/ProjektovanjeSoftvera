@@ -228,7 +228,7 @@ namespace View.Communication
         {
             Zahtev z = new Zahtev
             {
-                Operacija = Operacija.PretraziCasStazaLokacija,
+                Operacija = Operacija.PretraziCas,
                 Objekat = c
             };
             List<Cas> casovi;
@@ -247,7 +247,7 @@ namespace View.Communication
         {
             Zahtev z = new Zahtev
             {
-                Operacija = Operacija.PretraziCasTezina,
+                Operacija = Operacija.PretraziCas,
                 Objekat = c
             };
             List<Cas> casovi;

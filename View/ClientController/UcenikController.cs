@@ -111,6 +111,7 @@ namespace View.ClientController
                 };
                 if (Komunikacija.Instance.SearchUcenikIme(u))
                 {
+                    uCPronadjiUcenika.DgvUcenici.DataSource = null;
                     System.Windows.Forms.MessageBox.Show("Ne postoji ucenim sa tim imenom!");
                 }
                 else

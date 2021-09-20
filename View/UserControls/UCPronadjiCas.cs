@@ -17,7 +17,7 @@ namespace View.UserControls
         }
         private void UCPronadjiCas_Load(object sender, System.EventArgs e)
         {
-
+            casController.InitUCPronadjiCas(this);
         }
 
         private void btnPretraziStaza_Click(object sender, System.EventArgs e)
