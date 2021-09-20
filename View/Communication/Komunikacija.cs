@@ -126,7 +126,7 @@ namespace View.Communication
         {
             Zahtev z = new Zahtev
             {
-                Operacija = Operacija.PretraziUcenikaIme,
+                Operacija = Operacija.PretraziUcenika,
                 Objekat = u
             };
             List<Ucenik> ucenici;
@@ -142,7 +142,7 @@ namespace View.Communication
         {
             Zahtev z = new Zahtev
             {
-                Operacija = Operacija.PretraziUcenikaPrezime,
+                Operacija = Operacija.PretraziUcenika,
                 Objekat = u
             };
             List<Ucenik> ucenici;

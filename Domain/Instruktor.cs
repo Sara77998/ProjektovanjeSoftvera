@@ -27,9 +27,9 @@ namespace Domain
         [Browsable(false)]
         public string IdName => "ID";
         [Browsable(false)]
-        public string JoinCondition => "";
+        public string JoinCondition => "on (i.SkolaSkijanja=ss.skolaskijanjaid)";
         [Browsable(false)]
-        public string JoinTable => "";
+        public string JoinTable => "join SkolaSkijanja ss";
         [Browsable(false)]
         public string TableAlias => "i";
         [Browsable(false)]
@@ -62,6 +62,7 @@ namespace Domain
             {
                 Instruktor i = new Instruktor
                 {
+                    InstruktorId = (int)citac["InstruktorId"],
                     Ime = (string)citac["Ime"],
                     Prezime = (string)citac["Prezime"],
                     DatumRodjenja = (DateTime)citac["DatumRodjenja"],
@@ -73,7 +74,7 @@ namespace Domain
                     KorisnickoIme = (string)citac["KorisnickoIme"],
                     Lozinka = (string)citac["Lozinka"]
                 };
-                result.Add((IEntity)i);
+                result.Add(i);
 
             }
             return result;

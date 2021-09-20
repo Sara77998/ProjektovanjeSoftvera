@@ -39,7 +39,7 @@ namespace View.ClientController
                 Termin t = new Termin
                 {
                     DatumIVreme = uCPromeniTermin.DtpDatum.Value,
-                    WhereCondition = "r.Datum=",
+                    WhereCondition = "t.Datum=",
                     WhereValue = uCPromeniTermin.DtpDatum.Value.ToString("MM/dd/yyyy")
                 };
                 termini = Komunikacija.Instance.SearchTermin(t);
@@ -61,7 +61,7 @@ namespace View.ClientController
                 Termin t = new Termin
                 {
                     Instruktor = (Instruktor)uCPromeniTermin.CmbInstruktor.SelectedItem,
-                    WhereCondition = "m.Ime=",
+                    WhereCondition = "t.Ime=",
                     //WhereValue = uCPromeniTermin.TxtPretragaImePrezime.Text
 
                 };

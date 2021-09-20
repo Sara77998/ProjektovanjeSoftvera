@@ -34,7 +34,7 @@ namespace View
         }
         public void OpenMainForm()
         {
-            frmGlavna = new FrmGlavna(mainController);
+            frmGlavna = new FrmGlavna(mainController,Instruktor);
             frmGlavna.Show();
         }
     

@@ -8,8 +8,6 @@ namespace Common
         Login,
         ZapamtiUcenika,
         PretraziUcenika,
-        PretraziUcenikaIme,
-        PretraziUcenikaPrezime,
         PrikaziUcenika,
         ObrisiUcenika,
         ZapamtiCas,

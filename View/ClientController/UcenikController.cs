@@ -1,5 +1,6 @@
 ﻿using Domain;
 using System;
+using System.Globalization;
 using View.Communication;
 using View.UserControlHelpers;
 using View.UserControls;
@@ -10,24 +11,38 @@ namespace View.ClientController
     {
         internal void Save(UCDodajUcenika UCDodajUcenika)
         {
-            if (!UCHelpers.VlastiteImeniceValidacija(UCDodajUcenika.TxtIme, UCDodajUcenika.LblIme)
+            if (!UCHelpers.PraznoPoljeValidacija(UCDodajUcenika.TxtUcenikId)
+                | !UCHelpers.PraznoPoljeValidacija(UCDodajUcenika.TxtIme)
+                | !UCHelpers.PraznoPoljeValidacija(UCDodajUcenika.TxtPrezime)
+                | !UCHelpers.PraznoPoljeValidacija(UCDodajUcenika.TxtDatumRodjenja)
+                | !UCHelpers.PraznoPoljeValidacija(UCDodajUcenika.TxtEmail)
+                | !UCHelpers.PraznoPoljeValidacija(UCDodajUcenika.TxtTelefon))
+            {
+                return;
+            }
+            if (!UCHelpers.TelefonValidacija(UCDodajUcenika.TxtUcenikId, UCDodajUcenika.LblUcenikId)|
+                !UCHelpers.VlastiteImeniceValidacija(UCDodajUcenika.TxtIme, UCDodajUcenika.LblIme)
                 | !UCHelpers.VlastiteImeniceValidacija(UCDodajUcenika.TxtPrezime, UCDodajUcenika.LblPrezime)
                 | !UCHelpers.TelefonValidacija(UCDodajUcenika.TxtTelefon, UCDodajUcenika.LblTelefon)
-                | !UCHelpers.DatumValidacija(UCDodajUcenika.DtpDatumRodjenja, UCDodajUcenika.LblDatumRodjenja)
+                | !UCHelpers.DatumValidacija(UCDodajUcenika.TxtDatumRodjenja, UCDodajUcenika.LblDatumRodjenja)
+                | !UCHelpers.EmailValidacija(UCDodajUcenika.TxtEmail, UCDodajUcenika.LblEmail)
                 )
             {
                 return;
             }
             try
             {
+                
                 Ucenik u = new Ucenik
                 {
-
+                    UcenikId = UCDodajUcenika.TxtUcenikId.Text,
                     Ime = UCDodajUcenika.TxtIme.Text,
                     Prezime = UCDodajUcenika.TxtPrezime.Text,
-                    DatumRodjenja = UCDodajUcenika.DtpDatumRodjenja.Value,
+                    DatumRodjenja = DateTime.ParseExact(UCDodajUcenika.TxtDatumRodjenja.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture),
                     Telefon = UCDodajUcenika.TxtTelefon.Text,
-                    Email = UCDodajUcenika.TxtEmail.Text
+                    Email = UCDodajUcenika.TxtEmail.Text,
+                    WhereCondition = "u.ucenikid=",
+                    WhereValue = UCDodajUcenika.TxtUcenikId.Text
 
                 };
 
@@ -169,14 +184,15 @@ namespace View.ClientController
 
         internal void ResetForm(UCDodajUcenika uCDodajUcenika)
         {
+            uCDodajUcenika.TxtUcenikId.Clear();
             uCDodajUcenika.TxtIme.Clear();
             uCDodajUcenika.TxtPrezime.Clear();
-            DateTime dt = DateTime.Now;
-            uCDodajUcenika.DtpDatumRodjenja.Value = dt;
+            //DateTime dt = DateTime.Now;
+            uCDodajUcenika.TxtDatumRodjenja.Clear();
             uCDodajUcenika.TxtTelefon.Clear();
             uCDodajUcenika.TxtEmail.Clear();
 
-
+            uCDodajUcenika.LblUcenikId.Text = "";
             uCDodajUcenika.LblIme.Text = "";
             uCDodajUcenika.LblPrezime.Text = "";
             uCDodajUcenika.LblDatumRodjenja.Text = "";
@@ -184,20 +200,6 @@ namespace View.ClientController
             uCDodajUcenika.LblEmail.Text = "";
         }
 
-        //internal void ResetForm(UCUpdateMusterija uCUpdateMusterija)
-        //{
-        //    uCUpdateMusterija.CbMusterije.DataSource = null;
-        //    uCUpdateMusterija.TxtIme.Clear();
-        //    uCUpdateMusterija.TxtPrezime.Clear();
-        //    uCUpdateMusterija.TxtImeUpdate.Clear();
-        //    uCUpdateMusterija.TxtPrezimeUpdate.Clear();
-        //    uCUpdateMusterija.TxtBrojTelefonaUpdate.Clear();
-        //    DateTime dt = DateTime.Now;
-        //    uCUpdateMusterija.DtpDatumUpdate.Value = dt;
-        //    uCUpdateMusterija.LblIme.Text = "";
-        //    uCUpdateMusterija.LblPrezime.Text = "";
-        //    uCUpdateMusterija.LblBrojTelefona.Text = "";
-        //    uCUpdateMusterija.LblDatum.Text = "";
-        //}
+       
     }
 }

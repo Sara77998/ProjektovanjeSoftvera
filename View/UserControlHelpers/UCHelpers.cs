@@ -21,6 +21,29 @@ namespace View.UserControlHelpers
                 return true;
             }
         }
+        public static bool EmailValidacija(TextBox txt, Label label)
+        {
+            string email = txt.Text.Trim();
+
+            if (!string.IsNullOrEmpty(email))
+            {
+                bool imarazmake = email.Contains(" ");
+
+                int indexZnaka = email.LastIndexOf('@');
+
+                if (indexZnaka > 0 && !imarazmake)
+                {
+                    string posleZnaka = email.Substring(indexZnaka + 1);
+
+                    int indexTackePosleZnaka = posleZnaka.LastIndexOf('.');
+
+                    if (indexTackePosleZnaka > 0 && posleZnaka.Substring(indexTackePosleZnaka).Length > 1)
+                        return true;
+                }
+            }
+            label.Text = "Neispravan format email-a!";
+            return false;
+        }
         public static bool VlastiteImeniceValidacija(TextBox txt, Label label)
         {
 
@@ -69,9 +92,9 @@ namespace View.UserControlHelpers
                 return false;
             }
         }
-        public static bool DatumValidacija(DateTimePicker dtp, Label label)
+        public static bool DatumValidacija(TextBox dtp, Label label)
         {
-            if (!DateTime.TryParseExact(dtp.Text, "dd.MM.yyyy.", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
+            if (!DateTime.TryParseExact(dtp.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
             {
                 MessageBox.Show("datume morate uneti u dd.MM.yyyy formatu");
                 return false;

@@ -44,32 +44,30 @@ namespace Server
                     {
                         o = new Odgovor();
                         o.UspesnoKreiranOdgovor = false;
-                        throw;
+                        o.Error = ex.Message;
                     }
                     formater.Serialize(tok, o);
                 }
             }
             catch (IOException)//greska kod upotrebe razl devajseva
             {
-                //Console.WriteLine(">>>" + ex.Message);
-                //Server.PrijavljeniUpravnici.Remove(upravnik);
+                
                 System.Windows.Forms.MessageBox.Show("Veza je prekinuta!");
                 instruktori.Remove(ulogovaniInstruktor);
             }
             catch (SerializationException ex)
             {
-                //Console.WriteLine(">>>" + ex.Message);
-                //Server.PrijavljeniUpravnici.Remove(upravnik);
+               
                 System.Windows.Forms.MessageBox.Show("Veza je prekinuta!");
                 instruktori.Remove(ulogovaniInstruktor);
             }
-            finally
-            {
-                if (klijentSoket != null && klijentSoket.Connected)
-                {
-                    klijentSoket.Close();
-                }
-            }
+            //finally
+            //{
+            //    if (klijentSoket != null && klijentSoket.Connected)
+            //    {
+            //        klijentSoket.Close();
+            //    }
+            //}
         }
 
 
@@ -92,7 +90,7 @@ namespace Server
                     Kontroler.Instance.SaveUcenik((Ucenik)z.Objekat);
                     break;
                 case Operacija.PretraziUcenika:
-                    Kontroler.Instance.SearchUcenika((Ucenik)z.Objekat);
+                    o.Rezultat = Kontroler.Instance.SearchUcenika((Ucenik)z.Objekat);
                     break;
                 case Operacija.UcitajUcenika:
                     o.Rezultat = Kontroler.Instance.GetAllUcenik();
@@ -107,7 +105,7 @@ namespace Server
                     Kontroler.Instance.SaveCas((Cas)z.Objekat);
                     break;
                 case Operacija.PretraziCas:
-                    Kontroler.Instance.SearchCas((Cas)z.Objekat);
+                    o.Rezultat = Kontroler.Instance.SearchCas((Cas)z.Objekat);
                     break;
                 case Operacija.UcitajCasove:
                     o.Rezultat = Kontroler.Instance.GetAllCas();
@@ -125,7 +123,7 @@ namespace Server
                     Kontroler.Instance.UpdateTermin((Termin)z.Objekat);
                     break;
                 case Operacija.PretraziTermin:
-                    Kontroler.Instance.SearchTermin((Termin)z.Objekat);
+                    o.Rezultat = Kontroler.Instance.SearchTermin((Termin)z.Objekat);
                     break;
                 case Operacija.UcitajTermin:
                     o.Rezultat = Kontroler.Instance.GetAllTermin();

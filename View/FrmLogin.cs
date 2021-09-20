@@ -11,8 +11,8 @@ namespace View
         {
             this.loginController = loginController;
             InitializeComponent();
-            txtKorisnickoIme.Text = "ana";
-            txtLozinka.Text = "ana";
+            txtKorisnickoIme.Text = "sara";
+            txtLozinka.Text = "sara";
         }
        
 

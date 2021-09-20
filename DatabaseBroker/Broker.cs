@@ -13,7 +13,7 @@ namespace DatabaseBroker
 
         public Broker()
         {
-            konekcija = new SqlConnection(@"");
+            konekcija = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SkiSkolaBaza;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         public void OtvoriKonekciju()

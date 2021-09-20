@@ -40,18 +40,21 @@ namespace View.UserControls
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSacuvajUcenika = new System.Windows.Forms.Button();
-            this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.lblIme = new System.Windows.Forms.Label();
             this.lblPrezime = new System.Windows.Forms.Label();
             this.lblDatumRodjenja = new System.Windows.Forms.Label();
             this.lblTelefon = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.txtDatumRodj = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtUcenikId = new System.Windows.Forms.TextBox();
+            this.lblUcenikId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 77);
+            this.label1.Location = new System.Drawing.Point(52, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 17);
             this.label1.TabIndex = 0;
@@ -95,14 +98,14 @@ namespace View.UserControls
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(201, 74);
+            this.txtIme.Location = new System.Drawing.Point(205, 103);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(200, 22);
             this.txtIme.TabIndex = 5;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(201, 134);
+            this.txtPrezime.Location = new System.Drawing.Point(205, 140);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(200, 22);
             this.txtPrezime.TabIndex = 6;
@@ -125,7 +128,7 @@ namespace View.UserControls
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(49, 24);
+            this.label6.Location = new System.Drawing.Point(49, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 28);
             this.label6.TabIndex = 10;
@@ -141,18 +144,11 @@ namespace View.UserControls
             this.btnSacuvajUcenika.UseVisualStyleBackColor = true;
             this.btnSacuvajUcenika.Click += new System.EventHandler(this.btnSacuvajUcenika_Click);
             // 
-            // dtpDatumRodjenja
-            // 
-            this.dtpDatumRodjenja.Location = new System.Drawing.Point(201, 188);
-            this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
-            this.dtpDatumRodjenja.Size = new System.Drawing.Size(200, 22);
-            this.dtpDatumRodjenja.TabIndex = 12;
-            // 
             // lblIme
             // 
             this.lblIme.AutoSize = true;
             this.lblIme.ForeColor = System.Drawing.Color.Red;
-            this.lblIme.Location = new System.Drawing.Point(427, 77);
+            this.lblIme.Location = new System.Drawing.Point(431, 108);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(0, 17);
             this.lblIme.TabIndex = 13;
@@ -161,7 +157,7 @@ namespace View.UserControls
             // 
             this.lblPrezime.AutoSize = true;
             this.lblPrezime.ForeColor = System.Drawing.Color.Red;
-            this.lblPrezime.Location = new System.Drawing.Point(427, 139);
+            this.lblPrezime.Location = new System.Drawing.Point(431, 143);
             this.lblPrezime.Name = "lblPrezime";
             this.lblPrezime.Size = new System.Drawing.Size(0, 17);
             this.lblPrezime.TabIndex = 14;
@@ -170,7 +166,7 @@ namespace View.UserControls
             // 
             this.lblDatumRodjenja.AutoSize = true;
             this.lblDatumRodjenja.ForeColor = System.Drawing.Color.Red;
-            this.lblDatumRodjenja.Location = new System.Drawing.Point(427, 193);
+            this.lblDatumRodjenja.Location = new System.Drawing.Point(422, 199);
             this.lblDatumRodjenja.Name = "lblDatumRodjenja";
             this.lblDatumRodjenja.Size = new System.Drawing.Size(0, 17);
             this.lblDatumRodjenja.TabIndex = 15;
@@ -188,21 +184,55 @@ namespace View.UserControls
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.ForeColor = System.Drawing.Color.Red;
-            this.lblEmail.Location = new System.Drawing.Point(431, 303);
+            this.lblEmail.Location = new System.Drawing.Point(422, 301);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(0, 17);
             this.lblEmail.TabIndex = 17;
+            // 
+            // txtDatumRodj
+            // 
+            this.txtDatumRodj.Location = new System.Drawing.Point(205, 194);
+            this.txtDatumRodj.Name = "txtDatumRodj";
+            this.txtDatumRodj.Size = new System.Drawing.Size(200, 22);
+            this.txtDatumRodj.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(54, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 17);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "JMBG/Br. pasosa:";
+            // 
+            // txtUcenikId
+            // 
+            this.txtUcenikId.Location = new System.Drawing.Point(205, 61);
+            this.txtUcenikId.Name = "txtUcenikId";
+            this.txtUcenikId.Size = new System.Drawing.Size(200, 22);
+            this.txtUcenikId.TabIndex = 20;
+            // 
+            // lblUcenikId
+            // 
+            this.lblUcenikId.AutoSize = true;
+            this.lblUcenikId.Location = new System.Drawing.Point(422, 63);
+            this.lblUcenikId.Name = "lblUcenikId";
+            this.lblUcenikId.Size = new System.Drawing.Size(0, 17);
+            this.lblUcenikId.TabIndex = 21;
             // 
             // UCDodajUcenika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblUcenikId);
+            this.Controls.Add(this.txtUcenikId);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtDatumRodj);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelefon);
             this.Controls.Add(this.lblDatumRodjenja);
             this.Controls.Add(this.lblPrezime);
             this.Controls.Add(this.lblIme);
-            this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.btnSacuvajUcenika);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEmail);
@@ -235,11 +265,14 @@ namespace View.UserControls
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSacuvajUcenika;
-        private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.Label lblIme;
         private System.Windows.Forms.Label lblPrezime;
         private System.Windows.Forms.Label lblDatumRodjenja;
         private System.Windows.Forms.Label lblTelefon;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtDatumRodj;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtUcenikId;
+        private System.Windows.Forms.Label lblUcenikId;
     }
 }

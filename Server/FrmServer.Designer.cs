@@ -82,7 +82,7 @@ namespace Server
             // lblStanjeServera
             // 
             this.lblStanjeServera.AutoSize = true;
-            this.lblStanjeServera.Location = new System.Drawing.Point(461, 39);
+            this.lblStanjeServera.Location = new System.Drawing.Point(409, 39);
             this.lblStanjeServera.Name = "lblStanjeServera";
             this.lblStanjeServera.Size = new System.Drawing.Size(16, 17);
             this.lblStanjeServera.TabIndex = 3;
@@ -91,11 +91,10 @@ namespace Server
             // lblVreme
             // 
             this.lblVreme.AutoSize = true;
-            this.lblVreme.Location = new System.Drawing.Point(673, 38);
+            this.lblVreme.Location = new System.Drawing.Point(581, 39);
             this.lblVreme.Name = "lblVreme";
-            this.lblVreme.Size = new System.Drawing.Size(59, 17);
+            this.lblVreme.Size = new System.Drawing.Size(0, 17);
             this.lblVreme.TabIndex = 4;
-            this.lblVreme.Text = "*Vreme*";
             // 
             // FrmServer
             // 

@@ -8,7 +8,7 @@ namespace Domain
     [Serializable]
     public class Ucenik : IEntity
     {
-        public int UcenikId { get; set; }
+        public string UcenikId { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public DateTime DatumRodjenja { get; set; }
@@ -20,7 +20,7 @@ namespace Domain
         [Browsable(false)]
         public string TableName => "Ucenik";
         [Browsable(false)]
-        public string InsertValues => $"'{Ime}','{Prezime}','{DatumRodjenja.ToString("MM/dd/yyyy")}','{Telefon}','{Email}'";
+        public string InsertValues => $"'{UcenikId}','{Ime}','{Prezime}','{DatumRodjenja.ToString("MM/dd/yyyy")}','{Telefon}','{Email}'";
         [Browsable(false)]
         public string IdName => throw new NotImplementedException();
         [Browsable(false)]
@@ -51,6 +51,10 @@ namespace Domain
         public string JoinCondition3 => "";
         [Browsable(false)]
         public string JoinTable3 => "";
+        public override string ToString()
+        {
+            return $"{Ime} {Prezime}";
+        }
 
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
@@ -60,14 +64,14 @@ namespace Domain
             {
                 Ucenik u = new Ucenik
                 {
-                    UcenikId = citac.GetInt32(0),
+                    UcenikId = citac.GetString(0),
                     Ime = citac.GetString(1),
                     Prezime = citac.GetString(2),
                     DatumRodjenja = (DateTime)citac["DatumRodjenja"],
                     Telefon = citac.GetString(4),
                     Email = citac.GetString(5)
                 };
-                result.Add((IEntity)u);
+                result.Add(u);
             }
             return result;
         }

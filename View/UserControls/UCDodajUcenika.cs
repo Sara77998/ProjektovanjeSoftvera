@@ -9,13 +9,16 @@ namespace View.UserControls
         private UcenikController ucenikController;
 
 
+
+        public TextBox TxtUcenikId { get => txtUcenikId; }
         public TextBox TxtIme { get => txtIme; }
         public TextBox TxtPrezime { get => txtPrezime; }
-        public DateTimePicker DtpDatumRodjenja { get => dtpDatumRodjenja; }
+        public TextBox TxtDatumRodjenja { get => txtDatumRodj; }
         public TextBox TxtTelefon { get => txtTelefon; }
         public TextBox TxtEmail { get => txtEmail; }
 
 
+        public Label LblUcenikId { get => lblUcenikId; set { } }
         public Label LblIme { get => lblIme; set { } }
         public Label LblPrezime { get => lblPrezime; set { } }
         public Label LblDatumRodjenja { get => lblDatumRodjenja; set { } }
