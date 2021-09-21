@@ -45,7 +45,9 @@
     <Compile Include="CasSO\UcitajCasoveSO.cs" />
     <Compile Include="CasSO\VratiCasovePoKriterijumuSO.cs" />
     <Compile Include="CasSO\ZapamtiCasSO.cs" />
+    <Compile Include="InstruktorSO\UcitajInstruktoreSO.cs" />
     <Compile Include="StavkaTerminaSO\ObrisiStavkuTerminaSO.cs" />
+    <Compile Include="StavkaTerminaSO\UcitajStavkeTerminaSO.cs" />
     <Compile Include="StavkaTerminaSO\ZapamtiStavkuTerminaSO.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="InstruktorSO\LoginSO.cs" />

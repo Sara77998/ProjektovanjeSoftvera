@@ -17,7 +17,7 @@ namespace SystemOperations.TerminSO
             repository.Update(entity);
             for (int i = 0; i < t.StavkeTermina.Count; i++)
             {
-                t.StavkeTermina[i].TerimId = t;
+                t.StavkeTermina[i].TerminId = t;
                 repository.Save(t.StavkeTermina[i]);
             }
 

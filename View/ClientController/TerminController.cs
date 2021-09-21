@@ -16,6 +16,7 @@ namespace View.ClientController
     {
         private UCDodajTermin uCDodajTermin;
         private UCPromeniTermin uCPromeniTermin;
+        private UCSviTermini UCSviTermini;
         private BindingList<StavkaTermina> stavkeTermina = new BindingList<StavkaTermina>();
         private List<Termin> termini = new List<Termin>();
         internal void InitForm(UCDodajTermin uCDodajTermin)
@@ -24,6 +25,20 @@ namespace View.ClientController
             {
                 this.uCDodajTermin = uCDodajTermin;
                 uCDodajTermin.DgvStavkeTermina.DataSource = stavkeTermina;
+            }
+            catch (Exception ex)
+            {
+
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal void InitUCSviTermini(UCSviTermini uCSviTermini)
+        {
+
+            try
+            {
+                uCSviTermini.DgvSviTerminiSaUcenicima.DataSource = Komunikacija.Instance.GetAllStavkaTermina();
             }
             catch (Exception ex)
             {
@@ -102,7 +117,18 @@ namespace View.ClientController
 
         internal void InitUCPromeniTermin()
         {
-            throw new NotImplementedException();
+            try
+            {
+                //uCUpdateRentiranje.CbMusterijaUpdate.DataSource = Communication.Communication.Instance.GetAllMusterija();
+                //DateTime dateTime = DateTime.Now;
+               // uCUpdateRentiranje.LblDatumShow.Text = dateTime.ToString("MM/dd/yyyy");
+                //uCUpdateRentiranje.LblUkupnaCena.Text = "0";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         internal void InitUCDodajTermin(UCDodajTermin uCDodajTermin)
@@ -121,7 +147,10 @@ namespace View.ClientController
 
         internal void UpdateTermin()
         {
-            throw new NotImplementedException();
+            DataGridViewRow red = uCPromeniTermin.DgvTermini.SelectedRows[0];
+            Termin t = (Termin)red.DataBoundItem;
+            IzmeniStavkeRentiranja dialog2  = new IzmeniStavkeRentiranja(t);
+            dialog2.ShowDialog();
         }
 
         internal void AddStavkaTermina()
@@ -177,11 +206,11 @@ namespace View.ClientController
 
                 Termin t = new Termin
                 {
-                    //DatumIVreme = DataSourceUpdateMode,
+                    //DatumIVreme = DateTime.ToString("MM/dd/yyyy"),
                     Instruktor = i,
                     CasId = c,
-                    StavkeTermina = stavkeTermina.ToList()
-                    //InsertValues = $"'{m.JMBG}','{DateTime.Now.ToString("MM/dd/yyyy")}',{k}"
+                    StavkeTermina = stavkeTermina.ToList(),
+                    InsertValues = $"'{DateTime.Now.ToString("MM/dd/yyyy")}',{i.InstruktorId},{c.CasId}"
 
 
                 };

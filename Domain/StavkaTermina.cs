@@ -8,7 +8,7 @@ namespace Domain
     [Serializable]
     public class StavkaTermina : IEntity
     {
-        public Termin TerimId { get; set; }
+        public Termin TerminId { get; set; }
         public int RB { get; set; }
        
         public Ucenik Ucenik { get; set; }
@@ -22,15 +22,15 @@ namespace Domain
         [Browsable(false)]
         public string IdName => throw new NotImplementedException();
         [Browsable(false)]
-        public string JoinCondition => "on(sr.BrojSasije=a.BrojSasije)";
+        public string JoinCondition => "on(st.Ucenik=u.UcenikId)";
         [Browsable(false)]
-        public string JoinTable => "join Automobil a";
+        public string JoinTable => "join Ucenik u";
         [Browsable(false)]
-        public string JoinCondition1 => "on(sr.PolisaID=p.ID)";
+        public string JoinCondition1 => "on(st.Terminid=t.terminid)";
         [Browsable(false)]
-        public string JoinTable1 => "join Polisa p";
+        public string JoinTable1 => "join Termin t";
         [Browsable(false)]
-        public string TableAlias => "sr";
+        public string TableAlias => "st";
         [Browsable(false)]
         public string SelectValues => "*";
         [Browsable(false)]
@@ -53,53 +53,27 @@ namespace Domain
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
             List<IEntity> result = new List<IEntity>();
-            //while (citac.Read())
-            //{
-            //    a = new Automobil
-            //    {
-            //        BrojSasije = reader.GetString(7),
-            //        Registracija = reader.GetString(8),
-            //        GodinaProizvodnje = reader.GetInt32(9),
-            //        CenaPoDanu = Convert.ToDouble(reader.GetDecimal(10)),
-            //        Model = new Model
-            //        {
-            //            Id = reader.GetInt32(16),
-            //            Naziv = reader.GetString(18),
-            //            Verzija = reader.GetString(19),
-            //            Marka = new Marka
-            //            {
-            //                Id = reader.GetInt32(20),
-            //                Naziv = reader.GetString(21)
-            //            }
-            //        }
+            while (citac.Read())
+            {
+                StavkaTermina st = new StavkaTermina
+                {
+                    TerminId = new Termin
+                    {
+                        TerminId = citac.GetInt32(0)
+                        
 
-            //    };
-
-            //    Polisa p = new Polisa
-            //    {
-            //        Id = reader.GetInt32(12),
-            //        Naziv = reader.GetString(13),
-            //        CenaPoDanu = Convert.ToDouble(reader.GetDecimal(14)),
-            //        Opis = reader.GetString(15)
-            //    };
-
-            //    StavkaRentiranja sr = new StavkaRentiranja
-            //    {
-            //        Polisa = p,
-            //        Automobil = a,
-            //        Id = reader.GetInt32(0),
-            //        DatumOd = reader.GetDateTime(2),
-            //        DatumDo = reader.GetDateTime(3),
-            //        Rentiranje = new Rentiranje
-            //        {
-            //            Id = reader.GetInt32(1)
-            //        },
-            //        RedniBroj = reader.GetInt32(6)
-
-            //    };
-
-            //    result.Add(sr);
-            //}
+                    },
+                    RB = citac.GetInt32(1),
+                    Ucenik = new Ucenik
+                    {
+                        //UcenikId = citac.GetString(2),
+                        Ime = citac.GetString(4),
+                        Prezime = citac.GetString(5)
+                    }
+                };
+                result.Add(st);
+            }
+           
             return result;
         }
     }

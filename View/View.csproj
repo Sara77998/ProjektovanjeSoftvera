@@ -59,6 +59,12 @@
     <Compile Include="Dialog\DodajStavkuRentiranjaDialog.Designer.cs">
       <DependentUpon>DodajStavkuRentiranjaDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\IzmeniStavkeRentiranja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\IzmeniStavkeRentiranja.Designer.cs">
+      <DependentUpon>IzmeniStavkeRentiranja.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemOperationException.cs" />
     <Compile Include="FrmGlavna.cs">
       <SubType>Form</SubType>
@@ -125,8 +131,17 @@
     <Compile Include="UserControls\UCPronadjiUcenika.Designer.cs">
       <DependentUpon>UCPronadjiUcenika.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSviTermini.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSviTermini.Designer.cs">
+      <DependentUpon>UCSviTermini.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dialog\DodajStavkuRentiranjaDialog.resx">
       <DependentUpon>DodajStavkuRentiranjaDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\IzmeniStavkeRentiranja.resx">
+      <DependentUpon>IzmeniStavkeRentiranja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
@@ -166,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCPronadjiUcenika.resx">
       <DependentUpon>UCPronadjiUcenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSviTermini.resx">
+      <DependentUpon>UCSviTermini.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

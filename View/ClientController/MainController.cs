@@ -55,5 +55,10 @@ namespace View.ClientController
             frmGlavna.SetPanel(new UCPromeniTermin(new TerminController()));
 
         }
+
+        internal void OpenUCSviTermini(FrmGlavna frmGlavna)
+        {
+            frmGlavna.SetPanel(new UCSviTermini(new TerminController()));
+        }
     }
 }

@@ -6,6 +6,7 @@ using SystemOperations.UcenikSO;
 using SystemOperations.CasSO;
 using SystemOperations.TerminSO;
 using SystemOperations.StavkaTerminaSO;
+using System;
 
 namespace Controller
 {
@@ -95,6 +96,14 @@ namespace Controller
             so.ExecuteTemplate(cas);
 
         }
+
+        public object GetAllInstruktor()
+        {
+            UcitajInstruktoreSO so = new UcitajInstruktoreSO();           
+            so.ExecuteTemplate(new Instruktor());
+            return so.Result;
+        }
+
         //*********************************************
         public void SaveTermin(Termin termin)
         {
@@ -131,6 +140,13 @@ namespace Controller
         {
             ObrisiStavkuTerminaSO so = new ObrisiStavkuTerminaSO();
             so.ExecuteTemplate(stavkaTermina);
+        }
+
+        public object GetAllStavkaTermina()
+        {
+            UcitajStavkeTerminaSO so = new UcitajStavkeTerminaSO();
+            so.ExecuteTemplate(new StavkaTermina());
+            return so.Result;
         }
 
 

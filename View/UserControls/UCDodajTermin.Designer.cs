@@ -100,7 +100,7 @@ namespace View.UserControls
             // 
             this.dtpDatumIVreme.Location = new System.Drawing.Point(193, 82);
             this.dtpDatumIVreme.Name = "dtpDatumIVreme";
-            this.dtpDatumIVreme.Size = new System.Drawing.Size(200, 22);
+            this.dtpDatumIVreme.Size = new System.Drawing.Size(307, 22);
             this.dtpDatumIVreme.TabIndex = 5;
             // 
             // cmbInstruktor
@@ -108,7 +108,7 @@ namespace View.UserControls
             this.cmbInstruktor.FormattingEnabled = true;
             this.cmbInstruktor.Location = new System.Drawing.Point(193, 128);
             this.cmbInstruktor.Name = "cmbInstruktor";
-            this.cmbInstruktor.Size = new System.Drawing.Size(200, 24);
+            this.cmbInstruktor.Size = new System.Drawing.Size(307, 24);
             this.cmbInstruktor.TabIndex = 6;
             // 
             // cmbCas
@@ -116,7 +116,7 @@ namespace View.UserControls
             this.cmbCas.FormattingEnabled = true;
             this.cmbCas.Location = new System.Drawing.Point(193, 170);
             this.cmbCas.Name = "cmbCas";
-            this.cmbCas.Size = new System.Drawing.Size(200, 24);
+            this.cmbCas.Size = new System.Drawing.Size(307, 24);
             this.cmbCas.TabIndex = 7;
             // 
             // btnSacuvaj

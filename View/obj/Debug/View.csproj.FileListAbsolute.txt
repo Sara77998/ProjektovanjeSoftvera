@@ -23,3 +23,5 @@ C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.exe
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.pdb
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCObrisiUcenika.resources
 C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCObrisiCas.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.Dialog.IzmeniStavkeRentiranja.resources
+C:\Users\Sara\Documents\PS\PROJEKAT\SkiSkola\View\obj\Debug\View.UserControls.UCSviTermini.resources

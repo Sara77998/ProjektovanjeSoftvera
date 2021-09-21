@@ -46,6 +46,25 @@ namespace View.Communication
             klijentSoket.Close();
             klijentSoket = null;
         }
+
+        internal List<StavkaTermina> GetAllStavkaTermina()
+        {
+            List<StavkaTermina> stavke = new List<StavkaTermina>();
+            Zahtev z = new Zahtev()
+            {
+                Operacija = Operacija.UcitajStavkuTermina,
+                Objekat = new StavkaTermina
+                {
+
+                }
+            };
+            klijent.PosaljiZahtev(z);
+
+
+            stavke = (List<StavkaTermina>)klijent.VratiOdgovor();
+            return stavke;
+        }
+
         internal Instruktor PrijaviSe(string username, string password)
         {
             Zahtev z = new Zahtev()

@@ -84,6 +84,10 @@ namespace Server
                     instruktori.Add(ulogovaniInstruktor);
                     break;
 
+                case Operacija.UcitajInstruktore:
+                    o.Rezultat = Kontroler.Instance.GetAllInstruktor();
+                    break;
+
 
 
                 case Operacija.ZapamtiUcenika:
@@ -131,6 +135,9 @@ namespace Server
 
 
 
+                case Operacija.UcitajStavkuTermina:
+                    o.Rezultat = Kontroler.Instance.GetAllStavkaTermina();
+                    break;
                 case Operacija.ZapamtiStvakuTermina:
                     Kontroler.Instance.SaveStavkaTermina((StavkaTermina)z.Objekat);
                     break;

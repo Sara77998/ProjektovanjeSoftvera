@@ -31,7 +31,10 @@ namespace Domain
         public string JoinTable3 => "";
 
 
-
+        public override string ToString()
+        {
+            return $"{StazaLokacija} {TezinaCasa} {Cena}";
+        }
 
         public List<IEntity> GetEntities(SqlDataReader citac)
         {

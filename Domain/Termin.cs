@@ -17,7 +17,7 @@ namespace Domain
 
         public string TableName => "Termin";
         public string InsertValues { get; set; }
-        public string IdName => "ID";
+        public string IdName => "TerminId";
         public string JoinCondition => "on(r.JMBG=m.JMBG)";
         public string JoinTable => "join Musterija m";
         public string JoinCondition1 => "";
@@ -33,7 +33,10 @@ namespace Domain
         public string JoinCondition3 => "";
         public string JoinTable3 => "";
 
-
+        public override string ToString()
+        {
+            return $"{TerminId} {DatumIVreme} {Instruktor} {CasId}";
+        }
 
         public List<IEntity> GetEntities(SqlDataReader citac)
         {

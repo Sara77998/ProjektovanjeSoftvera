@@ -51,6 +51,7 @@ namespace Server
             // 
             // dgvPregledTermina
             // 
+            this.dgvPregledTermina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPregledTermina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPregledTermina.Location = new System.Drawing.Point(6, 21);
             this.dgvPregledTermina.Name = "dgvPregledTermina";

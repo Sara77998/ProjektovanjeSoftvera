@@ -30,7 +30,7 @@ namespace View.UserControls
 
         private void UCDodajTermin_Load(object sender, EventArgs e)
         {
-            //kako ce inicijalno izgledati
+            
             terminController.InitUCDodajTermin(this);
         }
 

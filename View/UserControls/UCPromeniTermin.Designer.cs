@@ -54,7 +54,7 @@ namespace View.UserControls
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(429, 558);
+            this.btnIzmeni.Location = new System.Drawing.Point(441, 657);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.Size = new System.Drawing.Size(126, 41);
             this.btnIzmeni.TabIndex = 17;
@@ -92,7 +92,8 @@ namespace View.UserControls
             this.dgvTermini.Name = "dgvTermini";
             this.dgvTermini.RowHeadersWidth = 51;
             this.dgvTermini.RowTemplate.Height = 24;
-            this.dgvTermini.Size = new System.Drawing.Size(519, 202);
+            this.dgvTermini.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTermini.Size = new System.Drawing.Size(519, 256);
             this.dgvTermini.TabIndex = 13;
             // 
             // label4
@@ -200,7 +201,7 @@ namespace View.UserControls
             // 
             // btnDodajStavku
             // 
-            this.btnDodajStavku.Location = new System.Drawing.Point(27, 569);
+            this.btnDodajStavku.Location = new System.Drawing.Point(25, 675);
             this.btnDodajStavku.Name = "btnDodajStavku";
             this.btnDodajStavku.Size = new System.Drawing.Size(75, 23);
             this.btnDodajStavku.TabIndex = 20;
@@ -210,7 +211,7 @@ namespace View.UserControls
             // 
             // btnObrisiStavku
             // 
-            this.btnObrisiStavku.Location = new System.Drawing.Point(124, 569);
+            this.btnObrisiStavku.Location = new System.Drawing.Point(132, 675);
             this.btnObrisiStavku.Name = "btnObrisiStavku";
             this.btnObrisiStavku.Size = new System.Drawing.Size(75, 23);
             this.btnObrisiStavku.TabIndex = 21;
@@ -231,7 +232,7 @@ namespace View.UserControls
             this.Controls.Add(this.dgvTermini);
             this.Controls.Add(this.label1);
             this.Name = "UCPromeniTermin";
-            this.Size = new System.Drawing.Size(574, 602);
+            this.Size = new System.Drawing.Size(658, 717);
             this.Load += new System.EventHandler(this.UCPromeniTermin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTermini)).EndInit();
             this.groupBox1.ResumeLayout(false);

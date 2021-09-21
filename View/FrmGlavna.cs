@@ -69,5 +69,10 @@ namespace View
         {
             mainController.CloseFrmGlavna();
         }
+
+        private void sviTerminiToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            mainController.OpenUCSviTermini(this);
+        }
     }
 }

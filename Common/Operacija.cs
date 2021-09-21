@@ -22,6 +22,7 @@ namespace Common
         PretraziTermin,
         PretraziTerminDatum,
         UcitajTermin,
+        UcitajStavkuTermina,
         ObrisiStavkuTermina,
         UcitajInstruktore
     }
