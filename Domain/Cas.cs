@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 
 namespace Domain
@@ -12,22 +13,39 @@ namespace Domain
         public string TezinaCasa { get; set; }
         public double Cena { get; set; }
 
+        [Browsable(false)]
         public string TableName => "Cas";
+        [Browsable(false)]
         public string InsertValues => $"'{StazaLokacija}', '{TezinaCasa}', {Cena}";
+        [Browsable(false)]
         public string IdName => "";
+        [Browsable(false)]
         public string JoinCondition => "";
+        [Browsable(false)]
         public string JoinTable => "";
+        [Browsable(false)]
         public string TableAlias => "c";
+        [Browsable(false)]
         public string SelectValues => "*";
+        [Browsable(false)]
         public string WhereCondition { get; set; }
+        [Browsable(false)]
         public string WhereValue { get; set; }
+        [Browsable(false)]
         public string Where => "where";
+        [Browsable(false)]
         public string JoinCondition1 => "";
+        [Browsable(false)]
         public string JoinTable1 => "";
+        [Browsable(false)]
         public string UpdateText { get; set; }
+        [Browsable(false)]
         public string JoinCondition2 => "";
+        [Browsable(false)]
         public string JoinTable2 => "";
+        [Browsable(false)]
         public string JoinCondition3 => "";
+        [Browsable(false)]
         public string JoinTable3 => "";
 
 

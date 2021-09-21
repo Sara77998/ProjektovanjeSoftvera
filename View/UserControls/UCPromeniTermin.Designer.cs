@@ -44,8 +44,6 @@ namespace View.UserControls
             this.btnPronadjiTerminInstruktor = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnPronadjiTerminCas = new System.Windows.Forms.Button();
-            this.btnDodajStavku = new System.Windows.Forms.Button();
-            this.btnObrisiStavku = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTermini)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -54,9 +52,9 @@ namespace View.UserControls
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(441, 657);
+            this.btnIzmeni.Location = new System.Drawing.Point(622, 374);
             this.btnIzmeni.Name = "btnIzmeni";
-            this.btnIzmeni.Size = new System.Drawing.Size(126, 41);
+            this.btnIzmeni.Size = new System.Drawing.Size(71, 83);
             this.btnIzmeni.TabIndex = 17;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
@@ -87,13 +85,14 @@ namespace View.UserControls
             // 
             // dgvTermini
             // 
+            this.dgvTermini.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTermini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTermini.Location = new System.Drawing.Point(25, 350);
             this.dgvTermini.Name = "dgvTermini";
             this.dgvTermini.RowHeadersWidth = 51;
             this.dgvTermini.RowTemplate.Height = 24;
             this.dgvTermini.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTermini.Size = new System.Drawing.Size(519, 256);
+            this.dgvTermini.Size = new System.Drawing.Size(591, 160);
             this.dgvTermini.TabIndex = 13;
             // 
             // label4
@@ -199,32 +198,10 @@ namespace View.UserControls
             this.btnPronadjiTerminCas.UseVisualStyleBackColor = true;
             this.btnPronadjiTerminCas.Click += new System.EventHandler(this.btnPronadjiTerminCas_Click);
             // 
-            // btnDodajStavku
-            // 
-            this.btnDodajStavku.Location = new System.Drawing.Point(25, 675);
-            this.btnDodajStavku.Name = "btnDodajStavku";
-            this.btnDodajStavku.Size = new System.Drawing.Size(75, 23);
-            this.btnDodajStavku.TabIndex = 20;
-            this.btnDodajStavku.Text = "+";
-            this.btnDodajStavku.UseVisualStyleBackColor = true;
-            this.btnDodajStavku.Click += new System.EventHandler(this.btnDodajStavku_Click);
-            // 
-            // btnObrisiStavku
-            // 
-            this.btnObrisiStavku.Location = new System.Drawing.Point(132, 675);
-            this.btnObrisiStavku.Name = "btnObrisiStavku";
-            this.btnObrisiStavku.Size = new System.Drawing.Size(75, 23);
-            this.btnObrisiStavku.TabIndex = 21;
-            this.btnObrisiStavku.Text = "-";
-            this.btnObrisiStavku.UseVisualStyleBackColor = true;
-            this.btnObrisiStavku.Click += new System.EventHandler(this.btnObrisiStavku_Click);
-            // 
             // UCPromeniTermin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnObrisiStavku);
-            this.Controls.Add(this.btnDodajStavku);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -232,7 +209,7 @@ namespace View.UserControls
             this.Controls.Add(this.dgvTermini);
             this.Controls.Add(this.label1);
             this.Name = "UCPromeniTermin";
-            this.Size = new System.Drawing.Size(658, 717);
+            this.Size = new System.Drawing.Size(696, 538);
             this.Load += new System.EventHandler(this.UCPromeniTermin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTermini)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -263,7 +240,5 @@ namespace View.UserControls
         private System.Windows.Forms.Button btnPronadjiTerminDatum;
         private System.Windows.Forms.Button btnPronadjiTerminInstruktor;
         private System.Windows.Forms.Button btnPronadjiTerminCas;
-        private System.Windows.Forms.Button btnDodajStavku;
-        private System.Windows.Forms.Button btnObrisiStavku;
     }
 }

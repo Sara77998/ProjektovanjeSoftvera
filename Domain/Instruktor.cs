@@ -56,7 +56,7 @@ namespace Domain
         public string JoinTable3 => "";
         public override string ToString()
         {
-            return $"{Ime} {Prezime} {SkolaSkijanja.Naziv}";
+            return $"{InstruktorId}   {Ime} {Prezime} ";
         }
 
         public List<IEntity> GetEntities(SqlDataReader citac)

@@ -16,7 +16,7 @@ namespace View.ClientController
     {
         private UCDodajTermin uCDodajTermin;
         private UCPromeniTermin uCPromeniTermin;
-        private UCSviTermini UCSviTermini;
+        private UCSviTermini uCSviTermini;
         private BindingList<StavkaTermina> stavkeTermina = new BindingList<StavkaTermina>();
         private List<Termin> termini = new List<Termin>();
         internal void InitForm(UCDodajTermin uCDodajTermin)
@@ -73,17 +73,20 @@ namespace View.ClientController
         {
             try
             {
+                Instruktor i = (Instruktor)uCPromeniTermin.CmbInstruktor.SelectedItem;
                 Termin t = new Termin
                 {
-                    Instruktor = (Instruktor)uCPromeniTermin.CmbInstruktor.SelectedItem,
-                    WhereCondition = "t.Ime=",
-                    //WhereValue = uCPromeniTermin.TxtPretragaImePrezime.Text
+                    Instruktor = new Instruktor
+                    {
+                        InstruktorId = i.InstruktorId
+                    },
+                    WhereCondition = "i.Prezime=",
+                    WhereValue = i.Prezime
 
                 };
-               termini = Komunikacija.Instance.SearchTermin(t);
-                //uCPromeniTermin.CbPretraga.DataSource = rentiranja;
-                //uCUpdateRentiranje.CbPretraga.DataSource = Communication.Communication.Instance.SearchRentiranjeIme(m);
-                MessageBox.Show("Postoji rentiranje sa zadatim imenom");
+                termini = Komunikacija.Instance.SearchTermin(t);
+                uCPromeniTermin.DgvTermini.DataSource = termini;
+                MessageBox.Show("Postoji termin koji vodi trazeni instruktor");
             }
             catch (Exception ex)
             {
@@ -96,17 +99,21 @@ namespace View.ClientController
         {
             try
             {
+                Cas c = (Cas)uCPromeniTermin.CmbCas.SelectedItem;
                 Termin t = new Termin
                 {
-                    Instruktor = (Instruktor)uCPromeniTermin.CmbInstruktor.SelectedItem,
-                    WhereCondition = "m.Ime=",
-                    //WhereValue = uCPromeniTermin.TxtPretragaImePrezime.Text
+                    CasId = new Cas
+                    {
+                        CasId = c.CasId
+                    },
+                    
+                    WhereCondition = "c.stazalokacija=",
+                    WhereValue = c.StazaLokacija
 
                 };
                 termini = Komunikacija.Instance.SearchTermin(t);
-                //uCPromeniTermin.CbPretraga.DataSource = rentiranja;
-                //uCUpdateRentiranje.CbPretraga.DataSource = Communication.Communication.Instance.SearchRentiranjeIme(m);
-                MessageBox.Show("Postoji rentiranje sa zadatim imenom");
+                uCPromeniTermin.DgvTermini.DataSource = termini;               
+                MessageBox.Show("Postoji termin koji na zadatoj stazi");
             }
             catch (Exception ex)
             {
@@ -119,10 +126,8 @@ namespace View.ClientController
         {
             try
             {
-                //uCUpdateRentiranje.CbMusterijaUpdate.DataSource = Communication.Communication.Instance.GetAllMusterija();
-                //DateTime dateTime = DateTime.Now;
-               // uCUpdateRentiranje.LblDatumShow.Text = dateTime.ToString("MM/dd/yyyy");
-                //uCUpdateRentiranje.LblUkupnaCena.Text = "0";
+                uCPromeniTermin.CmbInstruktor.DataSource = Komunikacija.Instance.GetAllInstrukruktor();
+                uCPromeniTermin.CmbCas.DataSource = Komunikacija.Instance.GetAllCas();              
             }
             catch (Exception ex)
             {

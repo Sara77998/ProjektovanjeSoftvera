@@ -108,6 +108,7 @@ namespace View.Dialog
             this.btnDodaj.TabIndex = 7;
             this.btnDodaj.Text = "+";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnObrisi
             // 
@@ -117,6 +118,7 @@ namespace View.Dialog
             this.btnObrisi.TabIndex = 8;
             this.btnObrisi.Text = "-";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnSacuvajIzmene
             // 
@@ -127,6 +129,7 @@ namespace View.Dialog
             this.btnSacuvajIzmene.TabIndex = 9;
             this.btnSacuvajIzmene.Text = "Sacuvaj ";
             this.btnSacuvajIzmene.UseVisualStyleBackColor = true;
+            this.btnSacuvajIzmene.Click += new System.EventHandler(this.btnSacuvajIzmene_Click);
             // 
             // IzmeniStavkeRentiranja
             // 
@@ -145,6 +148,7 @@ namespace View.Dialog
             this.Controls.Add(this.dgvIzmeniStavke);
             this.Name = "IzmeniStavkeRentiranja";
             this.Text = "IzmeniStavkeRentiranja";
+            this.Load += new System.EventHandler(this.IzmeniStavkeRentiranja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzmeniStavke)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
