@@ -156,6 +156,8 @@ namespace View.ClientController
             Termin t = (Termin)red.DataBoundItem;
             IzmeniStavkeRentiranja dialog2  = new IzmeniStavkeRentiranja(t);
             dialog2.ShowDialog();
+
+            
         }
 
         internal void AddStavkaTermina()

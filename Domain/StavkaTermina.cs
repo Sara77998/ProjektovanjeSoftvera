@@ -42,13 +42,13 @@ namespace Domain
         [Browsable(false)]
         public string UpdateText { get; set; }
         [Browsable(false)]
-        public string JoinCondition2 => "on(a.ModelID=m.ID)";
+        public string JoinCondition2 => "";
         [Browsable(false)]
-        public string JoinTable2 => "join Model m";
+        public string JoinTable2 => "";
         [Browsable(false)]
-        public string JoinCondition3 => "on(m.MarkaID=ma.ID)";
+        public string JoinCondition3 => "";
         [Browsable(false)]
-        public string JoinTable3 => "join Marka ma";
+        public string JoinTable3 => "";
 
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
@@ -66,7 +66,7 @@ namespace Domain
                     RB = citac.GetInt32(1),
                     Ucenik = new Ucenik
                     {
-                        //UcenikId = citac.GetString(2),
+                        UcenikId = citac.GetString(2),
                         Ime = citac.GetString(4),
                         Prezime = citac.GetString(5)
                     }

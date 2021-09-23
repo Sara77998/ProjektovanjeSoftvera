@@ -66,7 +66,9 @@ namespace Domain
                     DatumIVreme = citac.GetDateTime(1),
                     Instruktor = new Instruktor
                     {
-                        InstruktorId = citac.GetInt32(2)
+                        InstruktorId = citac.GetInt32(2),
+                        Ime = citac.GetString(5),
+                        Prezime = citac.GetString(6)
                     },
                     CasId = new Cas
                     {

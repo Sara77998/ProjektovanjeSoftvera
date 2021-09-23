@@ -55,7 +55,20 @@ namespace Domain
         {
             return $"{UcenikId} {Ime} {Prezime}";
         }
-
+        public Ucenik Objekat
+        {
+            get
+            {
+                return this;
+            }
+        }
+        public string Prikaz
+        {
+            get
+            {
+                return Prezime;
+            }
+        }
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
 

@@ -39,16 +39,20 @@ namespace View.Dialog
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnSacuvajIzmene = new System.Windows.Forms.Button();
+            this.cmbInstruktorIzmena = new System.Windows.Forms.ComboBox();
+            this.cmbCasIzmena = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzmeniStavke)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvIzmeniStavke
             // 
+            this.dgvIzmeniStavke.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIzmeniStavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIzmeniStavke.Location = new System.Drawing.Point(52, 214);
             this.dgvIzmeniStavke.Name = "dgvIzmeniStavke";
             this.dgvIzmeniStavke.RowHeadersWidth = 51;
             this.dgvIzmeniStavke.RowTemplate.Height = 24;
+            this.dgvIzmeniStavke.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIzmeniStavke.Size = new System.Drawing.Size(590, 161);
             this.dgvIzmeniStavke.TabIndex = 0;
             // 
@@ -81,23 +85,26 @@ namespace View.Dialog
             // 
             // txtDatum
             // 
+            this.txtDatum.Enabled = false;
             this.txtDatum.Location = new System.Drawing.Point(178, 57);
             this.txtDatum.Name = "txtDatum";
-            this.txtDatum.Size = new System.Drawing.Size(100, 22);
+            this.txtDatum.Size = new System.Drawing.Size(291, 22);
             this.txtDatum.TabIndex = 4;
             // 
             // txtInstruktor
             // 
-            this.txtInstruktor.Location = new System.Drawing.Point(178, 93);
+            this.txtInstruktor.Enabled = false;
+            this.txtInstruktor.Location = new System.Drawing.Point(512, 96);
             this.txtInstruktor.Name = "txtInstruktor";
-            this.txtInstruktor.Size = new System.Drawing.Size(100, 22);
+            this.txtInstruktor.Size = new System.Drawing.Size(141, 22);
             this.txtInstruktor.TabIndex = 5;
             // 
             // txtCas
             // 
-            this.txtCas.Location = new System.Drawing.Point(178, 141);
+            this.txtCas.Enabled = false;
+            this.txtCas.Location = new System.Drawing.Point(512, 141);
             this.txtCas.Name = "txtCas";
-            this.txtCas.Size = new System.Drawing.Size(100, 22);
+            this.txtCas.Size = new System.Drawing.Size(141, 22);
             this.txtCas.TabIndex = 6;
             // 
             // btnDodaj
@@ -131,11 +138,29 @@ namespace View.Dialog
             this.btnSacuvajIzmene.UseVisualStyleBackColor = true;
             this.btnSacuvajIzmene.Click += new System.EventHandler(this.btnSacuvajIzmene_Click);
             // 
+            // cmbInstruktorIzmena
+            // 
+            this.cmbInstruktorIzmena.FormattingEnabled = true;
+            this.cmbInstruktorIzmena.Location = new System.Drawing.Point(178, 96);
+            this.cmbInstruktorIzmena.Name = "cmbInstruktorIzmena";
+            this.cmbInstruktorIzmena.Size = new System.Drawing.Size(291, 24);
+            this.cmbInstruktorIzmena.TabIndex = 10;
+            // 
+            // cmbCasIzmena
+            // 
+            this.cmbCasIzmena.FormattingEnabled = true;
+            this.cmbCasIzmena.Location = new System.Drawing.Point(178, 141);
+            this.cmbCasIzmena.Name = "cmbCasIzmena";
+            this.cmbCasIzmena.Size = new System.Drawing.Size(291, 24);
+            this.cmbCasIzmena.TabIndex = 11;
+            // 
             // IzmeniStavkeRentiranja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbCasIzmena);
+            this.Controls.Add(this.cmbInstruktorIzmena);
             this.Controls.Add(this.btnSacuvajIzmene);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnDodaj);
@@ -167,5 +192,7 @@ namespace View.Dialog
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnSacuvajIzmene;
+        private System.Windows.Forms.ComboBox cmbInstruktorIzmena;
+        private System.Windows.Forms.ComboBox cmbCasIzmena;
     }
 }

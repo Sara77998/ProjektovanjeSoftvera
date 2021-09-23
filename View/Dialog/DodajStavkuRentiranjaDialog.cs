@@ -48,5 +48,10 @@ namespace View.Dialog
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void DodajStavkuRentiranjaDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

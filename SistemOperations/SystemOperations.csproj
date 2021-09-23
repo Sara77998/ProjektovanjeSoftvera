@@ -48,6 +48,7 @@
     <Compile Include="InstruktorSO\UcitajInstruktoreSO.cs" />
     <Compile Include="StavkaTerminaSO\ObrisiStavkuTerminaSO.cs" />
     <Compile Include="StavkaTerminaSO\UcitajStavkeTerminaSO.cs" />
+    <Compile Include="StavkaTerminaSO\UcitajStavkuTerminaKriterijumSO.cs" />
     <Compile Include="StavkaTerminaSO\ZapamtiStavkuTerminaSO.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="InstruktorSO\LoginSO.cs" />
