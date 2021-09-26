@@ -88,12 +88,14 @@ namespace View.UserControls
             // 
             // dgvStavkeTermina
             // 
+            this.dgvStavkeTermina.AllowUserToAddRows = false;
+            this.dgvStavkeTermina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStavkeTermina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeTermina.Location = new System.Drawing.Point(6, 32);
             this.dgvStavkeTermina.Name = "dgvStavkeTermina";
             this.dgvStavkeTermina.RowHeadersWidth = 51;
             this.dgvStavkeTermina.RowTemplate.Height = 24;
-            this.dgvStavkeTermina.Size = new System.Drawing.Size(491, 191);
+            this.dgvStavkeTermina.Size = new System.Drawing.Size(596, 216);
             this.dgvStavkeTermina.TabIndex = 4;
             // 
             // dtpDatumIVreme
@@ -122,7 +124,7 @@ namespace View.UserControls
             // btnSacuvaj
             // 
             this.btnSacuvaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSacuvaj.Location = new System.Drawing.Point(434, 479);
+            this.btnSacuvaj.Location = new System.Drawing.Point(463, 518);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(147, 41);
             this.btnSacuvaj.TabIndex = 8;
@@ -137,7 +139,7 @@ namespace View.UserControls
             this.groupBox1.Controls.Add(this.dgvStavkeTermina);
             this.groupBox1.Location = new System.Drawing.Point(3, 226);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 247);
+            this.groupBox1.Size = new System.Drawing.Size(689, 271);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stavke termina - ucenici";
@@ -145,7 +147,7 @@ namespace View.UserControls
             // btnObrisiStavku
             // 
             this.btnObrisiStavku.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObrisiStavku.Location = new System.Drawing.Point(503, 147);
+            this.btnObrisiStavku.Location = new System.Drawing.Point(608, 163);
             this.btnObrisiStavku.Name = "btnObrisiStavku";
             this.btnObrisiStavku.Size = new System.Drawing.Size(75, 63);
             this.btnObrisiStavku.TabIndex = 6;
@@ -156,7 +158,7 @@ namespace View.UserControls
             // btnDodajStavku
             // 
             this.btnDodajStavku.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajStavku.Location = new System.Drawing.Point(503, 53);
+            this.btnDodajStavku.Location = new System.Drawing.Point(608, 57);
             this.btnDodajStavku.Name = "btnDodajStavku";
             this.btnDodajStavku.Size = new System.Drawing.Size(75, 63);
             this.btnDodajStavku.TabIndex = 5;
@@ -208,7 +210,7 @@ namespace View.UserControls
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UCDodajTermin";
-            this.Size = new System.Drawing.Size(599, 532);
+            this.Size = new System.Drawing.Size(695, 589);
             this.Load += new System.EventHandler(this.UCDodajTermin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeTermina)).EndInit();
             this.groupBox1.ResumeLayout(false);

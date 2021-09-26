@@ -30,6 +30,10 @@ namespace Domain
         public string JoinTable2 => "";
         public string JoinCondition3 => "";
         public string JoinTable3 => "";
+        public override string ToString()
+        {
+            return $"{Naziv}";
+        }
 
         public List<IEntity> GetEntities(SqlDataReader citac)
         {

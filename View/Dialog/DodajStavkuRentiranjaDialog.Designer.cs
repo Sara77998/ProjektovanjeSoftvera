@@ -102,7 +102,7 @@ namespace View.Dialog
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DodajStavkuRentiranjaDialog";
-            this.Text = "DodajStavkuRentiranjaDialog";
+            this.Text = "Dodaj ucenika u termin";
             this.Load += new System.EventHandler(this.DodajStavkuRentiranjaDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,11 +35,11 @@ namespace View.UserControls
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPronadjiPrezime = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnPronadjiPrezime = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -57,6 +57,7 @@ namespace View.UserControls
             // 
             // dgvUcenici
             // 
+            this.dgvUcenici.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUcenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUcenici.ColumnHeadersVisible = false;
             this.dgvUcenici.EnableHeadersVisualStyles = false;
@@ -103,6 +104,15 @@ namespace View.UserControls
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pretraga po imenu";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Ime:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label3);
@@ -115,6 +125,15 @@ namespace View.UserControls
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pretraga po prezimenu";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Prezime:";
+            // 
             // btnPronadjiPrezime
             // 
             this.btnPronadjiPrezime.Location = new System.Drawing.Point(541, 21);
@@ -124,24 +143,6 @@ namespace View.UserControls
             this.btnPronadjiPrezime.Text = "Pronadji";
             this.btnPronadjiPrezime.UseVisualStyleBackColor = true;
             this.btnPronadjiPrezime.Click += new System.EventHandler(this.btnPronadjiPrezime_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Ime:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Prezime:";
             // 
             // UCPronadjiUcenika
             // 

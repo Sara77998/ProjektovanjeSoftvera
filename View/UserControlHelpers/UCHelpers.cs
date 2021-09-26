@@ -72,7 +72,7 @@ namespace View.UserControlHelpers
         {
             if (txt.Text.Contains("."))
             {
-                label.Text = "Stavite zarez umesto tačke!";
+                label.Text = "Cena je ceo broj u evrima!";
                 return false;
             }
             try

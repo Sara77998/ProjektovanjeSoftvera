@@ -65,45 +65,7 @@ namespace View.ClientController
 
 
 
-        //internal void Update(UCUpdateMusterija uCUpdateMusterija)
-        //{
-        //    if (uCUpdateMusterija.CbMusterije.SelectedItem == null)
-        //    {
-        //        System.Windows.Forms.MessageBox.Show("Niste izabrali musteriju koju zelite da izmenite");
-        //        return;
-        //    }
-        //    if (!UserControlHelpers.CapitalLetterValidation(uCUpdateMusterija.TxtImeUpdate, uCUpdateMusterija.LblIme)
-        //        | !UserControlHelpers.CapitalLetterValidation(uCUpdateMusterija.TxtPrezimeUpdate, uCUpdateMusterija.LblPrezime)
-        //        | !UserControlHelpers.PhoneNumberValidation(uCUpdateMusterija.TxtBrojTelefonaUpdate, uCUpdateMusterija.LblBrojTelefona)
-        //        | !UserControlHelpers.DateValidation(uCUpdateMusterija.DtpDatumUpdate, uCUpdateMusterija.LblDatum)
-        //        )
-        //    {
-        //        return;
-        //    }
-        //    try
-        //    {
-        //        Musterija m = new Musterija
-        //        {
-        //            /*JMBG = uCUpdateMusterija.JMBG,
-        //            Ime = uCUpdateMusterija.TxtImeUpdate.Text,
-        //            Prezime = uCUpdateMusterija.TxtPrezimeUpdate.Text,
-        //            BrojTelefona = uCUpdateMusterija.TxtBrojTelefonaUpdate.Text,
-        //            DatumRodjenja = uCUpdateMusterija.DtpDatumUpdate.Value*/
-        //            WhereCondition = "JMBG=",
-        //            WhereValue = $"'{uCUpdateMusterija.JMBG}'",
-        //            UpdateText = $"Ime='{uCUpdateMusterija.TxtImeUpdate.Text}',Prezime='{uCUpdateMusterija.TxtPrezimeUpdate.Text}', BrojTelefona='{uCUpdateMusterija.TxtBrojTelefonaUpdate.Text}', DatumRodjenja='{uCUpdateMusterija.DtpDatumUpdate.Value.ToString("MM/dd/yyyy")}'"
 
-        //        };
-        //        Communication.Communication.Instance.UpdateMusterija(m);
-        //        System.Windows.Forms.MessageBox.Show("Musterija uspesno izmenjena");
-        //        ResetForm(uCUpdateMusterija);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        System.Windows.Forms.MessageBox.Show(ex.Message);
-        //    }
-        //}
 
         internal static void SearchUcenikIme(UCPronadjiUcenika uCPronadjiUcenika)
         {
@@ -118,7 +80,7 @@ namespace View.ClientController
                 if (Komunikacija.Instance.SearchUcenikIme(u))
                 {
                     uCPronadjiUcenika.DgvUcenici.DataSource = null;
-                    System.Windows.Forms.MessageBox.Show("Ne postoji ucenim sa tim imenom!");
+                    System.Windows.Forms.MessageBox.Show("Ne postoji ucenik sa tim imenom!");
                 }
                 else
                 {
@@ -133,25 +95,7 @@ namespace View.ClientController
 
         }
 
-        //internal void UpdateFill(UCUpdateMusterija uCUpdateMusterija)
-        //{
-        //    try
-        //    {
-        //        Musterija m = (Musterija)uCUpdateMusterija.CbMusterije.SelectedItem;
-
-        //        uCUpdateMusterija.TxtImeUpdate.Text = m.Ime;
-        //        uCUpdateMusterija.TxtPrezimeUpdate.Text = m.Prezime;
-        //        uCUpdateMusterija.TxtBrojTelefonaUpdate.Text = m.BrojTelefona;
-        //        uCUpdateMusterija.DtpDatumUpdate.Value = m.DatumRodjenja;
-        //        uCUpdateMusterija.JMBG = m.JMBG;
-        //        System.Windows.Forms.MessageBox.Show("Ucitana musterija");
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        System.Windows.Forms.MessageBox.Show(ex.Message);
-        //    }
-        //}
+ 
 
         internal void Delete(UCObrisiUcenika uCObrisiUcenika)
         {
@@ -164,7 +108,7 @@ namespace View.ClientController
                 u.WhereValue = $"'{u.UcenikId}'";
                 Komunikacija.Instance.DeleteUcenik(u);
                 System.Windows.Forms.MessageBox.Show("Izabrani ucenik je obrisan!");
-                //ResetForm(uCUpdateAutomobil);
+                ResetForm(uCObrisiUcenika);
 
             }
             catch (Exception ex)
@@ -186,6 +130,7 @@ namespace View.ClientController
                 };
                 if (Komunikacija.Instance.SearchUcenikPrezime(u))
                 {
+                    uCPronadjiUcenika.DgvUcenici.DataSource = null;
                     System.Windows.Forms.MessageBox.Show("Ne postoji ucenik sa tim prezimenom!");
                 }
                 else
@@ -225,7 +170,10 @@ namespace View.ClientController
             uCDodajUcenika.LblTelefon.Text = "";
             uCDodajUcenika.LblEmail.Text = "";
         }
+        internal void ResetForm(UCObrisiUcenika uCObrisiUcenika)
+        {
+            uCObrisiUcenika.DgvSviUcenici.DataSource = Komunikacija.Instance.GetAllUcenik();
+        }
 
-       
     }
 }

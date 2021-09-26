@@ -53,22 +53,22 @@ namespace Domain
         public string JoinTable3 => "";
         public override string ToString()
         {
-            return $"{UcenikId} {Ime} {Prezime}";
+            return $" {Ime} {Prezime}";
         }
-        public Ucenik Objekat
-        {
-            get
-            {
-                return this;
-            }
-        }
-        public string Prikaz
-        {
-            get
-            {
-                return Prezime;
-            }
-        }
+        //public Ucenik Objekat
+        //{
+        //    get
+        //    {
+        //        return this;
+        //    }
+        //}
+        //public string Prikaz
+        //{
+        //    get
+        //    {
+        //        return Prezime;
+        //    }
+        //}
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
 

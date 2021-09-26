@@ -37,6 +37,7 @@ namespace View.UserControls
             // 
             // dgvSviCasovi
             // 
+            this.dgvSviCasovi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSviCasovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSviCasovi.Location = new System.Drawing.Point(16, 109);
             this.dgvSviCasovi.Name = "dgvSviCasovi";

@@ -73,7 +73,8 @@ namespace Domain
                     Email = (string)citac["Email"],
                     SkolaSkijanja = new SkolaSkijanja
                     {
-                        SkolaSkijanjaId = (int)citac["SkolaSkijanjaId"]
+                        SkolaSkijanjaId = (int)citac["SkolaSkijanjaId"],
+                        Naziv = (string)citac["Naziv"]
                     },
                     KorisnickoIme = (string)citac["KorisnickoIme"],
                     Lozinka = (string)citac["Lozinka"]

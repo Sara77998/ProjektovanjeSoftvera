@@ -47,16 +47,12 @@ namespace Domain
         public string JoinCondition3 => "";
         [Browsable(false)]
         public string JoinTable3 => "";
-
-
         public override string ToString()
         {
             return $"{StazaLokacija} {TezinaCasa} {Cena}";
         }
-
         public List<IEntity> GetEntities(SqlDataReader citac)
         {
-
             List<IEntity> result = new List<IEntity>();
             while (citac.Read())
             {

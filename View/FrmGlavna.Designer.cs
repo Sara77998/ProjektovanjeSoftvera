@@ -29,6 +29,7 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGlavna));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.učenikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajUčenikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,15 +42,14 @@ namespace View
             this.terminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajTerminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.promeniTerminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sviTerminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlGlavna = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvSviInstruktori = new System.Windows.Forms.DataGridView();
             this.lblUlogovaniInstruktor = new System.Windows.Forms.Label();
-            this.sviTerminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.pnlGlavna.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSviInstruktori)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -140,22 +140,29 @@ namespace View
             // dodajTerminToolStripMenuItem
             // 
             this.dodajTerminToolStripMenuItem.Name = "dodajTerminToolStripMenuItem";
-            this.dodajTerminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dodajTerminToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.dodajTerminToolStripMenuItem.Text = "Dodaj termin";
             this.dodajTerminToolStripMenuItem.Click += new System.EventHandler(this.dodajTerminToolStripMenuItem_Click);
             // 
             // promeniTerminToolStripMenuItem
             // 
             this.promeniTerminToolStripMenuItem.Name = "promeniTerminToolStripMenuItem";
-            this.promeniTerminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.promeniTerminToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.promeniTerminToolStripMenuItem.Text = "Promeni termin";
             this.promeniTerminToolStripMenuItem.Click += new System.EventHandler(this.promeniTerminToolStripMenuItem_Click);
             // 
+            // sviTerminiToolStripMenuItem
+            // 
+            this.sviTerminiToolStripMenuItem.Name = "sviTerminiToolStripMenuItem";
+            this.sviTerminiToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.sviTerminiToolStripMenuItem.Text = "Svi termini";
+            this.sviTerminiToolStripMenuItem.Click += new System.EventHandler(this.sviTerminiToolStripMenuItem_Click);
+            // 
             // pnlGlavna
             // 
+            this.pnlGlavna.Controls.Add(this.panel1);
             this.pnlGlavna.Controls.Add(this.label1);
             this.pnlGlavna.Controls.Add(this.label2);
-            this.pnlGlavna.Controls.Add(this.dgvSviInstruktori);
             this.pnlGlavna.Controls.Add(this.lblUlogovaniInstruktor);
             this.pnlGlavna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGlavna.Location = new System.Drawing.Point(0, 28);
@@ -179,19 +186,9 @@ namespace View
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 28);
+            this.label2.Size = new System.Drawing.Size(140, 28);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Svi instruktori:";
-            // 
-            // dgvSviInstruktori
-            // 
-            this.dgvSviInstruktori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSviInstruktori.Location = new System.Drawing.Point(12, 84);
-            this.dgvSviInstruktori.Name = "dgvSviInstruktori";
-            this.dgvSviInstruktori.RowHeadersWidth = 51;
-            this.dgvSviInstruktori.RowTemplate.Height = 24;
-            this.dgvSviInstruktori.Size = new System.Drawing.Size(678, 329);
-            this.dgvSviInstruktori.TabIndex = 1;
+            this.label2.Text = "Plan skijalista:";
             // 
             // lblUlogovaniInstruktor
             // 
@@ -202,12 +199,13 @@ namespace View
             this.lblUlogovaniInstruktor.TabIndex = 0;
             this.lblUlogovaniInstruktor.Text = "//";
             // 
-            // sviTerminiToolStripMenuItem
+            // panel1
             // 
-            this.sviTerminiToolStripMenuItem.Name = "sviTerminiToolStripMenuItem";
-            this.sviTerminiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.sviTerminiToolStripMenuItem.Text = "Svi termini";
-            this.sviTerminiToolStripMenuItem.Click += new System.EventHandler(this.sviTerminiToolStripMenuItem_Click);
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Location = new System.Drawing.Point(17, 112);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(511, 274);
+            this.panel1.TabIndex = 4;
             // 
             // FrmGlavna
             // 
@@ -225,7 +223,6 @@ namespace View
             this.menuStrip1.PerformLayout();
             this.pnlGlavna.ResumeLayout(false);
             this.pnlGlavna.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSviInstruktori)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,8 +245,8 @@ namespace View
         private System.Windows.Forms.ToolStripMenuItem promeniTerminToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvSviInstruktori;
         private System.Windows.Forms.Label lblUlogovaniInstruktor;
         private System.Windows.Forms.ToolStripMenuItem sviTerminiToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }

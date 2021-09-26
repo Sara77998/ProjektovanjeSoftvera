@@ -32,6 +32,7 @@ namespace View.ClientController
         internal void InitUCObrisiCas(UCObrisiCas uCObrisiCas)
         {
              uCObrisiCas.DgvSviCasovi.DataSource = Komunikacija.Instance.GetAllCas();
+
         }
 
         internal void Delete(UCObrisiCas uCObrisiCas)
@@ -45,7 +46,7 @@ namespace View.ClientController
                 c.WhereValue = $"'{c.CasId}'";
                 Komunikacija.Instance.DeleteCas(c);
                 System.Windows.Forms.MessageBox.Show("Izabrani cas je obrisan!");
-                //ResetForm(uCUpdateAutomobil);
+                ResetForm(uCObrisiCas);
 
             }
             catch (Exception ex)
@@ -84,20 +85,21 @@ namespace View.ClientController
             };
             try
             {
-                if (Komunikacija.Instance.SearchCasStazaLokacija(c) == null)
+                if (!Komunikacija.Instance.SearchCasStazaLokacija(c))
                 {
                     uCPronadjiCas.DgvCas.DataSource = null;
                     System.Windows.Forms.MessageBox.Show("Nema takvog casa!");
                 }
                 else
                 {
-                    uCPronadjiCas.DgvCas.DataSource = Komunikacija.Instance.SearchCasStazaLokacija(c);
+                    uCPronadjiCas.DgvCas.DataSource = Komunikacija.Instance.SearchCas(c);
+                    uCPronadjiCas.DgvCas.Columns["CasId"].Visible = false;
                     System.Windows.Forms.MessageBox.Show("Postoji takav cas!");
                 }
             }
             catch (Exception ex)
             {
-
+                
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
@@ -115,14 +117,16 @@ namespace View.ClientController
             };
             try
             {
-                if (Komunikacija.Instance.SearchCasTezina(c) == null)
+                
+                if (!Komunikacija.Instance.SearchCasTezina(c))
                 {
                     uCPronadjiCas.DgvCas.DataSource = null;
                     System.Windows.Forms.MessageBox.Show("Nema takvog casa!");
                 }
                 else
                 {
-                    uCPronadjiCas.DgvCas.DataSource = Komunikacija.Instance.SearchCasTezina(c);
+                    uCPronadjiCas.DgvCas.DataSource = Komunikacija.Instance.SearchCas(c);
+                    uCPronadjiCas.DgvCas.Columns["CasId"].Visible = false;
                     System.Windows.Forms.MessageBox.Show("Postoji takav cas!");
                 }
             }
@@ -186,8 +190,11 @@ namespace View.ClientController
             InitUCDodajCas(uCDodajCas);
 
         }
+        internal void ResetForm(UCObrisiCas uCObrisiCas)
+        {
+            uCObrisiCas.DgvSviCasovi.DataSource = Komunikacija.Instance.GetAllCas();
+        }
 
-        
-        
+
     }
 }

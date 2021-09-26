@@ -46,6 +46,7 @@ namespace View.Dialog
             // 
             // dgvIzmeniStavke
             // 
+            this.dgvIzmeniStavke.AllowUserToAddRows = false;
             this.dgvIzmeniStavke.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIzmeniStavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIzmeniStavke.Location = new System.Drawing.Point(52, 214);

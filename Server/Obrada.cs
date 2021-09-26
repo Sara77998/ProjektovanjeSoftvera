@@ -4,6 +4,7 @@ using Domain;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -16,13 +17,14 @@ namespace Server
         private NetworkStream tok;
         private BinaryFormatter formater;
 
-        private readonly BindingList<Instruktor> instruktori;
+        //private readonly BindingList<Instruktor> instruktori;
+        public BindingList<Instruktor> Instruktori { get; set; } = new BindingList<Instruktor>();
         private Instruktor ulogovaniInstruktor;
 
         public Obrada(Socket klijentSoket, BindingList<Instruktor> instruktori)
         {
             this.klijentSoket = klijentSoket;
-            this.instruktori = instruktori;
+            this.Instruktori = instruktori;
             //tok = new NetworkStream(klijentSoket);
         }
         public void ObradiZahtev()
@@ -53,13 +55,13 @@ namespace Server
             {
                 
                 System.Windows.Forms.MessageBox.Show("Veza je prekinuta!");
-                instruktori.Remove(ulogovaniInstruktor);
+                Instruktori.Remove(ulogovaniInstruktor);
             }
             catch (SerializationException ex)
             {
                
                 System.Windows.Forms.MessageBox.Show("Veza je prekinuta!");
-                instruktori.Remove(ulogovaniInstruktor);
+                Instruktori.Remove(ulogovaniInstruktor);
             }
             //finally
             //{
@@ -81,7 +83,15 @@ namespace Server
                 case Operacija.Login:
                     o.Rezultat = Kontroler.Instance.Login((Instruktor)z.Objekat);
                     ulogovaniInstruktor = (Instruktor)o.Rezultat;
-                    instruktori.Add(ulogovaniInstruktor);
+                    if (Instruktori.All(i => i.KorisnickoIme != ulogovaniInstruktor.KorisnickoIme))
+                    {
+                        Instruktori.Add(ulogovaniInstruktor);
+                    }
+                    else
+                    {
+                        //System.Windows.Forms.MessageBox.Show("Instruktor je vec ulogovan");
+                        throw new Exception("Instruktor je vec ulogovan");
+                    }                  
                     break;
 
                 case Operacija.UcitajInstruktore:
@@ -151,6 +161,7 @@ namespace Server
 
         internal void Zaustavi()
         {
+            
             klijentSoket.Close();
         }
     }

@@ -109,6 +109,7 @@ namespace View.Dialog
                 UpdateText = $"instruktor={instruktor.InstruktorId},casid={cas.CasId}"
             };
             Komunikacija.Instance.UpdateTermin(t);
+            MessageBox.Show("Sacuvane izmene!");
         }
     }
 }

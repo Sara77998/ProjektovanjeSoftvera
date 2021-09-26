@@ -13,8 +13,6 @@ namespace Domain
        
         public Ucenik Ucenik { get; set; }
 
-
-
         [Browsable(false)]
         public string TableName => "StavkaTermina";
         [Browsable(false)]
@@ -49,6 +47,8 @@ namespace Domain
         public string JoinCondition3 => "";
         [Browsable(false)]
         public string JoinTable3 => "";
+
+       
 
         public List<IEntity> GetEntities(SqlDataReader citac)
         {

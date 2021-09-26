@@ -13,7 +13,7 @@ namespace SystemOperations.CasSO
         public List<Cas> Result { get; set; }
         protected override void ExecuteOperation(IEntity entity)
         {
-            //Musterija m = (Musterija)entity;
+            
             Result = repository.GetAllWhere(entity).Cast<Cas>().ToList();
         }
     }

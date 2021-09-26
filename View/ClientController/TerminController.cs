@@ -25,6 +25,7 @@ namespace View.ClientController
             {
                 this.uCDodajTermin = uCDodajTermin;
                 uCDodajTermin.DgvStavkeTermina.DataSource = stavkeTermina;
+                uCDodajTermin.DgvStavkeTermina.Columns["TerminId"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -152,10 +153,18 @@ namespace View.ClientController
 
         internal void UpdateTermin()
         {
-            DataGridViewRow red = uCPromeniTermin.DgvTermini.SelectedRows[0];
-            Termin t = (Termin)red.DataBoundItem;
-            IzmeniStavkeRentiranja dialog2  = new IzmeniStavkeRentiranja(t);
-            dialog2.ShowDialog();
+            if (uCPromeniTermin.DgvTermini.DataSource != null)
+            {
+                DataGridViewRow red = uCPromeniTermin.DgvTermini.SelectedRows[0];
+                Termin t = (Termin)red.DataBoundItem;
+                IzmeniStavkeRentiranja dialog2 = new IzmeniStavkeRentiranja(t);
+                dialog2.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Morate izabrati termin koji zelite da izmenite!");
+            }
+            
 
             
         }

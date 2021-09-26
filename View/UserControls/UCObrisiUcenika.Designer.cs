@@ -47,6 +47,7 @@ namespace View.UserControls
             // 
             // dgvSviUcenici
             // 
+            this.dgvSviUcenici.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSviUcenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSviUcenici.Location = new System.Drawing.Point(20, 126);
             this.dgvSviUcenici.Name = "dgvSviUcenici";

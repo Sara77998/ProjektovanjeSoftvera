@@ -11,23 +11,27 @@ namespace View
         {
             this.loginController = loginController;
             InitializeComponent();
-            txtKorisnickoIme.Text = "sara";
-            txtLozinka.Text = "sara";
+            //txtKorisnickoIme.Text = "sara";
+            //txtLozinka.Text = "sara";
         }
        
 
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
-            if (loginController.PoveziSe())
-            {
-                loginController.Login(txtKorisnickoIme, txtLozinka, this);// zasto ovde prosledjujemo this
-            }
+            
+                loginController.Login(txtKorisnickoIme, txtLozinka, this);
+            
 
         }
 
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            loginController.PoveziSe();
         }
     }
 }

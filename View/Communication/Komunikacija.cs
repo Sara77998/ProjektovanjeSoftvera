@@ -243,7 +243,7 @@ namespace View.Communication
             return casovi;
         }
 
-        internal List<Cas> SearchCasStazaLokacija(Cas c)
+        internal bool SearchCasStazaLokacija(Cas c)
         {
             Zahtev z = new Zahtev
             {
@@ -257,12 +257,12 @@ namespace View.Communication
             casovi = (List<Cas>)klijent.VratiOdgovor();
             if (casovi.Count == 0 || casovi == null)
             {
-                throw new Exception("Ne postoji cas sa zadatim kriterijumom!");
+                return false;
             }
-            return casovi;
+            return true;
         }
 
-        internal List<Cas> SearchCasTezina(Cas c)
+        internal bool SearchCasTezina(Cas c)
         {
             Zahtev z = new Zahtev
             {
@@ -276,9 +276,9 @@ namespace View.Communication
             casovi = (List<Cas>)klijent.VratiOdgovor();
             if (casovi.Count == 0 || casovi == null)
             {
-                throw new Exception("Ne postoji cas sa zadatim kriterijumom!");
+                return false;
             }
-            return casovi;
+            return true;
         }
 
         internal List<Cas> GetAllCas()
