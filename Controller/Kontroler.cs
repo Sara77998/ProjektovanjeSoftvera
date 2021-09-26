@@ -150,26 +150,5 @@ namespace Controller
         }
 
 
-        ////////////////////////////////
-
-
-
-
-        //public void UpdateAutomobil(Automobil automobil)
-        //{
-
-        //    IzmeniAutomobilSO so = new IzmeniAutomobilSO();
-        //    so.ExecuteTemplate(automobil);
-
-        //}
-
-
-
-
-
-
-
-
-
     }
 }

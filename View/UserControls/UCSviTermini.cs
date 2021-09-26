@@ -25,5 +25,10 @@ namespace View.UserControls
         {
             terminController.InitUCSviTermini(this);
         }
+
+        private void dgvSviTerminiSaUcenicima_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

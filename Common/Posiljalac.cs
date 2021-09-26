@@ -18,7 +18,7 @@ namespace Common
             this.formater = new BinaryFormatter();
         }
 
-        public void Posalji(object message) //send object
+        public void Posalji(object message) 
         {
             formater.Serialize(tok, message);
         }

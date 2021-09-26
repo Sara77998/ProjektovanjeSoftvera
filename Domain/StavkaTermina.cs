@@ -59,7 +59,8 @@ namespace Domain
                 {
                     TerminId = new Termin
                     {
-                        TerminId = citac.GetInt32(0)
+                        TerminId = citac.GetInt32(0),
+                        DatumIVreme = citac.GetDateTime(10)
                         
 
                     },

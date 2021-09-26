@@ -55,13 +55,14 @@ namespace View.ClientController
                 Termin t = new Termin
                 {
                     DatumIVreme = uCPromeniTermin.DtpDatum.Value,
-                    WhereCondition = "t.Datum=",
-                    WhereValue = uCPromeniTermin.DtpDatum.Value.ToString("MM/dd/yyyy")
+                    WhereCondition = "t.DatumIVreme=",
+                    WhereValue = uCPromeniTermin.DtpDatum.Value.ToString("MM/dd/yyyy HH:mm")
                 };
                 termini = Komunikacija.Instance.SearchTermin(t);
+                uCPromeniTermin.DgvTermini.DataSource = termini;
                 //uCPromeniTermin.DgvTermini.DataSource = termini;
                 //uCUpdateRentiranje.CbPretraga.DataSource = Communication.Communication.Instance.SearchRentiranjeDatum(r);
-                MessageBox.Show("Postoji termin za taj dan");
+                MessageBox.Show("Postoji termin u to vreme");
             }
             catch (Exception ex)
             {
@@ -216,19 +217,17 @@ namespace View.ClientController
             }
             try
             {
-                //DateTime datumIVreme = 
+                DateTime datumIVreme = uCDodajTermin.DtpDatumIVreme.Value;
                 Instruktor i = (Instruktor)uCDodajTermin.CmbInstruktor.SelectedItem;
                 Cas c = (Cas)uCDodajTermin.CmbCas.SelectedItem;
 
                 Termin t = new Termin
                 {
-                    //DatumIVreme = DateTime.ToString("MM/dd/yyyy"),
+                    DatumIVreme = datumIVreme,
                     Instruktor = i,
                     CasId = c,
                     StavkeTermina = stavkeTermina.ToList(),
-                    InsertValues = $"'{DateTime.Now.ToString("MM/dd/yyyy")}',{i.InstruktorId},{c.CasId}"
-
-
+                    InsertValues = $"'{datumIVreme.ToString("MM/dd/yyyy HH:mm")}',{i.InstruktorId},{c.CasId}"
                 };
 
                 Komunikacija.Instance.SaveTermin(t);

@@ -56,6 +56,7 @@ namespace View.UserControls
             this.dgvSviTerminiSaUcenicima.RowTemplate.Height = 24;
             this.dgvSviTerminiSaUcenicima.Size = new System.Drawing.Size(628, 425);
             this.dgvSviTerminiSaUcenicima.TabIndex = 0;
+            this.dgvSviTerminiSaUcenicima.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSviTerminiSaUcenicima_CellContentClick);
             // 
             // UCSviTermini
             // 

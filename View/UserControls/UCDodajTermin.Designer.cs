@@ -100,8 +100,12 @@ namespace View.UserControls
             // 
             // dtpDatumIVreme
             // 
+            this.dtpDatumIVreme.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dtpDatumIVreme.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumIVreme.Location = new System.Drawing.Point(193, 82);
+            this.dtpDatumIVreme.MinDate = new System.DateTime(2021, 9, 26, 0, 0, 0, 0);
             this.dtpDatumIVreme.Name = "dtpDatumIVreme";
+            this.dtpDatumIVreme.ShowUpDown = true;
             this.dtpDatumIVreme.Size = new System.Drawing.Size(307, 22);
             this.dtpDatumIVreme.TabIndex = 5;
             // 
