@@ -44,10 +44,10 @@ namespace View
             this.promeniTerminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sviTerminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlGlavna = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUlogovaniInstruktor = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.pnlGlavna.SuspendLayout();
             this.SuspendLayout();
@@ -169,6 +169,15 @@ namespace View
             this.pnlGlavna.Name = "pnlGlavna";
             this.pnlGlavna.Size = new System.Drawing.Size(706, 575);
             this.pnlGlavna.TabIndex = 1;
+            this.pnlGlavna.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGlavna_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Location = new System.Drawing.Point(17, 112);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(511, 274);
+            this.panel1.TabIndex = 4;
             // 
             // label1
             // 
@@ -198,14 +207,6 @@ namespace View
             this.lblUlogovaniInstruktor.Size = new System.Drawing.Size(16, 17);
             this.lblUlogovaniInstruktor.TabIndex = 0;
             this.lblUlogovaniInstruktor.Text = "//";
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Location = new System.Drawing.Point(17, 112);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(511, 274);
-            this.panel1.TabIndex = 4;
             // 
             // FrmGlavna
             // 

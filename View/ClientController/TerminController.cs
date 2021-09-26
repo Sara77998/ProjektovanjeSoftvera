@@ -40,6 +40,7 @@ namespace View.ClientController
             try
             {
                 uCSviTermini.DgvSviTerminiSaUcenicima.DataSource = Komunikacija.Instance.GetAllStavkaTermina();
+                uCSviTermini.DgvSviTerminiSaUcenicima.Columns["RB"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -59,9 +60,7 @@ namespace View.ClientController
                     WhereValue = uCPromeniTermin.DtpDatum.Value.ToString("MM/dd/yyyy HH:mm")
                 };
                 termini = Komunikacija.Instance.SearchTermin(t);
-                uCPromeniTermin.DgvTermini.DataSource = termini;
-                //uCPromeniTermin.DgvTermini.DataSource = termini;
-                //uCUpdateRentiranje.CbPretraga.DataSource = Communication.Communication.Instance.SearchRentiranjeDatum(r);
+                uCPromeniTermin.DgvTermini.DataSource = termini;               
                 MessageBox.Show("Postoji termin u to vreme");
             }
             catch (Exception ex)
@@ -175,9 +174,14 @@ namespace View.ClientController
             int broj = stavkeTermina.Count + 1;
             DodajStavkuRentiranjaDialog dialog = new DodajStavkuRentiranjaDialog(broj);
             dialog.ShowDialog();
-            if (dialog.stavkaTermina != null)
+            Ucenik u = dialog.stavkaTermina.Ucenik;
+            if (dialog.stavkaTermina != null &&  stavkeTermina.All(s => s.Ucenik.UcenikId != u.UcenikId))
             {
                 stavkeTermina.Add(dialog.stavkaTermina);
+            }
+            else
+            {
+                MessageBox.Show("Izabrani ucenik vec postoji u ovom treminu!");
             }
         }
 
@@ -212,7 +216,7 @@ namespace View.ClientController
             if (!UCHelpers.ComboBoxValidacija(uCDodajTermin.CmbInstruktor, uCDodajTermin.LblInstruktor) |
                 !UCHelpers.ComboBoxValidacija(uCDodajTermin.CmbCas, uCDodajTermin.LblCas))
             {
-                //mozda i datum treba da validiram?
+                
                 return;
             }
             try

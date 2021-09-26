@@ -74,5 +74,10 @@ namespace View
         {
             mainController.OpenUCSviTermini(this);
         }
+
+        private void pnlGlavna_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

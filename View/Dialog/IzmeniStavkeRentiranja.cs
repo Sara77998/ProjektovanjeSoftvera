@@ -34,14 +34,7 @@ namespace View.Dialog
             List<StavkaTermina> stavke = new List<StavkaTermina>();
             //stavke = termin.StavkeTermina;
             stavke = Komunikacija.Instance.GetAllStavkaTermina().Where(i => i.TerminId.TerminId == termin.TerminId).ToList();
-            //if (stavke==null)
-            //{
-            //    bindinglista = new BindingList<StavkaTermina>();
-            //}
-            //else
-            //{
-            //    bindinglista = new BindingList<StavkaTermina>(stavke);
-            //}
+          
 
             bindinglista = new BindingList<StavkaTermina>(stavke);
         }
@@ -53,27 +46,35 @@ namespace View.Dialog
                 DataGridViewRow red = dgvIzmeniStavke.SelectedRows[0];
                 StavkaTermina st = (StavkaTermina)red.DataBoundItem;
                 bindinglista.Remove(st);
+                //for (int i = 0; i < bindinglista.Count; i++)
+                //{
+                //    bindinglista[i].RB = i + 1;
+                //}
 
             }
             catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("morate odabrati red!");
             }
+
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            StavkaTermina st = new StavkaTermina();
-            st.RB = bindinglista.Count() + 1;
-            DodajStavkuRentiranjaDialog dialog = new DodajStavkuRentiranjaDialog(st.RB);
+            
+            int broj = bindinglista.Count + 1;
+            DodajStavkuRentiranjaDialog dialog = new DodajStavkuRentiranjaDialog(broj);
             dialog.ShowDialog();
-            if (dialog.stavkaTermina != null)
+            Ucenik u = dialog.stavkaTermina.Ucenik;
+            if (dialog.stavkaTermina != null && bindinglista.All(s => s.Ucenik.UcenikId != u.UcenikId))
             {
-                
                 bindinglista.Add(dialog.stavkaTermina);
             }
-            
-            
+            else
+            {
+                MessageBox.Show("Izabrani ucenik vec postoji u ovom treminu!");
+            }
+
         }
 
         private void IzmeniStavkeRentiranja_Load(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace View.Dialog
             dgvIzmeniStavke.DataSource = bindinglista;
 
             dgvIzmeniStavke.Columns["terminid"].Visible = false;
-
+            dgvIzmeniStavke.Columns["RB"].Visible = false;
             //dgvIzmeniStavke.Columns["Ucenik"].Visible = false;
             //DataGridViewComboBoxColumn n = new DataGridViewComboBoxColumn();
             //n.DataSource = Komunikacija.Instance.GetAllUcenik();
